@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seun A</title>
+  
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/9b89365d79.js" crossorigin="anonymous"></script>
+
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
     <link rel="apple-touch-icon" href="/images/favicon.png">
 
@@ -17,8 +22,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
+  <!-- BASE ITEMS -->
+    <!-- Menu -->
     <nav class="navbar navbar-expand-xl navbar-light">
         <div class="container-fluid">
           <span class="navbar-text"></span>
@@ -28,40 +36,108 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#home-page">Home</a>
+                <a class="nav-link" id="nav-home" href="#home-page" onclick="display(homePage)">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#portfolio-page">Portfolio</a>
+                <a class="nav-link" id="nav-portfolio" href="#portfolio-page" onclick="display(aboutPage)">Portfolio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#about-page">About</a>
+                <a class="nav-link" id="nav-about" href="#about-page" onclick="display(portfolioPage)">About Me</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#contact-page">Contact</a>
+                <a class="nav-link" id="nav-contact" href="#contact-page" onclick="display(contactPage)">Contact</a>
               </li>
             </ul>
           </div>
         </div>
     </nav>
+    <!-- Corner Images -->
+      <img src="/images/base/top-left.png" alt="" class="base-img top-left" />
+      <img src="/images/base/top-right.png" alt="" class="base-img top-right" />
+      <img src="/images/base/bottom-left.png" alt="" class="base-img bottom-left" />
+      <img src="/images/base/bottom-right.png" alt="" class="base-img bottom-right" />
 
-    <div id="home-page">
+
+
+
+    
+    <!-- PAGES -->
+
+    <!-- Home Page -->
+    <div class="page" id="home-page">
         <div class="profile-container">
             <img src="/images/profile.jpg" id="profile-image" alt="image">
         </div>
-        <div class="greeting">
-            Hello I'm
-        </div>
-        <div class="name">
-            Seun Ajayi
-        </div>
-        <div class="title">
-            Frontend Web Developer
-        </div>
+        <div class="greeting"> Hello I'm </div>
+        <div class="name"> Seun Ajayi </div>
+        <div class="title"> Frontend Web Developer </div>
         <div class="home-btns">
-            <a class="btn about-btn" href="#about">About</a>
-            <a class="btn portfolio-btn" href="#portfolio">Portfolio</a>
+            <button class="btn about-btn" href="#about">About Me</button>
+            <button class="btn portfolio-btn" href="#portfolio">Portfolio</button>
         </div>
     </div>
+
+
+    <!-- Portfolio Page -->
+    <div class="page" id="portfolio-page" hidden>
+      <div class="page d-flex flex-column justify-content-center align-items-center">
+        <h1 ><strong>Portfolio Page</strong></h1>
+        <div>In progress...</div>
+        <p class="mt-4">Please check <strong>Contact Page</strong></p>
+      </div>
+    </div>
+
+
+
+    <!-- About Page -->
+    <div class="page" id="about-page" hidden>
+      <div class="page d-flex flex-column justify-content-center align-items-center">
+        <h1 ><strong>About Me Page</strong></h1>
+        <div>In progress...</div>
+        <p class="mt-4">Please check <strong>Contact Page</strong></p>
+      </div>
+    </div>
+
+
+
+    
+    <!-- Contact Page -->
+    <div class="page container-fluid" id="contact-page" hidden>
+      <div class="title text-center"><span>Contact Me</span></div>
+
+      <form>
+        <input type="text" class="form-control w-50 mb-1" id="form-name" placeholder="Name" />
+        <input type="email" class="form-control w-50 mb-2" id="form-email" placeholder="Email" />
+
+        <label class="form-label mt-2">Your Message: </label>
+        <input type="text" class="form-control w-50" id="form-subject" placeholder="Subject" />
+        <textarea name="Message" class="form-control mt-1 mb-2" id="form-text" rows="3" placeholder="Message"></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+
+      <div class="contact-info mt-4">
+        <div class="contact-title">Email: </div>
+        <a href="#">chocho.seunajayic@gmail.com</a>
+        
+        <div class="contact-links mt-3">
+          <div class="contact-title">Follow Me: </div>
+          <div class="contact-icons">
+            <a class="col icon" href="https://www.instagram.com/shunnnn.__/"><i class="fab fa-instagram"></i></a>
+            <a class="col icon" href="https://www.linkedin.com/in/seunajayi?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B4K1p0Lx4SHWn0RDK3spIYQ%3D%3D"><i class="fab fa-linkedin"></i></a>
+            <a class="col icon" href="https://github.com/Seun-A"><i class="fab fa-github"></i></a>
+            <a class="col icon" href="https://stackoverflow.com/users/19377577/seun-ajayi"><i class="fab fa-stack-overflow"></i></a>
+            <a class="col icon" href="http://twitter.com/shun_nnnnnn"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
 
     <div class="footer">
       UI: <a href="https://www.figma.com/file/obpVJDVfH5zt55ntDdmgmH/Shunnns-Portfolioss?node-id=13%3A224">

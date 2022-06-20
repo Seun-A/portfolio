@@ -1,19 +1,70 @@
 * { box-sizing: border-box; }
+
+/* Base (body) */
 body {
   padding: 0;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #FCDC74;
+}
+body .page {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.base-img {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.5;
+}
+.top-left { top: 2%; }
+.top-right { top: -0.5rem; right: -1rem; }
+.bottom-left { bottom: 10%; }
+.bottom-right { bottom: 0; right: 0; }
+/* Navigation */
+.navbar {
+  position: absolute;
+  right: 0;
+  margin: 10px;
+  font-size: 0.9rem;
+}
+.navbar-toggler {
+  border: none;
+  font-size: 1.2rem;
+  padding: 10px ;
+}
+.collapse, .navbar-collapse {
+  text-align: end;
+  padding: 8px 0;
+  margin-right: 10px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-family: 'Lora', serif;
+}
+.footer a {
+  color: #0060CA;
+  font-weight: 400;
+  text-decoration: none;
 }
 
+
+/* Pages */
+/* Home Page */
 #home-page {
-  height: 100vh;
-  background-color: #FCDC74;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 .profile-container {
   height: 150px;
   width: 150px;
@@ -21,66 +72,108 @@ body {
 }
 #profile-image {
   width: 100%;
-  border: 5px solid white;
+  border: 5px solid #FFF8F0;
   border-radius: 50%;
   filter: drop-shadow(0px 10px 29px rgba(0, 0, 0, 0.25));
 }
-
 .greeting {
   font-family: 'Lora', serif;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 .name {
   font-weight: 700;
-  font-size: 2rem;
-  margin: 4px;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
 }
 .title {
   font-family: 'Lora', serif;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
-
 .home-btns {
   display: flex;
-  margin: 15px;
+  margin: 10px;
 }
 .btn {
   background: #91CEFF;
-  margin: 20px;
-  padding: 10px 16px;
+  margin: 0px 10px;
+  padding: 7px 15px;
   border: 1px solid #090089;
   border-radius: 8px;
   box-shadow: 0px 5px 5px 0px #00000050;
-  font-size: 1rem;
+  font-size: 0.8rem;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.5s;
+}
+.btn:hover { background: #70BFFF; }
+.btn:focus {
+  transform: translateY(2px);
+  box-shadow: none;
 }
 
-
-.navbar {
+/* Contact Page */
+#contact-page {
+  font-family: 'Lora', serif;
+  font-size: 0.8rem;
+}
+#contact-page .title {
+  margin-top: 18px;
+  z-index: -1;
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+#contact-page .title span {
+  color: #474747;
+  border-bottom: 2px solid #474747;
+}
+#contact-page .title, #contact-page .form-label, #contact-page .btn, #contact-page .contact-title { font-family: 'Montserrat', sans-serif; }
+#contact-page form {
+  margin-top: 50px;
+  font-size: 0.8rem;
+}
+#contact-page input, #contact-page textarea { font-size: 0.8rem; }
+#contact-page .btn { margin: 0; }
+.contact-info {
   position: absolute;
-  right: 0;
-  margin: 40px;
-  font-size: 0.9rem;
-} 
-.navbar-toggler {
-  border: none;
-  padding: 0px;
+  bottom: 10vh;
 }
-.collapse, .navbar-collapse {
-  text-align: end;
-  padding: 8px 0;
-}
-
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 0.5rem;
-  font-size: 0.9rem;
-}
-.footer a {
+.contact-info .contact-title {
+  font-weight: 700;
   color: #0060CA;
-  font-weight: 400;
-  text-decoration: none;
 }
+.contact-info a { color: #323232; }
+.contact-icons { display: flex; }
+.contact-icons .icon {
+  background: white;
+  text-decoration: none;
+  border-radius: 50%;
+  margin-right: 15px;
+  height: 40px;
+  width: 40px;
+  vertical-align: middle;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-icons .icon:nth-child(3) { background: none; }
+.contact-icons .icon:nth-child(5) { background: #1D9BF0; }
+.contact-icons .icon i { font-size: 1.6rem; }
+.fa-instagram {
+  background: -webkit-linear-gradient(bottom left, #FFDC80, #FD1D1D, #833AB4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.fa-stack-overflow {
+  background: -webkit-linear-gradient(bottom, #BCBBBB 5px, #F47F24 10px, #F47F24);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.fa-linkedin { color: #0A66C2; }
+.fa-twitter { color: white; }
+.fa-github {
+  font-size: 40px !important;
+  color: white;
+}
+
+
