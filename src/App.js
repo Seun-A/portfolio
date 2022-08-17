@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+
+const circles = []
+for (let x = 1; x <= 10; x++) {
+  circles.push(<div className={`circle c-${x}`} key={x} />)
+}
+console.log(circles)
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App d-flex w-100">
+      <section className='base-container'>
+        {/* Content Goes Here */}
+      </section>
+
+      {/* Animated Circles */}
+      { circles.map(circle => circle) }
     </div>
   );
 }
