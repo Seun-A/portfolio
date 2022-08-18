@@ -1,0 +1,39 @@
+.hamburger {
+  width: 55px;
+  height: 55px;
+  background: #ffffff33;
+  border-radius: 50%;
+  border: 2px solid white;
+  float: right;
+  position: relative;
+  right: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: 11px;
+
+  &:hover {
+    background: #ffffff55;
+
+    // SIZE TRANSITION
+    // * { transition: width 0.2s; }
+    // :nth-child(2) { width: 75% }
+    // :nth-child(3) { width: 50% }
+  }
+  
+  // X TRANSITION
+  // &:active {
+    // * { transition: transform 0.2s ; }
+    // :nth-child(2){ background: none }
+    // :nth-child(1) { transform: rotate(45deg) translateX(7px) translateY(8px) }
+    // :nth-child(3) { 
+    //   transform: rotate(-45deg) translateX(7px) translateY(-7px); 
+    //   width : 100%;
+    // }
+  // }
+
+  .ham-line {
+    background: white;
+    height: 2px;
+    width: 100%;
+  }
+}

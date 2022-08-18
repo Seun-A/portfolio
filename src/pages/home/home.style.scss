@@ -1,0 +1,61 @@
+.home-page {
+  color: white;
+  text-shadow: 2px 2px 5px #243E1488;
+  padding-bottom: 100px;
+  
+  
+  h1, h2 { font-family: 'Raleway', sans-serif }
+  h1 { font-size: 5rem }
+  h2 { margin: 70px 0 30px }
+  h6 { font-family: 'Playfair Display', serif; font-size: 1.5rem }
+
+  .skill {
+    display: inline-block;
+    background: #243E1488;
+
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    border: 2px solid white;
+
+    padding: 10px 15px;
+    margin: 0 10px 10px 0;
+  }
+
+  .profile-img {
+    width: 450px;
+
+    position: relative;
+    right: 0px;
+
+    border-radius: 50%;
+    border: 5px solid #ffffff88;
+  }
+}
+
+
+/* Media Queries */
+@media (max-width: 1300px) {
+  .home-page {
+    h1 { font-size: 4rem }
+    h2 { margin: 60px 0 30px }
+    h6 { font-size: 1.5rem }
+
+    .profile-img { width: 400px }
+  
+    .skill {
+      font-size: 0.9rem;
+      padding: 8px 13px;
+    }
+  }
+} 
+
+@media (max-width: 1100px) {
+  .home-page {
+    h2 { margin: 40px 0 20px }
+    h6:nth-child(1) { margin-top: 50px }
+
+    .profile-img { width: 370px }
+  }
+} 
