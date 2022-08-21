@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import './App.scss';
-import Hamburger from './components/hamburger/hamburger.component';
+import Header from './components/header/header.component';
 
 const circles = []
 for (let x = 1; x <= 10; x++) {
@@ -9,12 +9,9 @@ for (let x = 1; x <= 10; x++) {
 
 function App() {
   return (
-    <div className="App d-flex w-100">
-      <section className='base-container'>
-        {/* Content Goes Here */}
-        <Hamburger />
-        <Outlet />
-      </section>
+    <div className="App">
+      <Header />
+      <Outlet />
 
       {/* Animated Circles */}
       { circles.map(circle => circle) }

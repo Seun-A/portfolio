@@ -1,28 +1,25 @@
+a { text-decoration: none }
+
 .App {
-  height: 100vh;
-  background: linear-gradient(to bottom right, #243E14, #7FBE4B);
+  width: 100%;
 }
 
-.base-container {
-  background: #ffffff77;
-  border: 2px solid #ffffff;
-  border-radius: 30px;
-  backdrop-filter: blur(2.5px);
+.page {
+  width: 100vw;
 
-  height: 93%;
-  width: 90%;
-  overflow: hidden;
+  padding: 70px 20px 10px;
+  transition: display 1s;
 
-  margin: auto;
-  padding: 20px;
-  z-index: 3;
-  overflow-y: hidden;
-
-  .page {
-    height: 100%;
-    width: 100%;
+  &.coming-soon {
+    height: 100vh;
+    
+    img {
+      width: 50%;
+      z-index: 50;
+    }
   }
 }
+
 
 // CIRCLES 
 .circle {

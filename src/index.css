@@ -1,9 +1,7 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
-  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  background: linear-gradient(to bottom right, #243E14, #7FBE4B);
+
   width: 100vw;
-  overflow: hidden ;
-}  
+  margin: 0;
+}
