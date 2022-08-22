@@ -2,8 +2,8 @@ import './home.style.scss'
 import HomeImg from '../../components/home-img/home-img.component';
 import { Link } from 'react-router-dom';
 
-import logo from '../../assets/redux.svg'
-import fire from '../../assets/firebase.png'
+import reduxIcon from '../../assets/redux.svg'
+import firebaseIcon from '../../assets/firebase.png'
 
 const HomePage = () => (
   <div className='page home-page d-flex'> 
@@ -27,12 +27,22 @@ const HomePage = () => (
         <div className='skills col-12 text-center d-flex flex-wrap justify-content-center'>
           {
             ['react', 'js', 'bootstrap', 'html5', 'css3'].map((skill, i) => (
-              <span className='skill d-flex justify-content-center align-items-center' key={i}><i className={`fa-brands fa-${skill}`} /></span>
+              <div className='xtooltip' key={i}>
+                <span className='skill d-flex justify-content-center align-items-center'><i className={`fa-brands fa-${skill}`} /></span>
+              <span className="tooltiptext">{skill}</span>
+              </div>
             ))
           }
 
-          <span className='skill d-flex justify-content-center align-items-center'><img src={logo} className='' alt='redux' /></span>
-          <span className='skill d-flex justify-content-center align-items-center'><img src={fire} className='' alt='redux' /></span>
+          {/* Imported Manually */}
+          <div className="xtooltip">
+            <span className='skill d-flex justify-content-center align-items-center'><img src={reduxIcon} alt='redux' /></span>
+            <span className="tooltiptext">redux</span>
+          </div>
+          <div className="xtooltip">
+            <span className='skill d-flex justify-content-center align-items-center'><img src={firebaseIcon} alt='redux' /></span>
+            <span className="tooltiptext">firebase</span>
+          </div>
         </div>
       </div>
     </section>
