@@ -23,7 +23,7 @@ root.render(
           <Route 
             path='*'
             element = {
-                <div className='page text-light coming-soon d-flex flex-column align-items-center justify-content-center'>
+                <div className='page text-light text-center coming-soon d-flex flex-column align-items-center justify-content-center'>
                   <img src={comingSoon} alt='Coming Soon'/> 
                   <h1 className='p-5'>Page In Progress...</h1>
                 </div>

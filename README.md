@@ -11,3 +11,5 @@ This repository will provide an overview of all my projects on display
 - [**React**](https://reactjs.org)
 - [**React Router**](https://reactrouter.com)
 - [**Sass**](https://sass-lang.com) 
+- [**Bootstrap**](https://getbootstrap.com) 
+- [**FontAwesome**](https://fontawesome.com) 

@@ -9,7 +9,7 @@ for (let x = 1; x <= 10; x++) {
 
 function App() {
   return (
-    <div className="App">
+    <div className="App d-flex justify-cintent-center">
       <Header />
       <Outlet />
 

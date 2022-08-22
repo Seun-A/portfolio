@@ -2,6 +2,9 @@ import './home.style.scss'
 import HomeImg from '../../components/home-img/home-img.component';
 import { Link } from 'react-router-dom';
 
+import logo from '../../assets/redux.svg'
+import fire from '../../assets/firebase.png'
+
 const HomePage = () => (
   <div className='page home-page d-flex'> 
     <section className='base-container container-fluid d-flex '> 
@@ -21,17 +24,19 @@ const HomePage = () => (
           </div>
         </div>
 
-        <div className='skills col-12 text-center'>
+        <div className='skills col-12 text-center d-flex flex-wrap justify-content-center'>
           {
-            ['JavaScript', 'React', 'HTML', 'CSS', 'Bootstrap', 'Firebase', 'Redux'].map((skill, i) => (
-              <div className='skill' key={i}>{skill}</div>
+            ['react', 'js', 'bootstrap', 'html5', 'css3'].map((skill, i) => (
+              <span className='skill d-flex justify-content-center align-items-center' key={i}><i className={`fa-brands fa-${skill}`} /></span>
             ))
           }
+
+          <span className='skill d-flex justify-content-center align-items-center'><img src={logo} className='' alt='redux' /></span>
+          <span className='skill d-flex justify-content-center align-items-center'><img src={fire} className='' alt='redux' /></span>
         </div>
       </div>
     </section>
-
   </div>
 )
 
-export default HomePage; 
+export default HomePage;
