@@ -1,9 +1,11 @@
 import './home.style.scss'
 import HomeImg from '../../components/home-img/home-img.component';
-import { Link } from 'react-router-dom';
 
-import reduxIcon from '../../assets/redux.svg'
-import firebaseIcon from '../../assets/firebase.png'
+import reduxImg from '../../assets/redux.svg'
+import firebaseImg from '../../assets/firebase.png'
+
+import HomeBtn from '../../components/home-btn/home-btn.component';
+import Pill from '../../components/pill/pill.component'
 
 const HomePage = () => (
   <div className='page home-page d-flex'> 
@@ -19,30 +21,21 @@ const HomePage = () => (
           <h6>Junior Frontend Developer</h6>
 
           <div className='home-btns'>
-            <button className='home-btn'><Link to='/projects'>Projects</Link></button>
-            <button className='home-btn'><Link to='/contact'>Contact</Link></button>
+            <HomeBtn to='/projects' label='Projects' />
+            <HomeBtn to='/contact' label='Contact' />
           </div>
         </div>
 
         <div className='skills col-12 text-center d-flex flex-wrap justify-content-center'>
           {
             ['react', 'js', 'bootstrap', 'html5', 'css3'].map((skill, i) => (
-              <div className='xtooltip' key={i}>
-                <span className='skill d-flex justify-content-center align-items-center'><i className={`fa-brands fa-${skill}`} /></span>
-              <span className="tooltiptext">{skill}</span>
-              </div>
+              <Pill icon={skill} key={i} />
             ))
           }
 
           {/* Imported Manually */}
-          <div className="xtooltip">
-            <span className='skill d-flex justify-content-center align-items-center'><img src={reduxIcon} alt='redux' /></span>
-            <span className="tooltiptext">redux</span>
-          </div>
-          <div className="xtooltip">
-            <span className='skill d-flex justify-content-center align-items-center'><img src={firebaseIcon} alt='redux' /></span>
-            <span className="tooltiptext">firebase</span>
-          </div>
+          <Pill img={reduxImg} imgLabel='redux' />
+          <Pill img={firebaseImg} imgLabel='firebase' />
         </div>
       </div>
     </section>

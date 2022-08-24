@@ -13,3 +13,9 @@ This repository will provide an overview of all my projects on display
 - [**Sass**](https://sass-lang.com) 
 - [**Bootstrap**](https://getbootstrap.com) 
 - [**FontAwesome**](https://fontawesome.com) 
+
+#
+
+## !!! Pending !!!
+- **Header Comoponent** - *make dynamic*
+- **Contact Page** - *email functionality*

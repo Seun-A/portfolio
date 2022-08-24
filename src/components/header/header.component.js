@@ -1,7 +1,7 @@
 import './header.style.scss'
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ active }) => {
   const handleClick = event => {
     const currentNav = event.currentTarget
 

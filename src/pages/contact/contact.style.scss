@@ -1,0 +1,70 @@
+.contact-page {
+  z-index: 2;
+
+  h1 {
+    font-weight: 600;
+    padding: 15px 40px;
+    border-bottom: 3px solid white;
+  }
+
+  form { margin-top: 2rem; }
+
+  button {
+    background: white;
+    border: none;
+    border: 1px solid white;
+    border-radius: 10px;
+
+    color: #243E14;
+    font-size: 1rem;
+    font-weight: 600;
+
+    padding: 10px;
+    position: relative;
+    box-shadow: 0 4px 0 0 #3f6c23;
+    
+    transition: all  0.2s;
+    
+    &:hover {
+      background: rgba($color: #518b2d, $alpha: 0.6);
+      color: white;
+    }
+  }
+
+
+
+  .tooltipper {
+    cursor: pointer;
+    .pill {
+      transition: all 0.2s ease;
+      
+      &:hover {
+        background: white;
+        color: #518b2d;
+      }
+    }
+
+    .tooltiptext {
+      display: none !important;
+    }
+  }
+}
+
+
+/* Media Queries */
+@media (max-width: 767px) {
+  .contact-page {
+    form { width: 90vw !important; }
+  }
+} 
+
+@media (max-width: 575px) {
+  .contact-page {
+    h1 { 
+      font-size: 1.7rem;
+      padding: 15px 21px;
+    }
+
+    button { padding: 5px; }
+  }
+} 

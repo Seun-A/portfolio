@@ -1,5 +1,4 @@
 .home-page {
-  color: white;
   text-shadow: 2px 2px 5px #243E1488;
   display: flex;
   align-items: center;
@@ -27,34 +26,7 @@
         font-size: 1.3rem;
       }
 
-      .home-btns {
-        margin-top: 30px;
-
-        .home-btn {
-          background: #243E1488;
-          box-shadow: 0px 3px 3px 0px #243E1488;
-          border: 2px solid white;
-          border-radius: 30px;
-
-          margin-right: 10px;
-          padding: 10px 30px;
-          font-size: 1.1rem;
-
-          transition: all 0.15s;
-          
-          a {
-            color: white;
-            font-weight: 500;
-          }
-
-          &:hover { background: #243E14bf }
-
-          &:active {
-            transform: translateY(2px);
-            box-shadow: none;
-          }
-        }
-      }
+      .home-btns { margin-top: 30px }
     }
   }
   
@@ -62,59 +34,6 @@
     margin-top: 15vh;
     position: relative;
     bottom: 0;
-
-    .skill {
-      background: #243E1455;
-      border: 1.5px solid white;
-      border-radius: 50%;
-
-      width: 3rem;
-      height: 3rem;
-      
-      color: white;
-      font-size: 1.5rem !important;
-      
-      margin: 0 15px 10px 0;
-
-      img { width: 1.7rem }
-    }
-
-    .xtooltip {
-      position: relative;
-  
-      .tooltiptext {
-        visibility: hidden;
-        width: 120px;
-        background-color: #243E1488;
-        color: #fff;
-        text-align: center;
-        border-radius: 6px;
-        padding: 5px 0;
-        position: absolute;
-        z-index: 1;
-        top: 95%;
-        left: 45%;
-        margin-left: -60px;
-        text-transform: uppercase;
-  
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          left: 50%;
-          margin-left: -5px;
-          border-width: 5px;
-          border-style: solid;
-          border-color: transparent transparent #243E1488 transparent;
-        }
-      }
-  
-      &:hover {
-        .tooltiptext {
-          visibility: visible;
-        }
-      }
-    }
   }
 }
 
@@ -134,7 +53,7 @@
   .home-page {
     
     .base-container {
-      padding: 50px;
+      padding: 50px 50px 20px;
       
       .intro {
         text-align: center;
@@ -144,14 +63,21 @@
       }
 
       .skills {
-        margin-top: 7vh;
+        margin-top: 10vh;
         padding: 0 15px;
+      }
+    }
+  }
+} 
 
-        .skill {
-          font-size: 1rem;
-          padding: 8px 15px;
-          margin: 0 10px 10px 0;
-        }
+@media (max-width: 576px) {
+  .home-page {
+    .base-container {
+      min-height: 85vh;
+      padding: 70px 0 40px 0;
+      
+      .skills {
+        margin-top: 15vh;
       }
     }
   }
@@ -165,13 +91,10 @@
       .intro {
         h1 { font-size: 2.5rem;}
         h6 { font-size: 1rem;}
+      }
 
-        .home-btns {
-          .home-btn {
-            font-size: 1rem;
-            padding: 8px 25px;
-          }
-        }
+      .skills {
+        margin-top: 13vh;        
       }
     }
   }

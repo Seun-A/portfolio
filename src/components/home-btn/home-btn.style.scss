@@ -1,0 +1,31 @@
+.home-btn {
+  background: #243E1488;
+  box-shadow: 0px 3px 3px 0px #243E1488;
+  border: 2px solid white;
+  border-radius: 30px;
+
+  margin-right: 10px;
+  padding: 10px 30px;
+  font-size: 1.1rem;
+
+  transition: all 0.15s;
+  
+  a {
+    color: white;
+    font-weight: 500;
+  }
+
+  &:hover { background: #243E14bf }
+
+  &:active {
+    transform: translateY(2px);
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 499px) {
+  .home-btn {
+    font-size: 1rem;
+    padding: 8px 25px;
+  }
+}
