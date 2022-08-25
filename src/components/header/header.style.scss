@@ -22,8 +22,12 @@
 
   .logo {
     font-size: 2rem;
-    color: white;
-    font-weight: 300;
+    font-weight: 500;
+
+    height: 35px;
+    width: 35px;    
+    border: 2px solid white;
+    border-radius: 50%;
   }
   
   .nav {
@@ -55,12 +59,17 @@
 }
 
 
+
 /* Media Queries */
 @media (max-width: 575px) { 
   .header { 
     padding: 0 10px;
 
-    .logo { font-size: 1.7rem }
+    .logo { 
+      font-size: 1.5rem; 
+      height: 30px;
+      width: 30px;
+    }
 
     .nav {
       .nav-item {

@@ -14,7 +14,7 @@ const Header = ({ active }) => {
   
   return (
   <header className="header">
-    <span className='logo'>&lt; S /&gt;</span>
+    <span className='logo d-flex align-items-center justify-content-center'>S</span>
 
     <nav className='nav' id='nav'>
       <Link onClick={handleClick} id='nav-home' className='nav-item active' to='/'>Home</Link> 
