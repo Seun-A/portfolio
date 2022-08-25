@@ -1,0 +1,30 @@
+form { margin-top: 2rem; }
+
+button {
+  background: white;
+  border: none;
+  border: 1px solid white;
+  border-radius: 10px;
+
+  color: #243E14;
+  font-size: 1rem;
+  font-weight: 600;
+
+  padding: 10px;
+  position: relative;
+  box-shadow: 0 4px 0 0 #3f6c23;
+  
+  transition: all  0.2s;
+  
+  &:hover {
+    background: rgba($color: #518b2d, $alpha: 0.6);
+    color: white;
+  }
+}
+
+
+
+/* Media Queries */
+@media (max-width: 575px) {
+  button { padding: 5px; }
+} 

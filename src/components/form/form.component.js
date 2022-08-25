@@ -1,3 +1,4 @@
+import './form.style.scss'
 import FormInput from '../form-input/form-input.component'
 
 const Form = ({ handleChange, onSubmit, state }) => (
@@ -39,7 +40,7 @@ const Form = ({ handleChange, onSubmit, state }) => (
       }
     </div>
 
-    <button className='col-12'>Send Message</button>
+    <button className='col-12 mb-5'>Send Message</button>
   </form>
 )
 

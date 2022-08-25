@@ -24,14 +24,7 @@ class ContactPage extends React.Component {
   render() {
     return (
       <div className='page contact-page text-center d-flex flex-column justify-content-center align-items-center'> 
-        <h1>Send me an email!</h1>
-
-        <Form onSubmit={this.handleSubmit} state={this.state} handleChange={this.handleChange} />
-
-        <h1 className='mt-5 mb-4'>OR</h1>
-
-        {/* Links */}
-        <div className='d-flex mt-2 mb-5'>
+        <div className='d-flex mt-2 mb-3'>
           {
             [
               ['linkedin', 'https://www.linkedin.com/in/seunajayi'], 
@@ -48,6 +41,10 @@ class ContactPage extends React.Component {
             ))
           }
         </div>
+
+        <h1>Or send me an email!</h1>
+
+        <Form onSubmit={this.handleSubmit} state={this.state} handleChange={this.handleChange} />
       </div>
     );
   }
