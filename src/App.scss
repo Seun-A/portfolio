@@ -33,7 +33,7 @@ a { text-decoration: none }
   position: fixed;
   background: #ffffff25;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 0;
 
   &:nth-child(even) { animation: growShrink 20s infinite; }
   &:nth-child(odd) { animation: growShrink 8s infinite; }

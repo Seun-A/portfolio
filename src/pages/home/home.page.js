@@ -1,7 +1,7 @@
 import './home.style.scss'
 import HomeImg from '../../components/home-img/home-img.component';
 
-import reduxImg from '../../assets/redux.svg'
+import reduxImg from '../../assets/redux.png'
 import firebaseImg from '../../assets/firebase.png'
 
 import HomeBtn from '../../components/home-btn/home-btn.component';

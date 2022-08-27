@@ -1,0 +1,4 @@
+/* Media Queries */
+@media (max-width: 575px) {
+  form button { padding: 5px !important; }
+} 

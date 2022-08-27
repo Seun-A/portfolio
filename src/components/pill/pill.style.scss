@@ -23,7 +23,7 @@
       content: "";
       position: absolute;
       bottom: 100%;
-      left: 50%;
+      left: 55%;
       
       border-color: transparent transparent #243E1488 transparent;
       border-width: 5px;
@@ -38,29 +38,32 @@
       visibility: visible;
     }
   }
+  .pill {
+    background: #243E1455;
+    border: 1.5px solid white;
+    border-radius: 50%;
+    
+    width: 3rem;
+    height: 3rem;
+    
+    color: white;
+    font-size: 1.5rem !important;
+    
+    margin: 0 5px 10px ;
+    
+    img { width: 1.7rem }
+  }
+
+  .pill { img {
+    -webkit-filter: drop-shadow(2px 2px 5px #243E1488);
+    filter: drop-shadow(2px 2px 5px #243E1488);
+  }}
 }
+
 
 
 
 /* Media Queries */
-.pill {
-  background: #243E1455;
-  border: 1.5px solid white;
-  border-radius: 50%;
-
-  width: 3rem;
-  height: 3rem;
-  
-  color: white;
-  font-size: 1.5rem !important;
-  
-  margin: 0 15px 10px 0;
-
-  img { width: 1.7rem }
-}
-
-
-
 @media (max-width: 991px) {
   .pill {
     font-size: 1rem;

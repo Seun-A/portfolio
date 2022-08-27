@@ -13,16 +13,17 @@ const Header = ({ active }) => {
   }
   
   return (
-  <header className="header">
-    <span className='logo d-flex align-items-center justify-content-center'>S</span>
+    <header className="header">
+      <span className='logo d-flex align-items-center justify-content-center'>S</span>
 
-    <nav className='nav' id='nav'>
-      <Link onClick={handleClick} id='nav-home' className='nav-item active' to='/'>Home</Link> 
-      <Link onClick={handleClick} id='nav-projects' className='nav-item' to='/projects'>Projects</Link>
-      <Link onClick={handleClick} id='nav-contact' className='nav-item' to='/contact'>Contact</Link>
-    </nav>
-  </header>
-)}
+      <nav className='nav' id='nav'>
+        <Link onClick={handleClick} id='nav-home' className='nav-item active' to='/'>Home</Link> 
+        <Link onClick={handleClick} id='nav-projects' className='nav-item' to='/projects'>Projects</Link>
+        <Link onClick={handleClick} id='nav-contact' className='nav-item' to='/contact'>Contact</Link>
+      </nav>
+    </header>
+  )
+}
 
 
 export default Header; 
