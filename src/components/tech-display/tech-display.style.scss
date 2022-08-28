@@ -1,26 +1,28 @@
 @keyframes flip {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(356deg);
-  }
+  from { transform: rotateY(-60deg); }
+  to { transform: rotateY(299deg); }
 }
 
 
 #tech-display {
   width: 100%;
-  height: 160px;
-  overflow-x: scroll;
 
-  // >span:hover .pill { animation-play-state: paused; }  
+  >span {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
   // Pills
   .tooltipper {
+    display: flex;
+    justify-content: center;
+
     .pill {
       transform-style: preserve-3d;
-      width: 100px;
-      height: 100px;
+      width: 97px;
+      height: 97px;
 
       font-size: 3rem !important;
       text-shadow: 2px 2px 5px #243E1488;
@@ -32,8 +34,8 @@
 
       &::before {
         content: '';
-        width: 100px;
-        height: 100px;
+        width: 97px;
+        height: 97px;
         background: white;
         border-radius: 50%;
 
@@ -45,7 +47,7 @@
         content: '';
         width: 5px;
         background: white;
-        border-radius: 4px;
+        border-radius: 1px;
         
         position: absolute;
         top: -1px;
@@ -67,3 +69,52 @@
     }
   }
 }
+
+
+
+/* Media Queries */
+@media (max-width: 991px) {
+  #tech-display .tooltipper {
+    .pill {
+      width: 76px;
+      height: 76px;
+      margin: 0 10px 10px;
+      font-size: 2.5rem !important;
+      
+      img { width: 2.5rem; }
+
+      &::before { width: 76px; height: 76px; }
+      &::after {
+        border-radius: 1px;    
+        position: absolute;
+        left: 33px;
+      }
+    }
+  }
+}  
+
+@media (max-width: 767px) {
+  #tech-display {
+    > span {
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+    }
+
+    .tooltipper {
+      .pill {
+        width: 60px;
+        height: 60px;  
+        margin: 0 5px 10px;
+        font-size: 1.5rem !important;
+
+        img { width: 1.5rem; }
+
+        &::before { width: 60px; height: 60px; }
+        &::after { left: 23px; }
+      }
+      +.tech-label { font-size: 0.7rem; }
+    }
+  }
+}
+
+@media (max-width: 586px) { #tech-display >span { justify-content: start; } }

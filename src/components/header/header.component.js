@@ -1,29 +1,35 @@
 import './header.style.scss'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-const Header = ({ active }) => {
-  const handleClick = event => {
-    const currentNav = event.currentTarget
+const Header = () => {
+  const pathname = useLocation().pathname.split('/')[1]
+  const [isHome, isProjects, isContacts] = [
+    pathname === '',
+    pathname === 'projects',
+    pathname === 'contact'
+  ]
 
-    // Nav Items
-    const navigation = document.getElementById('nav')
-    navigation.childNodes.forEach(element => element.classList.remove('active'))
-
-    currentNav.classList.add('active')
-  }
-  
   return (
     <header className="header">
-      <span className='logo d-flex align-items-center justify-content-center'>S</span>
+      <Link className='text-light' to='/'>
+        <span className='logo d-flex align-items-center justify-content-center'>S</span>
+      </Link>
 
-      <nav className='nav' id='nav'>
-        <Link onClick={handleClick} id='nav-home' className='nav-item active' to='/'>Home</Link> 
-        <Link onClick={handleClick} id='nav-projects' className='nav-item' to='/projects'>Projects</Link>
-        <Link onClick={handleClick} id='nav-contact' className='nav-item' to='/contact'>Contact</Link>
+      <nav className='nav'>
+        {
+          [
+            {name: 'Home', to: '/', active: isHome}, {name: 'Projects', to: 'projects', active: isProjects}, {name: 'Contact', to: '/contact', active: isContacts}
+          ].map((e, i) => (
+            <Link
+              key={i}
+              to={e.to}
+              className={`nav-item ${ e.active ? 'active' : null }`}
+            >{e.name}</Link>
+          ))
+        }
       </nav>
     </header>
   )
 }
-
 
 export default Header; 

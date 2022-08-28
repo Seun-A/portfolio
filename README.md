@@ -17,5 +17,4 @@ This repository will provide an overview of all my projects on display
 #
 
 ## !!! Pending !!!
-- **Header Comoponent** - *make dynamic*
 - **Contact Page** - *email functionality*

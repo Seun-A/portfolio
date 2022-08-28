@@ -1,7 +1,9 @@
+import './contact.style.scss'
+
 import React from 'react';
+
 import Form from '../../components/form/form.component';
 import Pill from '../../components/pill/pill.component';
-import './contact.style.scss'
 
 class ContactPage extends React.Component {
   constructor() {
@@ -14,7 +16,11 @@ class ContactPage extends React.Component {
       message: ''
     }
   }
-  handleSubmit = event => event.preventDefault(); 
+  handleSubmit = event => {
+    event.preventDefault();
+
+
+  }
 
   handleChange = event => {
     const { value, name } = event.target;
