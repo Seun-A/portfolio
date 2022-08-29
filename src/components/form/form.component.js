@@ -5,7 +5,6 @@ import { useState } from 'react'
 const Form = ({ handleChange, onSubmit, state }) => {
   const formStyle = { marginTop: "2rem" }
   
-
   const [isHovering, setIsHovering] = useState(false);
   const handleMouseEnter = () => setIsHovering(true);
   const handleMouseLeave = () => setIsHovering(false);
@@ -29,15 +28,14 @@ const Form = ({ handleChange, onSubmit, state }) => {
 
 
   return (
-  <form 
-    onSubmit={onSubmit} 
-    className='container-fluid w-75'
-    style={formStyle}
-  >
-    <div className='row'>{
-      ['name', 'email', 'subject', 'message'].map((e, i) => {
-        const toRender = e === 'name' || e === 'email' ? 
-          (
+    <form 
+      onSubmit={onSubmit} 
+      className='container-fluid w-75'
+      style={formStyle}
+    >
+      <div className='row'>{
+        ['name', 'email', 'subject', 'message'].map((e, i) => {
+          const inputs = e === 'name' || e === 'email' ? (
             <div className='col-12 col-md-6' key={i}>
               <FormInput 
                 name = {e}
@@ -49,9 +47,7 @@ const Form = ({ handleChange, onSubmit, state }) => {
                 required
               />
             </div>
-          ) 
-          : 
-          (
+          ) : ( 
             <div className='col-12' key={i}>
               <FormInput 
                 isMessage= { e === 'message' ? true : false }
@@ -65,19 +61,20 @@ const Form = ({ handleChange, onSubmit, state }) => {
               />
             </div>
           )
-        return toRender
-      })
-    }</div>
+          return inputs
+        })
+      }</div>
 
-    <button 
-      className='col-12 mb-5' 
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      style={btnStyle}
-    >
-      Send Message
-    </button>
-  </form>
-)}
+      <button 
+        className='col-12 mb-5' 
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        style={btnStyle}
+      >
+        Send Message
+      </button>
+    </form>
+  )
+}
 
 export default Form; 

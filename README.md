@@ -17,4 +17,4 @@ This repository will provide an overview of all my projects on display
 #
 
 ## !!! Pending !!!
-- **Contact Page** - *email functionality*
+- **Projects Page** - *insert projects*

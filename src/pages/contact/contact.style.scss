@@ -1,6 +1,8 @@
 .contact-page {
   z-index: 2;
 
+  #alert { display: none; }
+
   // Pills, disable tooltip
   .tooltipper {
     cursor: pointer;
