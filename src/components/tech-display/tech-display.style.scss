@@ -20,6 +20,7 @@
     justify-content: center;
 
     .pill {
+      background: #243E14aa;;
       transform-style: preserve-3d;
       width: 97px;
       height: 97px;
@@ -36,28 +37,28 @@
         content: '';
         width: 97px;
         height: 97px;
-        background: white;
+        background: #ffffff55;
         border-radius: 50%;
 
         position: absolute;
-        transform: translateZ(-5px);
+        transform: translateZ(-2px);
       }
 
-      &::after {
-        content: '';
-        width: 5px;
-        background: white;
-        border-radius: 1px;
+      // &::after {
+      //   content: '';
+      //   width: 5px;
+      //   background: white;
+      //   border-radius: 1px;
         
-        position: absolute;
-        top: -1px;
-        bottom: 0;
-        left: 40px;
-        z-index: -1;
+      //   position: absolute;
+      //   top: -1px;
+      //   bottom: 0;
+      //   left: 40px;
+      //   z-index: -1;
 
-        transform: rotateY(-90deg);
-        transform-origin: 100% 50%;
-      }
+      //   transform: rotateY(-90deg);
+      //   transform-origin: 100% 50%;
+      // }
     }
 
     +.tech-label { font-weight: bold; }

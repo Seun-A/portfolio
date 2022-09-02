@@ -17,4 +17,5 @@ This repository will provide an overview of all my projects on display
 #
 
 ## !!! Pending !!!
+- **Projects Page** - *responsiveness*
 - **Projects Page** - *insert projects*

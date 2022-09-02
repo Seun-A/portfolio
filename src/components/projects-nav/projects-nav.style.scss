@@ -4,9 +4,11 @@
   border-radius: 8px;
   position: relative;
 
-  a {
+  a.proj-nav-item {
     display: inline-block;
     z-index: 1;
+
+    &.active { color: #3f6c23 !important; }
     
     color: white;
     transition: all 0.5s ease; 
@@ -20,10 +22,6 @@
     
     width: 150px;
     height: 100%;
-
-    &.active {
-      color: #3f6c23;
-    }
   }
   
   .animation {

@@ -7,10 +7,9 @@ import firebaseImg from '../../assets/firebase.png'
 const TechDisplay = () => (
   <div 
     id='tech-display'
-    className='d-flex align-items-center align-content-center justify-content-cente mt-4 my-5' 
+    className='d-flex align-items-center align-content-center mt-4 my-5' 
   >
     <span className='d-flex mx-auto'>
-
       {
         ['react', 'js', 'bootstrap', 'html5', 'css3'].map((skill, i) => (
           <div className='mx-1' key={i}>
@@ -19,6 +18,7 @@ const TechDisplay = () => (
           </div>
         ))
       }
+
       {/* Imported Manually */}
       <div className='mx-1'>
         <Pill img={reduxImg} imgLabel='redux' />
@@ -31,6 +31,6 @@ const TechDisplay = () => (
     </span>
 
   </div>
-)
+);
 
 export default TechDisplay;

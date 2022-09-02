@@ -1,28 +1,31 @@
 import './projects-nav.style.scss'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const ProjectsNav = () => {
-  const handleClick = event => {
-    const currentNav = event.currentTarget
-
-    // Nav Items
-    const navigation = document.getElementById('projectsnav')
-    navigation.childNodes.forEach(element => element.classList.remove('active'))
-
-    currentNav.classList.add('active')
-  }
-
-  
+  const path = useLocation().pathname.split('/')[2]
+  const [all, htmlCss, js, react] = [
+    path === '',
+    path === 'html-css',
+    path === 'js',
+    path === 'react-js'
+  ]  
 
   return (
     <nav 
       id='projectsnav' 
       className='d-flex justify-content-around align-items-center mx-auto my-3'
     >
-      <Link className='active' onClick={handleClick} to='/projects/'>ALL</Link>
-      <Link onClick={handleClick} to='/projects/html-css'>HTML/CSS</Link>
-      <Link onClick={handleClick} to='/projects/js'>JAVASCRIPT</Link>
-      <Link onClick={handleClick} to='/projects/react-js'>REACT-JS</Link>
+      {
+        [
+          {name: 'ALL', to: '/projects/', active: all}, {name: 'HTML/CSS', to: '/projects/html-css', active: htmlCss}, {name: 'JAVASCRIPT', to: '/projects/js', active: js}, {name: 'REACT-JS', to: '/projects/react-js', active: react}, 
+        ].map((e, i) => (
+          <Link
+            key={i}
+            to={e.to}
+            className={`proj-nav-item ${e.active ? 'active' : null}`}
+          >{e.name}</Link>
+        ))
+      }
       <div className='animation start-home'></div>
     </nav>
   )
