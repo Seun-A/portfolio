@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom'
 const ProjectsNav = () => {
   const path = useLocation().pathname.split('/')[2]
   const [all, htmlCss, js, react] = [
-    path === '',
+    path === '' || path === undefined,
     path === 'html-css',
     path === 'js',
     path === 'react-js'

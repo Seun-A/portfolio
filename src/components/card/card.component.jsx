@@ -17,13 +17,15 @@ class Card extends React.Component {
 
   render() {
     return (
-      <div className='card d-flex align-items-center justify-content-center'>
-        <img className='h-100 ratio ratio-1x1' src={this.props.image} alt='card' />
+      <div 
+        className='card d-flex align-items-center justify-content-center'
+        style={{ backgroundImage : `url(${this.props.image})` }}
+      >
         <span className='card-title d-flex align-items-center justify-content-center'>{this.props.title}</span>
         
         <div className='hover d-flex flex-column align-items-center justify-content-around'>
           <div className='d-flex flex-column align-items-center'>
-            <span className='hover-title mb-1'>{this.props.title}</span>
+            <span className='hover-title mb-2'>{this.props.title}</span>
             <span className='hover-languages'>{this.props.languages}</span>
           </div>
           <button className='hover-btn' onClick={this.viewDisplay}>LEARN MORE</button>

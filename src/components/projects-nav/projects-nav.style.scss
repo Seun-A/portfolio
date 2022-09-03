@@ -49,6 +49,7 @@
 @media (max-width: 1199px) {
   #projectsnav {
     width: 850px;
+
     .start-home, a.active~.animation { width: 150px; }
     .start-home, a:nth-child(1).active~.animation { left: 31.5px; }
     .start-about, a:nth-child(2).active~.animation { left: 244px; }
@@ -60,7 +61,7 @@
 @media (max-width: 991px) { 
   #projectsnav {
     width: 700px;
-    a { font-size: 1rem; width: 130px; }
+    a.proj-nav-item { font-size: 1rem; width: 130px; }
 
     .start-home, a.active~.animation { width: 130px; }
     .start-home, a:nth-child(1).active~.animation { left: 22.5px; }
@@ -73,7 +74,7 @@
 @media (max-width: 767px) { 
   #projectsnav {
     width: 520px;
-    a { font-size: 0.9rem; width: 100px; }
+    a.proj-nav-item { font-size: 0.9rem; width: 100px; }
 
     .start-home, a.active~.animation { width: 100px; }
     .start-home, a:nth-child(1).active~.animation { left: 15px; }
@@ -86,7 +87,7 @@
 @media (max-width: 575px) { 
   #projectsnav {
     width: 380px;
-    a { font-size: 0.8rem; width: 80px; }
+    a.proj-nav-item { font-size: 0.75rem; width: 80px; }
 
     .start-home, a.active~.animation { width: 80px; }
     .start-home, a:nth-child(1).active~.animation { left: 7.5px; }
@@ -100,7 +101,7 @@
 @media (max-width: 425px) { 
   #projectsnav {
     width: 320px;
-    a { font-size: 0.75rem; width: 75px; }
+    a.proj-nav-item { font-size: 0.71rem; width: 75px; }
 
     .start-home, a.active~.animation { width: 75px; }
     .start-home, a:nth-child(1).active~.animation { left: 2.5px; }
@@ -113,7 +114,7 @@
 @media (max-width: 370px) { 
   #projectsnav {
     width: 280px;
-    a { font-size: 0.6rem; width: 65px; }
+    a.proj-nav-item { font-size: 0.6rem; width: 65px; }
 
     .start-home, a.active~.animation { width: 65px; }
     .start-home, a:nth-child(1).active~.animation { left: 2.5px; }

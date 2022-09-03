@@ -8,7 +8,7 @@ const CardModal = ({ closeDisplay, image, title, summary, languages, narration, 
       <img className='ratio ratio-1x1' src={image} alt='card' />
       
       <div className='modal-title mt-3'>{title}</div>
-      <div className='modal-summary text-capitalize'>{summary}</div>
+      <div className='modal-summary px-2 text-capitalize'>{summary}</div>
       <div className='modal-technologies my-2 text-uppercase'>{languages}</div>
 
       <hr />

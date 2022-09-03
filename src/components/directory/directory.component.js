@@ -6,6 +6,7 @@ import ecomImg from "../../assets/directory-assets/e-commerce.jpeg";
 import cusnavImg from "../../assets/directory-assets/custom-nav.jpg";
 import infscrollImg from "../../assets/directory-assets/infinite-scroll.jpg";
 import moneyImg from "../../assets/directory-assets/money.png";
+import quoteImg from "../../assets/directory-assets/quote-gen.png";
 
 export default class Directory extends React.Component {
   constructor() {
@@ -16,7 +17,7 @@ export default class Directory extends React.Component {
         {
           title: "E-Commerce App",
           languages : ['react', 'redux', 'firebase', 'sass'],
-          summary: "React JS E-Commerce Web Application",
+          summary: "React-JS E-Commerce Web Application",
           narration : "This E-Commerce React Web App user can see product collections and individual products, sign in and sign up using either E-mail or Google",
           link: "https://seun-a-ecommerce.netlify.app",
           image: ecomImg,
@@ -48,7 +49,16 @@ export default class Directory extends React.Component {
           link: "https://money-by-korede.netlify.app/",
           image: moneyImg,
           inProgress : true
-        }
+        },
+        {
+          title: "Quote Generator",
+          languages : ['javascript'],
+          summary: "Random Quote Generator",
+          narration : "Randomly fetches from a json file which is working like a database to get the random quote. The user can generate random quotes and tweet them",
+          link: "https://seun-a.github.io/quote-generator/",
+          image: quoteImg,
+          inProgress : false
+        },
       ]
     }
   }

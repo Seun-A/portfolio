@@ -2,9 +2,12 @@
   position: relative;
   border-radius: 10px;
   border: none;
-  background: none;
-  height: 100%;
   overflow: hidden;
+  aspect-ratio: 1 !important;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   
   &:hover {
     .hover { visibility: visible; opacity: 1; }
@@ -74,7 +77,8 @@
     top: 50px;
     left: 0;
     background: #121F0A55;
-    z-index: 80;
+    z-index: 5;
+    transform: translateZ(60px);
     height: calc(100vh - 50px);
     width: 100vw;
     overflow: scroll;
@@ -87,7 +91,7 @@
       background: white;
       color: #365C1E;
       border-radius: 5px;
-      margin: 60px auto;
+      margin: 60px auto 30px;
       position: relative;
       box-shadow: 0 0 20px 2px #121F0A99;
 
@@ -150,6 +154,51 @@
           color: #5f9335;
           border: 1px solid #5f9335;
         }
+      }
+    }
+  }
+}
+
+
+
+
+
+/** Media Queries **/
+@media (max-width: 767px) {
+  .card {
+    .hover {
+      .hover-title { font-size: 1.4rem; }
+      .hover-languages { font-size: 0.9rem; }
+      .hover-btn { font-size: 1.1rem; }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .card {
+    .card-title { font-size: 1.1rem; }
+
+    .hover {
+      .hover-title { font-size: 1.3rem; }
+      .hover-languages { font-size: 0.9rem; }
+      .hover-btn { font-size: 1rem; }
+    }
+
+    /* MODAL */
+    .card-modal-container {      
+      .card-modal {
+        width: 85%;
+        margin: 40px auto 30px;
+        font-size: 0.9rem;
+
+        button.close-modal {
+          width: 1.5rem; height: 1.5rem;
+          font-size: 1rem;          
+          right: 7px;
+        }
+
+        hr { margin: 15px auto; }
+        .view-btn { width: 135px; }
       }
     }
   }
