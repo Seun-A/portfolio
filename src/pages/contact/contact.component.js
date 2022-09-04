@@ -6,6 +6,7 @@ import emailjs from '@emailjs/browser';
 import Form from '../../components/form/form.component';
 import Pill from '../../components/pill/pill.component';
 import Alert from '../../components/alert/alert.component';
+import Loader from '../../components/loader/loader.component';
 
 class ContactPage extends React.Component {
   constructor() {
@@ -21,6 +22,7 @@ class ContactPage extends React.Component {
   
   handleSubmit = event => {
     event.preventDefault();
+    document.getElementById("loader").style.display = "flex";
 
     const state = this.state;
     emailjs.send(
@@ -30,7 +32,8 @@ class ContactPage extends React.Component {
       process.env.REACT_APP_EMAILJS_USER_ID
     )
     .then(() => {
-      this.setState({name:'', email: '', subject: '', message: ''}); 
+      this.setState({name:'', email: '', subject: '', message: ''});
+      document.getElementById("loader").style.display = "none";
       document.getElementById("alert").style.display = "flex";
     })
     .catch(error => console.log(error));
@@ -44,7 +47,9 @@ class ContactPage extends React.Component {
   render() {
     return (
       <div className='page contact-page text-center d-flex flex-column justify-content-center align-items-center'> 
+        <Loader />
         <Alert />
+
         <div className='d-flex mt-2 mb-3'>
           {
             [
@@ -58,7 +63,6 @@ class ContactPage extends React.Component {
               <a href={e[1]} target='_blank' key={i} rel="noreferrer">
                 <Pill icon={e[0]} />
               </a>
-
             ))
           }
         </div>
