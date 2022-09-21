@@ -15,10 +15,19 @@ export default class Directory extends React.Component {
     this.state = {
       cards : [
         {
+          title: "Money",
+          languages : ['react', 'sass'],
+          summary: "React Mobile Banking Application",
+          narration : "The MONEY app is a Mobile Banking Application, rendered as a React Web Application",
+          link: "https://money-by-korede.netlify.app/",
+          image: moneyImg,
+          inProgress : false
+        },
+        {
           title: "E-Commerce App",
           languages : ['react', 'redux', 'firebase', 'sass'],
           summary: "React-JS E-Commerce Web Application",
-          narration : "This E-Commerce React Web App user can see product collections and individual products, sign in and sign up using either E-mail or Google",
+          narration : "In this E-Commerce React Web Application, the user can see product collections and individual products, sign in and sign up using either E-mail or Google",
           link: "https://seun-a-ecommerce.netlify.app",
           image: ecomImg,
           inProgress : true
@@ -40,15 +49,6 @@ export default class Directory extends React.Component {
           link: "https://seun-a.github.io/Infinite-Scroll/",
           image: infscrollImg,
           inProgress : false
-        },
-        {
-          title: "Money",
-          languages : ['react', 'sass'],
-          summary: "React Mobile Banking Application **IN PROGRESS**",
-          narration : "This is a Mobile Banking Application, rendered as a Web Application",
-          link: "https://money-by-korede.netlify.app/",
-          image: moneyImg,
-          inProgress : true
         },
         {
           title: "Quote Generator",
