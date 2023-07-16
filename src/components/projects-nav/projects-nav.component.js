@@ -3,11 +3,11 @@ import { Link, useLocation } from 'react-router-dom'
 
 const ProjectsNav = () => {
   const path = useLocation().pathname.split('/')[2]
-  const [all, htmlCss, js, react] = [
+  const [all, react, js, htmlCss] = [
     path === '' || path === undefined,
-    path === 'html-css',
+    path === 'react-js',
     path === 'js',
-    path === 'react-js'
+    path === 'html-css'
   ]  
 
   return (
@@ -17,7 +17,10 @@ const ProjectsNav = () => {
     >
       {
         [
-          {name: 'ALL', to: '/projects/', active: all}, {name: 'HTML/CSS', to: '/projects/html-css', active: htmlCss}, {name: 'JAVASCRIPT', to: '/projects/js', active: js}, {name: 'REACT-JS', to: '/projects/react-js', active: react}, 
+          {name: 'ALL', to: '/projects/', active: all},
+          {name: 'REACT-JS', to: '/projects/react-js', active: react}, 
+          {name: 'JAVASCRIPT', to: '/projects/js', active: js},
+          {name: 'HTML/CSS', to: '/projects/html-css', active: htmlCss},
         ].map((e, i) => (
           <Link
             key={i}

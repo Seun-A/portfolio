@@ -29,7 +29,6 @@ const TechDisplay = () => (
         <div className='tech-label'>REDUX</div>
       </div>
     </span>
-
   </div>
 );
 

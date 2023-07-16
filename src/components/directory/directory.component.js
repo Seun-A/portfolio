@@ -7,6 +7,7 @@ import cusnavImg from "../../assets/directory-assets/custom-nav.jpg";
 import infscrollImg from "../../assets/directory-assets/infinite-scroll.jpg";
 import moneyImg from "../../assets/directory-assets/money.png";
 import quoteImg from "../../assets/directory-assets/quote-gen.png";
+import mealPlanner from "../../assets/directory-assets/meal-planner.png";
 
 export default class Directory extends React.Component {
   constructor() {
@@ -15,6 +16,24 @@ export default class Directory extends React.Component {
     this.state = {
       cards : [
         {
+          title: "E-Commerce App",
+          languages : ['react', 'redux', 'firebase', 'sass'],
+          summary: "React-JS E-Commerce Web Application",
+          narration : "In this E-Commerce React Web Application, the user can see product collections and individual products, sign in and sign up using either E-mail or Google",
+          link: "https://seun-a-meal-planner.netlify.app",
+          image: ecomImg,
+          inProgress : true
+        },
+        {
+          title: "Weekly Meal Planner",
+          languages : ['react'],
+          summary: "Weekly Meal Planner React App",
+          narration : "Inspired by a Canva design, this meal planner has input and edit functionality for each meal in a day of the week",
+          link: "https://money-by-korede.netlify.app/",
+          image: mealPlanner,
+          inProgress : true
+        },
+        {
           title: "Money",
           languages : ['react', 'sass'],
           summary: "React Mobile Banking Application",
@@ -22,15 +41,6 @@ export default class Directory extends React.Component {
           link: "https://money-by-korede.netlify.app/",
           image: moneyImg,
           inProgress : false
-        },
-        {
-          title: "E-Commerce App",
-          languages : ['react', 'redux', 'firebase', 'sass'],
-          summary: "React-JS E-Commerce Web Application",
-          narration : "In this E-Commerce React Web Application, the user can see product collections and individual products, sign in and sign up using either E-mail or Google",
-          link: "https://seun-a-ecommerce.netlify.app",
-          image: ecomImg,
-          inProgress : true
         },
         {
           title: "Custom Navigation",
@@ -69,7 +79,7 @@ export default class Directory extends React.Component {
     const filtered = this.props.filter ? this.state.cards.filter(card => card.languages.includes(this.props.filter)) : this.state.cards
 
     return (
-      <div className='container-fluid'>
+      <div className='container-fluid mb-3'>
         <div className='row gx-3 d-flex justify-content-center'>
           {
             filtered.map(({languages, ...otherProps}, i) => {
