@@ -29,7 +29,7 @@ export default class Directory extends React.Component {
           languages : ['react'],
           summary: "Weekly Meal Planner React App",
           narration : "Inspired by a Canva design, this meal planner has input and edit functionality for each meal in a day of the week",
-          link: "https://money-by-korede.netlify.app/",
+          link: "https://seun-a-meal-planner.netlify.app",
           image: mealPlanner,
           inProgress : true
         },
