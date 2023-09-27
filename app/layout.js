@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
  return (
     <html lang="en" className={`${croissant_one.variable} ${nunito.variable}`}>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class">
           <div className="sticky top-0 z-20">
             <Header />
           </div>
