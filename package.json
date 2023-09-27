@@ -38,7 +38,7 @@
     ]
   },
   "devDependencies": {
-    "@iconify/react": "^4.1.1",
+    "@iconify/react": "^4.1.1-beta.1",
     "autoprefixer": "^10.4.16",
     "eslint": "8.50.0",
     "eslint-config-next": "13.5.3",

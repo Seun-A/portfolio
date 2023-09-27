@@ -10,7 +10,7 @@ export default function HomePage() {
     {title: 'About', icon: 'iconamoon:profile-fill'},
     {title: 'CV', icon: 'line-md:download-loop'},
     {title: 'Projects', icon: 'heroicons-outline:code'},
-    {title: 'Contact', icon: 'ion:mail-outlinegit '},
+    {title: 'Contact', icon: 'ion:mail-outline'},
   ]
 
   const stack = [

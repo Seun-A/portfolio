@@ -1,25 +1,40 @@
 {
   "pages": {
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
-    ],
     "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
+      "static/chunks/webpack-fd29fc8f3f254615.js",
+      "static/chunks/fd9d1056-a626650b05191da4.js",
+      "static/chunks/864-90499a42bad35976.js",
+      "static/chunks/main-app-84e405a01baa35d5.js",
+      "static/chunks/176-f947f9ce978d207f.js",
+      "static/chunks/830-26ce740fec328d1c.js",
+      "static/css/0cbd6d9027001987.css",
+      "static/chunks/app/layout-139cfe2839054451.js"
     ],
-    "/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/loading.js"
+    "/page": [
+      "static/chunks/webpack-fd29fc8f3f254615.js",
+      "static/chunks/fd9d1056-a626650b05191da4.js",
+      "static/chunks/864-90499a42bad35976.js",
+      "static/chunks/main-app-84e405a01baa35d5.js",
+      "static/chunks/176-f947f9ce978d207f.js",
+      "static/chunks/691-07c6b57471c57028.js",
+      "static/chunks/830-26ce740fec328d1c.js",
+      "static/chunks/app/page-510ed6af3493ed3d.js"
     ],
     "/not-found": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/not-found.js"
+      "static/chunks/webpack-fd29fc8f3f254615.js",
+      "static/chunks/fd9d1056-a626650b05191da4.js",
+      "static/chunks/864-90499a42bad35976.js",
+      "static/chunks/main-app-84e405a01baa35d5.js",
+      "static/chunks/176-f947f9ce978d207f.js",
+      "static/chunks/691-07c6b57471c57028.js",
+      "static/chunks/app/not-found-b14d4f828ee0c4b5.js"
+    ],
+    "/components/page": [
+      "static/chunks/webpack-fd29fc8f3f254615.js",
+      "static/chunks/fd9d1056-a626650b05191da4.js",
+      "static/chunks/864-90499a42bad35976.js",
+      "static/chunks/main-app-84e405a01baa35d5.js",
+      "static/chunks/app/components/page-679a55a31197b01c.js"
     ]
   }
 }
