@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import './pill.style.scss'
 
 const Pill = ({ icon, img, imgLabel }) => (
@@ -7,7 +8,7 @@ const Pill = ({ icon, img, imgLabel }) => (
         icon ? (
           <i className={`fa-brands fa-${icon}`} />
         ) : img ? (
-          <img src={img} alt={img} />
+          <Image src={img} alt={img} />
         ) : null
       }
     </span>

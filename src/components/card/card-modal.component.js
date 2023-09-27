@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const CardModal = ({ closeDisplay, image, title, summary, languages, narration, link, inProgress }) => (
   <div className='card-modal-container'>
     <div className='card-modal pb-4'>
@@ -5,7 +7,7 @@ const CardModal = ({ closeDisplay, image, title, summary, languages, narration, 
         <i className="fa-solid fa-xmark" />
       </button>
 
-      <img className='ratio ratio-1x1' src={image} alt='card' />
+      <Image className='ratio ratio-1x1' src={image} alt='card' />
       
       <div className='modal-title mt-3'>{title}</div>
       <div className='modal-summary px-2 text-capitalize'>{summary}</div>

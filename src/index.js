@@ -8,12 +8,13 @@ import {
 } from 'react-router-dom';
 import App from './App';
 
-import HomePage from './pages/home/home.page';
-import ContactPage from './pages/contact/contact.component';
-import ProjectsPage from './pages/projects/projects.component';
+import HomePage from './old-pages/home/home.page';
+import ContactPage from './old-pages/contact/contact.component';
+import ProjectsPage from './old-pages/projects/projects.component';
 
 import notFound from './assets/page-not-found.svg'
 import Directory from './components/directory/directory.component';
+import Image from 'next/image';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -36,7 +37,7 @@ root.render(
             path='*'
             element = {
               <div className='page text-light text-center coming-soon d-flex flex-column align-items-center justify-content-center'>
-                <img src={notFound} alt='Coming Soon'/>
+                <Image src={notFound} alt='Coming Soon'/>
                 <h1 className='p-5'>Page Not Found</h1>
               </div>
             }

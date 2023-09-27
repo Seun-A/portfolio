@@ -1,9 +1,10 @@
+import Image from 'next/image';
 import loader from '../../assets/loader.svg'
 import './loader.style.scss'
 
 const Loader = () => (
   <div id='loader' className='justify-content-center'>
-    <img src={loader} alt='loader' />
+    <Image src={loader} alt='loader' />
   </div>
 )
 
