@@ -8,9 +8,9 @@ import {
 } from 'react-router-dom';
 import App from './App';
 
-import HomePage from './pages/home/home.page';
-import ContactPage from './pages/contact/contact.component';
-import ProjectsPage from './pages/projects/projects.component';
+import HomePage from './old-pages/home/home.page';
+import ContactPage from './old-pages/contact/contact.component';
+import ProjectsPage from './old-pages/projects/projects.component';
 
 import notFound from './assets/page-not-found.svg'
 import Directory from './components/directory/directory.component';

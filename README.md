@@ -1,21 +1,10 @@
-# Portfolio
-## Hi! I'm **Seun Ajayi**
+# Hi, I'm **Seun**!
 
-I am a **Junior Frontend Developer**, specializing in [**JavaScript**](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [**ReactJS**](https://reactjs.org)
+### I am a **Frontend Developer**, and this is my [Portfolio](https://seun-a-portfolio.netlify.app)
 
-This repository will provide an overview of all my projects on display 
-
-# 
+<br />
 
 ## Technologies Used:
-- [**React**](https://reactjs.org)
-- [**React Router**](https://reactrouter.com)
-- [**Sass**](https://sass-lang.com) 
-- [**Bootstrap**](https://getbootstrap.com) 
-- [**FontAwesome**](https://fontawesome.com) 
-
-#
-
-## !!! Pending !!!
-- **Projects Page** - *responsiveness*
-- **Projects Page** - *insert projects*
+- [**NextJS**](https://nextjs.org)
+- [**Tailwind CSS**](https://tailwindcss.com/) 
+- [**Sass**](https://sass-lang.com)
