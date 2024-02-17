@@ -6,14 +6,14 @@ import {
   Route, 
   Routes 
 } from 'react-router-dom';
-import App from './App';
+import App from './app';
 
 import HomePage from './old-pages/home/home.page';
 import ContactPage from './old-pages/contact/contact.component';
 import ProjectsPage from './old-pages/projects/projects.component';
 
 import notFound from './assets/page-not-found.svg'
-import Directory from './components/directory/directory.component';
+import Directory from './old-components/directory/directory.component';
 import Image from 'next/image';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

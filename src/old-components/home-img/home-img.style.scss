@@ -1,0 +1,28 @@
+.home-img-container {
+  height: 100%;
+
+  .profile-img {
+    width: 350px;
+
+    border-radius: 50%;
+    border: 5px solid #ffffffcc;
+    margin-left: 30px;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+  .home-img-container {
+    .profile-img {
+      margin: auto;
+    }
+   }
+}
+
+@media (max-width: 576px) {
+  .home-img-container {
+    .profile-img {
+      width: 250px;
+    }
+   }
+}

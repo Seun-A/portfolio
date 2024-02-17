@@ -1,0 +1,83 @@
+.tooltipper {
+  position: relative;  
+
+  .tooltiptext {
+    visibility: hidden;
+    background-color: #243E1488;
+    border-radius: 6px;
+    color: #fff;
+
+    text-align: center;
+    text-transform: uppercase;
+    
+    width: 120px;
+    padding: 5px 0;
+    margin-left: -60px;
+    
+    position: absolute;
+    top: 95%;
+    left: 40%;
+    z-index: 1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: 55%;
+      
+      border-color: transparent transparent #243E1488 transparent;
+      border-width: 5px;
+      border-style: solid;
+
+      margin-left: -5px;
+    }
+  }
+
+  &:hover {
+    .tooltiptext {
+      visibility: visible;
+    }
+  }
+  .pill {
+    background: #243E1455;
+    border: 1.5px solid white;
+    border-radius: 50%;
+    
+    width: 3rem;
+    height: 3rem;
+    
+    color: white;
+    font-size: 1.5rem !important;
+    
+    margin: 0 5px 10px;
+    
+    img { width: 1.7rem }
+  }
+
+  .pill { img {
+    -webkit-filter: drop-shadow(2px 2px 5px #243E1488);
+    filter: drop-shadow(2px 2px 5px #243E1488);
+  }}
+}
+
+
+
+
+/* Media Queries */
+@media (max-width: 991px) {
+  .pill {
+    font-size: 1rem;
+    padding: 8px 15px;
+    margin: 0 10px 10px 0;
+  }
+} 
+
+@media (max-width: 499px) {
+  .pill {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem !important;
+    margin: 0 7px 10px 0;
+    img { width: 1.25rem }
+  }
+} 

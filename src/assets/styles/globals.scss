@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color: theme('colors.sugar-dark');
+  --bg: theme('colors.peach');
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color: theme('colors.peach');
+    --bg: theme('colors.sugar-dark');
+  }
+}
+
+body {
+  font-family: theme('fontFamily.nunito');
+  color: var(--color);
+  background: var(--bg);
+
+  @apply
+  w-screen min-h-screen overflow-x-hidden
+  bg-no-repeat 
+   
+  text-sugar-dark 
+}
+
+.page {
+  @apply transition-all px-4 md:px-12 py-4 md:pt-24 lg:pt-40;
+}
+
+.flex-center-center {
+  @apply flex justify-center items-center
+}
+
+// CIRCLES
+.circle {
+  z-index: -1;
+
+  @apply fixed bg-white/[0.15] rounded-full;
+
+  &:nth-child(even) { animation: growShrink 20s infinite; }
+  &:nth-child(odd) { animation: growShrink 8s infinite; }
+
+  &.c-1 { width: 100px; height: 100px; top: 100px; left: 50px; }
+  &.c-2 { width: 81px; height: 81px; top: 550px; right: 500px; }
+  &.c-3 { width: 70px; height: 70px; top: 400px; right: 50px; }
+  &.c-4 { width: 47px; height: 47px; top: 700px; left: 600px; }
+  &.c-5 { width: 30px; height: 30px; top: 50px; left: 350px; }
+  &.c-6 { width: 22px; height: 22px; top: 20px; right: 350px; }
+  &.c-7 { width: 100px; height: 100px; top: 780px; right: 200px; }
+  &.c-8 { width: 16px; height: 16px; top: 500px; left: 600px; }
+  &.c-9 { width: 60px; height: 60px; top: 550px; left: 350px; }
+  &.c-10 { width: 38px; height: 38px; top: 200px; right: 650px; }
+}
+
+@keyframes growShrink {
+  0% { transform: scale(1) }
+  50% { transform: scale(1.5) }
+}
+
+@for $i from 1 through 3 {
+  h#{$i} {
+    font-family: theme('fontFamily.croissant');
+  }
+}
+
+.bg-blur {
+  @apply backdrop-filter backdrop-blur-sm;
+}
+
+.flex-center-center {
+  @apply flex items-center justify-center;
+}
+
+.home-card {
+  $this: &;
+
+  @apply
+  text-center px-3 bg-blur whitespace-nowrap
+  shadow-md rounded-lg bg-white/20 transition-all duration-200 ease-in-out
+  ;
+  
+  &-lg {
+    @apply py-8 lg:py-10;
+  }
+  
+  &:not(.home-card-lg) {
+    @apply py-2 cursor-pointer hover:bg-burnt/50 hover:text-peach hover:font-semibold
+  }
+}

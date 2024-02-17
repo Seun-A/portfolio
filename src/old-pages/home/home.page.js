@@ -1,11 +1,11 @@
 import './home.style.scss'
-import HomeImg from '../../components/home-img/home-img.component';
+import HomeImg from '../../old-components/home-img/home-img.component';
 
 import reduxImg from '../../assets/redux.png'
 import firebaseImg from '../../assets/firebase.png'
 
-import HomeBtn from '../../components/home-btn/home-btn.component';
-import Pill from '../../components/pill/pill.component'
+import HomeBtn from '../../old-components/home-btn/home-btn.component';
+import Pill from '../../old-components/pill/pill.component'
 
 const HomePage = () => (
   <div className='page home-page d-flex'>

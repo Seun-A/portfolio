@@ -3,10 +3,10 @@ import './contact.style.scss';
 import React from 'react';
 import emailjs from '@emailjs/browser';
 
-import Form from '../../components/form/form.component';
-import Pill from '../../components/pill/pill.component';
-import Alert from '../../components/alert/alert.component';
-import Loader from '../../components/loader/loader.component';
+import Form from '../../old-components/form/form.component';
+import Pill from '../../old-components/pill/pill.component';
+import Alert from '../../old-components/alert/alert.component';
+import Loader from '../../old-components/loader/loader.component';
 
 class ContactPage extends React.Component {
   constructor() {
