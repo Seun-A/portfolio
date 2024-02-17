@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color: theme('colors.sugar-dark');
+  --bg: theme('colors.peach');
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color: theme('colors.peach');
+    --bg: theme('colors.sugar-dark');
+  }
+}
+
+body {
+  font-family: theme('fontFamily.nunito');
+  color: var(--color);
+  background: url(/bg-dark.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  width: 100vw;
+  overflow-x: hidden;
+  color: theme('colors.sugar-dark');
+}
+
+.flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  color: var(--color);
+}

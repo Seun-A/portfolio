@@ -1,7 +1,7 @@
-import "@/styles/globals.scss"
+import "./layout.css"
 import { Croissant_One, Nunito } from 'next/font/google'
 import { ThemeProvider } from "./theme-provider"
-import Header from "@/components/navigation/Header"
+import Navbar from "@/components/Navbar"
 
 const croissant_one = Croissant_One({
   subsets: ['latin'],
@@ -25,19 +25,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
  return (
     <html lang="en" className={`${croissant_one.variable} ${nunito.variable}`}>
-      <body>
+      <body className="flex">
         <ThemeProvider attribute="class">
-          <div className="sticky top-0 z-20">
-            <Header />
-          </div>
-
-          <main className="pb-6">
+          <Navbar />
+          
+          <main className="grow">
             {children}
           </main>
         </ThemeProvider>
-
-        {/* Animated Circles */}
-        { new Array(10).fill().map((e, i) => <div key={i} className={`circle c-${i}`} />) }
       </body>
     </html>
   )

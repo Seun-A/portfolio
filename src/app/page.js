@@ -26,48 +26,51 @@ export default function HomePage() {
 
 
   return (
-    <div className="page grid grid-cols-12 gap-y-10 md:gap-x-10">
-      <div className="col-span-full lg:col-span-6 relative aspect-square w-64 m-10 lg:m-0 mx-auto flex-center-center ">
-        <Image
-          priority
-          src={avatar}
-          alt="avatar"
-          className="col-span-12 lg:col-span-5 w-52 lg:w-72 aspect-square bg-white/30 dark:bg-peach/60 bg-blur rounded-full justify-self-center self-center select-none z-10e"
-        />
-        {
-          stack.map(({icon, position}, index) => (
-            <div key={index} className={`
-              w-12 aspect-square bg-white/50 rounded-full absolute flex-center-center
-              bg-blur
-              ${position}
-            `}>
-              <Icon
-                icon={icon}
-                className="text-2xl"
-              />
-            </div>
-            ))
-        }
-      </div>
-
-      <div className="col-span-12 lg:col-span-6 grid grid-cols-4 gap-3">
-        <div className="home-card home-card-lg col-span-4 lg:col-span-2 space-y-2">
-          <h4 className="text-lg">Hi, I&apos;m</h4>
-          <h1 className="text-3xl xl:text-4xl font-semibold">Seun Ajayi</h1>
-          <h4 className="text-lg font-mono">&lt;FrontendDeveloper /&gt;</h4>
-        </div>
-        {
-          icons.map(({title, icon}, index) => (
-            <Link href='coming-soon' key={index} className="home-card col-span-1 aspect-square lg:aspect-auto bg-blur flex-col flex-center-center space-y-1">
-              <Icon
-                icon={icon}
-                className="mx-auto text-[10vw] md:text-[8vw] lg:text-6xl"
-              />
-              <span className="text-[2.5vw] md:text-lg">{title}</span>
-            </Link>
-          ))
-        }
-      </div>
+    <div className="border text-white">
+      hello
     </div>
+    // <div className="page grid grid-cols-12 gap-y-10 md:gap-x-10">
+    //   <div className="col-span-full lg:col-span-6 relative aspect-square w-64 m-10 lg:m-0 mx-auto flex-center-center ">
+    //     <Image
+    //       priority
+    //       src={avatar}
+    //       alt="avatar"
+    //       className="col-span-12 lg:col-span-5 w-52 lg:w-72 aspect-square bg-white/30 dark:bg-peach/60 bg-blur rounded-full justify-self-center self-center select-none z-10e"
+    //     />
+    //     {
+    //       stack.map(({icon, position}, index) => (
+    //         <div key={index} className={`
+    //           w-12 aspect-square bg-white/50 rounded-full absolute flex-center-center
+    //           bg-blur
+    //           ${position}
+    //         `}>
+    //           <Icon
+    //             icon={icon}
+    //             className="text-2xl"
+    //           />
+    //         </div>
+    //         ))
+    //     }
+    //   </div>
+
+    //   <div className="col-span-12 lg:col-span-6 grid grid-cols-4 gap-3">
+    //     <div className="home-card home-card-lg col-span-4 lg:col-span-2 space-y-2">
+    //       <h4 className="text-lg">Hi, I&apos;m</h4>
+    //       <h1 className="text-3xl xl:text-4xl font-semibold">Seun Ajayi</h1>
+    //       <h4 className="text-lg font-mono">&lt;FrontendDeveloper /&gt;</h4>
+    //     </div>
+    //     {
+    //       icons.map(({title, icon}, index) => (
+    //         <Link href='coming-soon' key={index} className="home-card col-span-1 aspect-square lg:aspect-auto bg-blur flex-col flex-center-center space-y-1">
+    //           <Icon
+    //             icon={icon}
+    //             className="mx-auto text-[10vw] md:text-[8vw] lg:text-6xl"
+    //           />
+    //           <span className="text-[2.5vw] md:text-lg">{title}</span>
+    //         </Link>
+    //       ))
+    //     }
+    //   </div>
+    // </div>
   )
 }
