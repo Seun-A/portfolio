@@ -1,0 +1,25 @@
+.menu {
+  background: #4B110080;
+  z-index: 2;
+  padding: 0.5rem 1rem;
+  position: fixed;
+  top: 4rem;
+  right: 3.55rem;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.menuItem {
+  opacity: 30%;
+  font-weight: 700;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.activeMenuItem {
+  opacity: 100%;
+}

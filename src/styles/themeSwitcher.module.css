@@ -1,0 +1,40 @@
+.themeSwitcher {
+  width: 4.875rem;
+  height: 2.25rem;
+  border: 1.5px solid theme("colors.peach");
+  padding: 0.25rem;
+  border-radius: 1.125rem;
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 1.15rem;
+}
+.themeSwitcher button {
+  z-index: 1;
+  font-size: 0.8rem;
+  padding: 0.1rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transition: color 0.3s ease-in-out;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.activeThemeBtn {
+  color: theme("colors.sugar");
+}
+
+.btnBg {
+  background: theme("colors.peach");
+  height: 1.6rem;
+  width: 1.6rem;
+  border-radius: 50%;
+  position: absolute;
+  right: 0.215rem;
+  transition: right 0.3s ease-in-out;
+}
+.btnBgLight {
+  right: 2.875rem;
+}

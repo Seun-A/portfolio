@@ -23,7 +23,7 @@ module.exports = {
       },
       fontFamily: {
         'nunito': ['var(--font-nunito)'],
-        'croissant': ['var(--font-croissant)'],
+        'noto': ['var(--font-noto-serif)'],
       }
     },
   },

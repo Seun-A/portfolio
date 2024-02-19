@@ -1,0 +1,59 @@
+.homePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.introCtn {
+  text-align: center;
+  font-weight: 700;
+}
+.introCtn > h3 {
+  text-transform: uppercase;
+  font-size: 2.75rem;
+}
+.introCtn > h1 {
+  font-size: 7rem;
+  max-width: 9ch;
+  line-height: 7rem;
+}
+
+.stackGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 4rem;
+  row-gap: 1rem;
+}
+.stackCol {
+  grid-column: span 1 / span 1;
+  display: flex;
+  
+  align-items: center;
+  gap: 0.875rem;
+  padding: 1rem 0.75rem;
+  font-size: 1.25rem;
+  border-radius: 0.25rem;
+
+  transition: background 0.3s ease-in-out;
+}
+.stackIconCtn {
+  border: 1px solid theme("colors.peach");
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stackIcon {
+  font-size: 2rem;
+}
+.stackCol:nth-child(2) .stackIcon {
+  font-size: 1.65rem;
+  transform: translateY(-1.5px);
+}
+.stackCol:hover {
+  background: #F7DBA730;
+}

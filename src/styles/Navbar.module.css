@@ -1,8 +1,7 @@
 .navbar {
-  height: 100vh;
-  padding: 2.5rem 1.5rem;
+  padding: 2.5rem 0;
+  width: 7.375rem;
   background: #4B110080;
-  backdrop-filter: blur(1px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -15,29 +14,52 @@
   background: theme("colors.peach");
   border-radius: 50%;
   margin: 0 auto 1.5rem;
+  overflow: hidden;
+  position: relative;
 }
 
-.themeSwitcher {
+.socialBtnsCtn {
   display: flex;
-  justify-content: space-between;
-  gap: 1.15rem;
-  padding: 0.25rem;
-  border: 1.5px solid theme("colors.peach");
-  height: 2.25rem;
-  border-radius: 1.125rem;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.socialBtn, .cvBtn {
+  border: 1px solid theme("colors.peach");
+  color: theme("colors.peach");
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease-in-out;
+}
+.socialBtn {
+  font-size: 1.35rem;
+}
+.cvBtn {
+  font-size: 0.9rem;
+  letter-spacing: 0.04rem;
+  font-weight: 600;
+}
+.socialBtn:hover, .cvBtn:hover {
+  background: #F7DBA760;
 }
 
-.themeSwitcher button {
-  padding: 0.1rem;
-  aspect-ratio: 1;
+.scrollToTopBtn {
+  border: 2px solid theme("colors.peach");
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
-  font-size: 0.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.25rem;
+  transition: background 0.3s ease-in-out;
 }
-
-.activeThemeBtn {
-  background: theme("colors.peach");
-  color: theme("colors.sugar");
+.scrollToTopBtn:hover {
+  background: #F7DBA760;
+}
+.scrollToTopBtn svg {
+  transform: translateY(-1px);
 }
