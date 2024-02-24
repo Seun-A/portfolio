@@ -1,5 +1,5 @@
 "use client"
-import navbarStyles from "@/styles/navbar.module.css"
+import navbarStyles from "../styles/navbar.module.css"
 import { Icon } from "@iconify/react"
 import Image from "next/image"
 import Link from "next/link"
@@ -46,7 +46,7 @@ export function Navbar() {
   ]
   return (
     <nav className={navbarStyles.navbar}>
-      <div>
+      <div className={navbarStyles.colOne}>
         <div className={navbarStyles.avatarCtn}>
           <Image
             src={"/avatar.svg"}

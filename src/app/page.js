@@ -1,16 +1,18 @@
 'use client'
-import About from "@/components/About"
-import Home from "@/components/Home"
-import Impact from "@/components/Impact"
-import Projects from "@/components/Projects"
+import Home from "../components/Home"
+import About from "../components/About"
+import Projects from "../components/Projects"
+import Impact from "../components/Impact"
+import Contact from "../components/Contact"
 
-export default function Page() {
+export default function Main() {
   return (
-    <div className="overflow-y-scroll h-full baseCtn">
+    <>
       <Home />
-      <About />
+      {/* <About /> */}
       <Projects />
       {/* <Impact /> */}
-    </div>
+      <Contact />
+    </>
   )
 }

@@ -1,22 +1,8 @@
 .projectsPage {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   gap: 4rem;
-}
-.title {
-  font-size: 4rem;
-  font-weight: 700;
-  position: relative;
-}
-.title::before {
-  content: '';
-  background: theme("colors.peach");
-  border-radius: 2px;
-  position: absolute;
-  bottom: 0.5rem;
-  width: 100%;
-  height: 4px;
 }
 
 .paragraph {

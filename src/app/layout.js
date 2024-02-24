@@ -1,8 +1,8 @@
 import "./layout.css"
 import { Noto_Serif, Nunito } from 'next/font/google'
 import { ThemeProvider } from "./theme-provider"
-import Navbar from "@/components/Navbar"
-import Menu from "@/components/Menu"
+import Navbar from "../components/Navbar"
+import Menu from "../components/Menu"
 
 const noto_serif = Noto_Serif({
   subsets: ['latin'],
@@ -19,19 +19,19 @@ const nunito = Nunito({
 
 
 export const metadata = {
-  title: 'Seun-A',
+  title: 'Seun Ajayi',
   description: 'Portfolio',
 }
 
 export default function RootLayout({ children }) {
  return (
     <html lang="en" className={`${noto_serif.variable} ${nunito.variable}`}>
-      <body className="flex">
+      <body>
         <ThemeProvider attribute="class">
           <Navbar />
           <Menu />
-          
-          <main className="grow">
+         
+          <main>
             {children}
           </main>
         </ThemeProvider>

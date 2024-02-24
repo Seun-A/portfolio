@@ -1,14 +1,15 @@
-import aboutStyles from "@/styles/about.module.css"
+import aboutStyles from "../styles/about.module.css"
+import lorem from "./lorem"
+import Stack from "./Stack"
 
 export default function About() {
   return (
-    <div id="#about" className={`page ${aboutStyles.aboutPage}`}>
-      <h1 className={aboutStyles.title}>About</h1>
+    <div id="about" className={`page ${aboutStyles.aboutPage}`}>
+      <h1 className="title">About</h1>
+      <Stack />
 
       <div className={aboutStyles.paragraphCtn}>
-        <p>
-          I&apos;m a Civil Engineering student and Frontend Developer (React JS) with a great passion for structures and technology.
-        </p>
+        <p>{lorem}</p>
       </div>
     </div>
   )

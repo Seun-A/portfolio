@@ -25,3 +25,21 @@
   align-items: center;
   justify-content: space-between;
 }
+
+@media (max-width: 768px) {
+  .card {
+    width: 200px;
+    min-width: 200px;
+  }
+  
+  .cardImgCtn {
+    border-radius: 0.5rem;
+    aspect-ratio: 3/4;
+    margin-bottom: 0.75rem;
+  }
+  
+  .cardFooter {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+}

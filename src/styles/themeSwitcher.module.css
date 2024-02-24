@@ -1,4 +1,4 @@
-.themeSwitcher {
+.themeSwitcherLg {
   width: 4.875rem;
   height: 2.25rem;
   border: 1.5px solid theme("colors.peach");
@@ -10,7 +10,7 @@
   justify-content: space-between;
   gap: 1.15rem;
 }
-.themeSwitcher button {
+.themeSwitcherLg button {
   z-index: 1;
   font-size: 0.8rem;
   padding: 0.1rem;
@@ -37,4 +37,27 @@
 }
 .btnBgLight {
   right: 2.875rem;
+}
+
+.themeSwitcherSm {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1.5rem;
+  border: 1px solid theme("colors.peach");
+  padding: 0.325rem;
+
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .themeSwitcherLg {
+    display: none;
+  }
+  .themeSwitcherSm {
+    display: flex;
+  }
 }
