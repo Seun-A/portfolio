@@ -1,12 +1,12 @@
 "use client";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Icon } from "@iconify/react";
 import themeSwitcherStyles from "../styles/themeSwitcher.module.css"
 
 export const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme("dark");
 
   useEffect(() => {
     setMounted(true);
@@ -19,7 +19,7 @@ export const ThemeSwitcher = () => {
 
 
   return (
-    <>
+    <React.Fragment>
       <button
         className={themeSwitcherStyles.themeSwitcherSm}
         onClick={() => theme === "dark" ? setTheme("light") : setTheme("dark")}
@@ -44,6 +44,6 @@ export const ThemeSwitcher = () => {
           <Icon icon="ion:moon-sharp" />
         </button>
       </div>
-    </>
+    </React.Fragment>
   );
 };

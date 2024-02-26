@@ -10,7 +10,7 @@ export function Navbar() {
     {
       title: "CV",
       icon: null,
-      href: "https://docs.google.com/document/d/1-VQpR-YrWwwTrScbkoiofVFpnz01dc3v9Ozq7Kl9S7I/edit?sharingaction=ownershiptransfer",
+      href: "https://docs.google.com/document/d/1-VQpR-YrWwwTrScbkoiofVFpnz01dc3v9Ozq7Kl9S7I/edit?usp=sharing",
       isCV: true
     },
     {
@@ -46,7 +46,7 @@ export function Navbar() {
   ]
   return (
     <nav className={navbarStyles.navbar}>
-      <div className={navbarStyles.colOne}>
+      <div>
         <div className={navbarStyles.avatarCtn}>
           <Image
             src={"/avatar.svg"}

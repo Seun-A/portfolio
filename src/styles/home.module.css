@@ -56,7 +56,7 @@
   transform: translateY(-1.5px);
 }
 .stackCol:hover {
-  background: #F7DBA730;
+  /* background: #F7DBA730; */
 }
 
 @media (max-width: 1024px) {
@@ -71,7 +71,6 @@
     line-height: 5rem;
   }
   .stackGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
   }
   .stackCol {
@@ -79,10 +78,14 @@
     gap: 0.5rem;
     padding: 0.5rem 0.25rem;
     font-size: 1.25rem;
+    text-align: center;
   }
 }
 
 @media (max-width: 768px) {
+  .homePage {
+    gap: 2.5rem;
+  }
   .introCtn > h3 {
     font-size: 1.2rem;
   }
@@ -90,7 +93,9 @@
     font-size: 4rem;
     line-height: 4rem;
   }
-
+  .stackGrid {
+    gap: 0.25rem;
+  }
   .stackIconCtn {
     width: 2.5rem;
     height: 2.5rem;
@@ -103,6 +108,6 @@
     transform: translateY(-1.2px);
   }
   .stackTitle {
-    font-size: 1.125rem;
+    font-size: 0.9rem;
   }
 }

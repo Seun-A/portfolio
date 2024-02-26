@@ -1,8 +1,8 @@
-import projectsStyles from "../styles/projects.module.css"
+import React from "react"
 import ProjectCard from "./ProjectCard"
-
-import projectsDirectory from "../data/projectsDirectory.json"
 import Stack from "./Stack"
+import projectsDirectory from "../data/projectsDirectory.json"
+import projectsStyles from "../styles/projects.module.css"
 
 export default function Projects() {
   return (
@@ -13,15 +13,15 @@ export default function Projects() {
 
       <div className={projectsStyles.projectsGrid}>
         {projectsDirectory.map(({ ...project }, index) => (
-          <>
-            <ProjectCard {...project} key={index} />
+          <React.Fragment key={index}>
+            <ProjectCard {...project} />
             {index !== (projectsDirectory.length - 1) &&
               <div
                 key={index + projectsDirectory.length}
                 className={projectsStyles.divide}
               />
             }
-          </>
+          </React.Fragment>
         ))}
       </div>
     </div>

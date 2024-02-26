@@ -17,7 +17,7 @@
 html {
   scroll-behavior: smooth;
   background-color: rgb(121, 55, 22);
-  scroll-snap-type: y mandatory
+  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -37,7 +37,7 @@ body::-webkit-scrollbar {
   width: 0.5rem;
 }
 body::-webkit-scrollbar-track {
-  background: theme("colors.sugar-dark");
+  background: var(--color);
   border-radius: 0.25rem;
 }
 body::-webkit-scrollbar-thumb {
@@ -55,14 +55,10 @@ button {
   color: var(--color);
 }
 
-main {
-  scroll-snap-type: y mandatory
-}
-
 .page {
   block-size: 100vh;
   scroll-snap-align: center;
-  padding: 4rem 3rem;
+  padding: 1rem 3rem;
   font-size: 1.25rem;
 }
 
@@ -81,6 +77,15 @@ main {
   height: 4px;
 }
 
+@media (max-height: 850px) {
+  html {
+    scroll-snap-type: initial;
+  }
+
+  .page {
+    block-size: auto;
+  }
+}
 
 @media (max-width: 1024px) {
   body {
@@ -93,12 +98,18 @@ main {
 }
 
 @media (max-width: 768px) {
+  html {
+    scroll-snap-type: initial;
+  }
+
   body {
+    padding-top: 4rem;
     padding-left: 0;
   }
 
   .page {
-    padding: 5.5rem 0.75rem 1rem;
+    block-size: auto;
+    padding: 3.5rem 0.75rem 1rem;
     font-size: 0.875rem;
   }
 

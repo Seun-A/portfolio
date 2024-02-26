@@ -1,15 +1,49 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import contactStyles from "../styles/contact.module.css"
 import { Icon } from "@iconify/react"
+import emailjs from 'emailjs-com';
+import Alert from "./Alert";
 
 export default function Contact() {
-  const [formState, setFormState] = useState({ name: '', email: '', subject: '', message: '' })
-  const { name, email, subject, message } = formState
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })
+  const { name, email, subject, message } = formData
+
+  const [isBtnDisabled, setBtnDisabled] = useState(true)
+
+  const [isShowAlert, setShowAlert] = useState(false)
+
+  useEffect(() => {
+    setBtnDisabled(!(name&&email&&subject&&message))
+  }, [name, email, subject, message])
+
+
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+
+    if (!isBtnDisabled) {
+      setShowAlert(!isShowAlert)
+      emailjs.send(
+        process.env.SERVICE_ID,
+        process.env.TEMPLATE_ID,
+        formData,
+        process.env.USER_ID,
+      )
+      .then(() => {
+        setShowAlert(true)
+        setTimeout(() => {
+          setShowAlert(false)
+          setFormData({ name: '', email: '', subject: '', message: '' })
+        }, 800);
+      })
+      .catch(error => console.log(error))
+    }
+  }
 
   const handleChange = (event) => {
     const { name, value } = event.target
-    setFormState(prev => ({...prev, [name]: value}))
+    setFormData(prev => ({...prev, [name]: value}))
   }
 
   const social_links = [
@@ -38,12 +72,15 @@ export default function Contact() {
   return (
     <div id="contact" className={`page ${contactStyles.aboutPage}`}>
       <h1 className="title">Contact</h1>
+      
+      <Alert isVisible={isShowAlert} />
 
       <form className={contactStyles.form}>
         <div className={`${contactStyles.inputCtn} ${contactStyles.nameCtn}`}>
           <label className={contactStyles.label}>Name:</label>
           <input
             className={contactStyles.input}
+            required
             type="text"
             name="name"
             value={name}
@@ -55,6 +92,7 @@ export default function Contact() {
           <label className={contactStyles.label}>Email:</label>
           <input
             className={contactStyles.input}
+            required
             type="email"
             name="email"
             value={email}
@@ -66,6 +104,7 @@ export default function Contact() {
           <label className={contactStyles.label}>Subject:</label>
           <input
             className={contactStyles.input}
+            required
             type="text"
             name="subject"
             value={subject}
@@ -75,6 +114,7 @@ export default function Contact() {
 
         <textarea
           className={`${contactStyles.inputCtn} ${contactStyles.message}`}
+          required
           typeof="text"
           name="message"
           placeholder="Your Message..."
@@ -82,7 +122,12 @@ export default function Contact() {
           onChange={handleChange}
         />
 
-        <button className={contactStyles.submitBtn}>Send Message</button>
+        <button
+          className={`${contactStyles.submitBtn} ${isBtnDisabled && contactStyles.disabledBtn}`}
+          onClick={handleSubmit}
+        >
+          Send Message
+        </button>
 
         <div className={contactStyles.socialsCtn}>
           {social_links.map(({ icon, href }, index) => (

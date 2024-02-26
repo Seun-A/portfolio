@@ -85,8 +85,25 @@
     backdrop-filter: blur(4px);
   }
 
+  .avatarCtn {
+    width: 40px;
+    height: 40px;
+  }
+
   .socialBtnsCtn {
     flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .socialBtn, .cvBtn {
+    width: 1.65rem;
+    height: 1.65rem;
+  }
+  .socialBtn {
+    font-size: 1rem;
+  }
+  .cvBtn {
+    font-size: 0.75rem;
   }
 
   .scrollToTopBtn {
