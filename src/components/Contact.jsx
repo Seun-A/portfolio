@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import contactStyles from "../styles/contact.module.css"
 import { Icon } from "@iconify/react"
-import emailjs from 'emailjs-com';
 import Alert from "./Alert";
+import emailjs from 'emailjs-com';
+import formConfig from '../data/contactFormConfig.json'
+import contactStyles from "../styles/contact.module.css"
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })
@@ -17,25 +18,22 @@ export default function Contact() {
     setBtnDisabled(!(name&&email&&subject&&message))
   }, [name, email, subject, message])
 
-
-
   const handleSubmit = async (event) => {
     event.preventDefault()
 
     if (!isBtnDisabled) {
       setShowAlert(!isShowAlert)
       emailjs.send(
-        process.env.SERVICE_ID,
-        process.env.TEMPLATE_ID,
+        formConfig["SERVICE_ID"],
+        formConfig["TEMPLATE_ID"],
         formData,
-        process.env.USER_ID,
+        formConfig["USER_ID"],
       )
       .then((res) => {
         if (res.status === 200) {
           setShowAlert(true)
         }
 
-        setShowAlert(true)
         setTimeout(() => {
           setShowAlert(false)
           setFormData({ name: '', email: '', subject: '', message: '' })
