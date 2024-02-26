@@ -84,6 +84,7 @@ button {
 
   .page {
     block-size: auto;
+    min-height: fit-content;
   }
 }
 

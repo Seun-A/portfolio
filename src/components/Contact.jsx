@@ -78,31 +78,33 @@ export default function Contact() {
       <Alert isVisible={isShowAlert} />
 
       <form className={contactStyles.form}>
-        <div className={`${contactStyles.inputCtn} ${contactStyles.nameCtn}`}>
-          <label className={contactStyles.label}>Name:</label>
-          <input
-            className={contactStyles.input}
-            required
-            type="text"
-            name="name"
-            value={name}
-            onChange={handleChange}
-          />
+        <div className={contactStyles.topCol}>
+          <div className={contactStyles.inputCtn}>
+            <label className={contactStyles.label}>Name:</label>
+            <input
+              className={contactStyles.input}
+              required
+              type="text"
+              name="name"
+              value={name}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className={contactStyles.inputCtn}>
+            <label className={contactStyles.label}>Email:</label>
+            <input
+              className={contactStyles.input}
+              required
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleChange}
+            />
+          </div>
         </div>
 
-        <div className={`${contactStyles.inputCtn} ${contactStyles.emailCtn}`}>
-          <label className={contactStyles.label}>Email:</label>
-          <input
-            className={contactStyles.input}
-            required
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className={`${contactStyles.inputCtn} ${contactStyles.subjectCtn}`}>
+        <div className={contactStyles.inputCtn}>
           <label className={contactStyles.label}>Subject:</label>
           <input
             className={contactStyles.input}
