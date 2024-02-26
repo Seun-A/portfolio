@@ -30,7 +30,11 @@ export default function Contact() {
         formData,
         process.env.USER_ID,
       )
-      .then(() => {
+      .then((res) => {
+        if (res.status === 200) {
+          setShowAlert(true)
+        }
+
         setShowAlert(true)
         setTimeout(() => {
           setShowAlert(false)
