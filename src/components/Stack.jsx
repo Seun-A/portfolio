@@ -8,6 +8,10 @@ export default function Stack() {
       icon: "akar-icons:nextjs-fill",
     },
     {
+      name: "VueJS",
+      icon: "fa-brands:vuejs",
+    },
+    {
       name: "React",
       icon: "mdi:react",
     },

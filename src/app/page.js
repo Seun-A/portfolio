@@ -9,9 +9,7 @@ export default function Main() {
   return (
     <>
       <Home />
-      {/* <About /> */}
       <Projects />
-      {/* <Impact /> */}
       <Contact />
     </>
   )

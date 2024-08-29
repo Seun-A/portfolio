@@ -1,5 +1,11 @@
 [
   {
+    "title": "Brooi",
+    "url": "https://www.brooi.com",
+    "imageUrl": "/projects/brooi.png",
+    "isContribution": true
+  },
+  {
     "title": "SchoolAide",
     "url": "https://schoolaide.co",
     "imageUrl": "/projects/schoolaide.png",

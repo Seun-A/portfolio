@@ -77,7 +77,7 @@ button {
   height: 4px;
 }
 
-@media (max-height: 850px) {
+@media (max-height: 768px) {
   html {
     scroll-snap-type: initial;
   }
