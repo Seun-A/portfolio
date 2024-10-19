@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import cardStyles from "../styles/projectCard.module.css"
+import cardStyles from "./index.module.css"
 import { Icon } from "@iconify/react"
 
 export default function ProjectCard({ title, imageUrl, url, isContribution }) {

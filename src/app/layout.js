@@ -1,8 +1,8 @@
 import "./layout.css"
-import { Noto_Serif, Nunito } from 'next/font/google'
+import { Noto_Serif, Nunito, Montserrat } from 'next/font/google'
 import { ThemeProvider } from "./theme-provider"
-import Navbar from "../components/Navbar"
-import Menu from "../components/Menu"
+import Navbar from "@/components/navbar"
+import Menu from "@/components/menu"
 
 const noto_serif = Noto_Serif({
   subsets: ['latin'],
@@ -17,6 +17,12 @@ const nunito = Nunito({
   variable: '--font-nunito',
 })
 
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-montserrat',
+})
+
 
 export const metadata = {
   title: 'Seun Ajayi',
@@ -25,7 +31,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
  return (
-    <html lang="en" className={`${noto_serif.variable} ${nunito.variable}`}>
+    <html lang="en" className={`${noto_serif.variable} ${nunito.variable}  ${montserrat.variable}`}>
       <body>
         <ThemeProvider attribute="class">
           <Navbar />

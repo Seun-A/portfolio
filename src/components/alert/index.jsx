@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react"
-import alertStyles from "../styles/alert.module.css"
+import alertStyles from "./index.module.css"
 
 export default function Alert({isVisible}) {
   return (

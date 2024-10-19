@@ -1,9 +1,9 @@
 "use client"
-import navbarStyles from "../styles/navbar.module.css"
+import navbarStyles from "./index.module.css"
 import { Icon } from "@iconify/react"
 import Image from "next/image"
 import Link from "next/link"
-import { ThemeSwitcher } from "./ThemeSwitcher"
+import { ThemeSwitcher } from "@/components/theme-switcher"
 
 export function Navbar() {
   const navbar_links = [

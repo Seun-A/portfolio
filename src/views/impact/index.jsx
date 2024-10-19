@@ -1,5 +1,5 @@
-import impactStyles from "../styles/impact.module.css"
-import ImpactCard from "./ImpactCard"
+import impactStyles from "./index.module.css"
+import ImpactCard from "@/components/impact-card"
 
 export default function Impact() {
   return (

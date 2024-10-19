@@ -1,9 +1,9 @@
 'use client'
-import Home from "../components/Home"
-import About from "../components/About"
-import Projects from "../components/Projects"
-import Impact from "../components/Impact"
-import Contact from "../components/Contact"
+import Home from "@/views/home"
+import About from "@/views/about"
+import Projects from "@/views/projects"
+import Impact from "@/views/impact"
+import Contact from "@/views/contact"
 
 export default function Main() {
   return (
