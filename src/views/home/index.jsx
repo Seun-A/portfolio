@@ -1,4 +1,5 @@
-import homepageStyles from "../styles/home.module.css"
+import homepageStyles from "./index.module.css"
+
 import { Icon } from "@iconify/react"
 import Link from "next/link"
 

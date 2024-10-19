@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Icon } from "@iconify/react"
-import Alert from "./Alert";
+import Alert from "@/components/alert";
 import emailjs from 'emailjs-com';
-import formConfig from '../data/contactFormConfig.json'
-import contactStyles from "../styles/contact.module.css"
+import formConfig from '@/data/contactFormConfig.json'
+import contactStyles from "./index.module.css"
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })

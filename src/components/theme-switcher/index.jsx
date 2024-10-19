@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Icon } from "@iconify/react";
-import themeSwitcherStyles from "../styles/themeSwitcher.module.css"
+import themeSwitcherStyles from "./index.module.css"
 
 export const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
