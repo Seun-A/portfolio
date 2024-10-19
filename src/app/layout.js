@@ -3,6 +3,7 @@ import { Noto_Serif, Nunito, Montserrat } from 'next/font/google'
 import { ThemeProvider } from "./theme-provider"
 import Navbar from "@/components/navbar"
 import Menu from "@/components/menu"
+import lorem from "@/components/lorem"
 
 const noto_serif = Noto_Serif({
   subsets: ['latin'],
@@ -32,15 +33,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
  return (
     <html lang="en" className={`${noto_serif.variable} ${nunito.variable}  ${montserrat.variable}`}>
-      <body>
-        <ThemeProvider attribute="class">
+      <body suppressHydrationWarning={true}>
+        {/* <ThemeProvider attribute="class"> */}
           <Navbar />
-          <Menu />
+          {/* <Menu /> */}
          
           <main>
             {children}
           </main>
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   )

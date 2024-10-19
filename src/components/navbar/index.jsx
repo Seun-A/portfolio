@@ -1,53 +1,22 @@
 "use client"
-import navbarStyles from "./index.module.css"
+import "./index.css"
 import { Icon } from "@iconify/react"
 import Image from "next/image"
 import Link from "next/link"
-import { ThemeSwitcher } from "@/components/theme-switcher"
+// import { ThemeSwitcher } from "@/components/theme-switcher"
 
 export function Navbar() {
-  const navbar_links = [
-    {
-      title: "CV",
-      icon: null,
-      href: "https://docs.google.com/document/d/1-VQpR-YrWwwTrScbkoiofVFpnz01dc3v9Ozq7Kl9S7I/edit?usp=sharing",
-      isCV: true
-    },
-    {
-      title: "GitHub",
-      icon: "mdi:github",
-      href: "https://github.com/Seun-A",
-      isCV: false
-    },
-    {
-      title: "Twitter",
-      icon: "mdi:twitter",
-      href: "https://twitter.com/shun__aj",
-      isCV: false
-    },
-    {
-      title: "Instagram",
-      icon: "mdi:instagram",
-      href: "https://www.instagram.com/shunnnn.__/",
-      isCV: false
-    },
-    {
-      title: "Gmail",
-      icon: "mdi:gmail",
-      href: "mailto:seunfunmi.chisom@gmail.com",
-      isCV: false
-    },
-    {
-      title: "LinkedIn",
-      icon: "mdi:linkedin",
-      href: "https://www.linkedin.com/in/seunajayi/",
-      isCV: false
-    },
-  ]
+  const isBrowser = () => typeof window !== 'undefined'; 
+
+  const scrollToTop = () => {
+    if (!isBrowser()) return;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   return (
-    <nav className={navbarStyles.navbar}>
-      <div>
-        <div className={navbarStyles.avatarCtn}>
+    <nav className='navbar'>
+      <div className="navbar-inner">
+        <div className="avatar-ctn">
           <Image
             src={"/avatar.svg"}
             alt="avatar"
@@ -56,25 +25,33 @@ export function Navbar() {
           />
         </div>
 
-        <ThemeSwitcher />
-      </div>
+        <ul className="navbar-links-ctn">
+          <li className="navbar-link">
+            <Link href=''>
+              Home
+            </Link>
+          </li>
+          <li className="navbar-link">
+            <Link href=''>
+              About
+            </Link>
+          </li>
+          <li className="navbar-link">
+            <Link href=''>
+              Projects
+            </Link>
+          </li>
+          <li className="navbar-link">
+            <Link href=''>
+              Contact
+            </Link>
+          </li>
+        </ul>
 
-      <div className={navbarStyles.socialBtnsCtn}>
-        {navbar_links.map(({title, icon, href, isCV}, index) => (
-          <Link
-            key={index}
-            href={href}
-            target="_blank"
-            className={isCV ? navbarStyles.cvBtn : navbarStyles.socialBtn}
-          >
-            {isCV ? title : <Icon icon={icon} />}
-          </Link>
-        ))}
+        <div onClick={scrollToTop} className='navbar-to-top-btn'>
+          <Icon icon="ion:chevron-up" />
+        </div>
       </div>
-
-      <Link href="#home" className={navbarStyles.scrollToTopBtn}>
-        <Icon icon="ion:chevron-up" />
-      </Link>
     </nav>
   ) 
 }

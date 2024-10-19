@@ -17,6 +17,7 @@
   width: 100%;
   flex-grow: 1;
   font-weight: 500;
+  color: theme("colors.sugar-dark");
 }
 .topCol {
   display: flex;
@@ -26,7 +27,7 @@
 
 .inputCtn {
   border: 2px solid theme("colors.peach");
-  color: theme("colors.peach");
+  color: theme("colors.sugar-dark");
   border-radius: 0.75rem;
   box-shadow: 0 1px 3px 0 theme("colors.sugar-dark");
   overflow: hidden;
@@ -47,9 +48,11 @@
   flex-grow: 1;
   min-height: 19rem;
   resize: none;
+  color: theme("colors.sugar-dark");
 }
 .message::placeholder {
-  color: #F7DBA7A5;
+  color: theme("colors.sugar-dark");
+  /* color: #F7DBA7A5; */
 }
 
 .label {
@@ -110,10 +113,13 @@
   padding: 7.5px;
   border-radius: 50%;
   font-size: 2rem;
-  transition: background 0.2s ease-in-out;
+  transition: filter 0.2s ease-in-out;
+  background-color: theme("colors.sugar-dark");
+  color: theme("colors.peach");
+  box-shadow: 2px 3px 4px theme("colors.sugar-dark");
 }
 .socialBtn:hover {
-  background: #F7DBA740;
+  filter: brightness(1.5);
 }
 
 

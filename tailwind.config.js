@@ -20,10 +20,20 @@ module.exports = {
         'forest': '#7B9E87',
         'olivine': '#B6D094',
         'violet': '#856084',
+        
+        
+        'teagreen': '#CCD5AE',
+        'beige': '#E9EDC9',
+        'cornsilk': '#FEFAE0',
+        'papaya': '#FAEDCD',
+        'buff': '#D4A373',
+        'raisin': '#1E1E24',
+        'off-white': '#F5F5F5',
       },
       fontFamily: {
         'nunito': ['var(--font-nunito)'],
         'noto': ['var(--font-noto-serif)'],
+        'montserrat': ['var(--font-montserrat)'],
       }
     },
   },
