@@ -1,4 +1,4 @@
-import stackStyles from "../styles/stack.module.css"
+import stackStyles from "./index.module.css"
 import { Icon } from "@iconify/react"
 
 export default function Stack() {

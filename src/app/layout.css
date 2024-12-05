@@ -16,21 +16,29 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: rgb(121, 55, 22);
+  /* background-color: rgb(121, 55, 22); */
+  background-color: #FEFAE0;
   scroll-snap-type: y mandatory;
 }
 
 body {
   font-family: theme('fontFamily.nunito');
-  color: var(--color);
-  background: var(--bg);
+  /* color: var(--color); */
+  color: theme('colors.sugar-dark');
+  /* background: var(--bg); */
+  background: theme('colors.cornsilk');
+  /* background: #f6f6f6; */
   background-repeat: repeat;
   background-size: 120rem;
   background-position: center;
 
   overflow-x: hidden;
   position: relative;
-  padding-left: 7.25rem;
+  padding: 6rem 1.5rem 3rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: theme('fontFamily.montserrat');
 }
 
 body::-webkit-scrollbar {
@@ -41,7 +49,7 @@ body::-webkit-scrollbar-track {
   border-radius: 0.25rem;
 }
 body::-webkit-scrollbar-thumb {
-  background: theme("colors.peach"); 
+  background: theme("colors.peach");
   border-radius: 0.25rem;
 }
 
@@ -56,9 +64,11 @@ button {
 }
 
 .page {
-  block-size: 100vh;
-  scroll-snap-align: center;
-  padding: 1rem 3rem;
+  /* block-size: 100vh;
+  scroll-snap-align: center; */
+  /* padding: 1rem 3rem; */
+  padding: 1rem 0;
+  margin: 4rem 0 0;
   font-size: 1.25rem;
 }
 
@@ -77,6 +87,31 @@ button {
   height: 4px;
 }
 
+.layout-to-top-btn {
+  position: fixed;
+  top: calc(100vh - 4rem);
+  right: 1rem;
+  color: theme("colors.peach");
+  border: 2px solid theme("colors.peach");
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  transition: filter 0.3s ease-in-out;
+  background-color: #5B331F80;
+  box-shadow: 2px 3px 4px theme("colors.sugar-dark");
+  cursor: pointer;
+}
+.layout-to-top-btn:hover {
+  filter: brightness(1.5);
+}
+.layout-to-top-btn svg {
+  transform: translateY(-1px);
+}
+
 @media (max-height: 768px) {
   html {
     scroll-snap-type: initial;
@@ -90,10 +125,10 @@ button {
 
 @media (max-width: 1024px) {
   body {
-    padding-left: 6.25rem;
+    padding: 5rem 1rem 3rem;
   }
   .page {
-    padding: 3rem 1.5rem;
+    /* padding: 3rem 1.5rem; */
     font-size: 1.125rem;
   }
 }
@@ -103,14 +138,9 @@ button {
     scroll-snap-type: initial;
   }
 
-  body {
-    padding-top: 4rem;
-    padding-left: 0;
-  }
-
   .page {
     block-size: auto;
-    padding: 3.5rem 0.75rem 1rem;
+    /* padding: 3.5rem 0.75rem 1rem; */
     font-size: 0.875rem;
   }
 

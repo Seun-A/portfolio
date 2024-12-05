@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Icon } from "@iconify/react"
-import Alert from "./Alert";
+import Alert from "@/components/alert";
 import emailjs from 'emailjs-com';
-import formConfig from '../data/contactFormConfig.json'
-import contactStyles from "../styles/contact.module.css"
+import formConfig from '@/data/contactFormConfig.json'
+import contactStyles from "./index.module.css"
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })
@@ -50,22 +50,27 @@ export default function Contact() {
 
   const social_links = [
     {
+      title: 'Instagram',
       icon: "mdi:instagram",
       href: "https://www.instagram.com/shunnnn.__/",
     },
     {
+      title: 'GitHub',
       icon: "mdi:github",
       href: "https://github.com/Seun-A",
     },
     {
-      icon: "mdi:twitter",
+      title: 'X (Twitter)',
+      icon: "ri:twitter-x-fill",
       href: "https://twitter.com/shun__aj",
     },
     {
+      title: 'Email',
       icon: "mdi:gmail",
       href: "mailto:seunfunmi.chisom@gmail.com",
     },
     {
+      title: 'LinkedIn',
       icon: "mdi:linkedin",
       href: "https://www.linkedin.com/in/seunajayi/",
     },
@@ -134,11 +139,12 @@ export default function Contact() {
         </button>
 
         <div className={contactStyles.socialsCtn}>
-          {social_links.map(({ icon, href }, index) => (
+          {social_links.map(({ icon, href, title }, index) => (
             <Link
               key={index}
               href={href}
               target="_blank"
+              title={title}
               className={contactStyles.socialBtn}
             >
               <Icon icon={icon} />

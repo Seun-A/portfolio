@@ -1,6 +1,6 @@
-import aboutStyles from "../styles/about.module.css"
-import lorem from "./lorem"
-import Stack from "./Stack"
+import aboutStyles from "./index.module.css"
+import lorem from "@/components/lorem"
+import Stack from "@/components/stack"
 
 export default function About() {
   return (

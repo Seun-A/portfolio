@@ -1,8 +1,8 @@
 import React from "react"
-import ProjectCard from "./ProjectCard"
-import Stack from "./Stack"
-import projectsDirectory from "../data/projectsDirectory.json"
-import projectsStyles from "../styles/projects.module.css"
+import ProjectCard from "@/components/project-card"
+import Stack from "@/components/stack"
+import projectsDirectory from "@/data/projectsDirectory.json"
+import projectsStyles from "./index.module.css"
 
 export default function Projects() {
   return (

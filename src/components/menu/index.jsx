@@ -1,5 +1,5 @@
 "use client"
-import menuStyles from "../styles/menu.module.css"
+import menuStyles from "./index.module.css"
 import Link from "next/link"
 import { useState } from "react"
 
