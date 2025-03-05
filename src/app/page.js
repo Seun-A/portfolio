@@ -1,10 +1,9 @@
 'use client'
-import Hero from "@/views/hero"
-import About from "@/views/about"
+import Skills from "@/views/skills"
 import Projects from "@/views/projects"
 import Impact from "@/views/impact"
-import Contact from "@/views/contact"
-import Link from "next/link"
+import Experience from "@/views/experience"
+import Testimonials from "@/views/testimonials"
 import { Icon } from "@iconify/react"
 
 export default function Main() {
@@ -17,13 +16,16 @@ export default function Main() {
 
   return (
     <>
-      <Hero />
+      <Skills />
       <Projects />
-      <Contact />
+      {/* <Impact />
+      <Experience />
+      <Testimonials /> */}
 
-      <div onClick={scrollToTop} href="#home" className='layout-to-top-btn'>
+      
+      {/* <div onClick={scrollToTop} href="#home" className='layout-to-top-btn'>
         <Icon icon="ion:chevron-up" />
-      </div>
+      </div> */}
     </>
   )
 }

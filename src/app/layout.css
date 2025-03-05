@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  font-family: theme('fontFamily.nunito');
+  font-family: theme('fontFamily.montserrat');
   /* color: var(--color); */
   color: theme('colors.sugar-dark');
   /* background: var(--bg); */
@@ -34,23 +34,16 @@ body {
 
   overflow-x: hidden;
   position: relative;
-  padding: 6rem 1.5rem 3rem;
+  /* padding: 6rem 1.5rem 3rem; */
+}
+
+.main > * {
+  margin-top: 100px;
+  padding: 32px 80px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: theme('fontFamily.montserrat');
-}
-
-body::-webkit-scrollbar {
-  width: 0.5rem;
-}
-body::-webkit-scrollbar-track {
-  background: theme("colors.sugar-dark");
-  border-radius: 0.25rem;
-}
-body::-webkit-scrollbar-thumb {
-  background: theme("colors.peach");
-  border-radius: 0.25rem;
 }
 
 .flex-center-center {
@@ -67,9 +60,9 @@ button {
   /* block-size: 100vh;
   scroll-snap-align: center; */
   /* padding: 1rem 3rem; */
-  padding: 1rem 0;
-  margin: 4rem 0 0;
-  font-size: 1.25rem;
+  /* padding: 1rem 0; */
+  /* margin: 4rem 0 0; */
+  /* font-size: 1.25rem; */
 }
 
 .title {
@@ -118,18 +111,18 @@ button {
   }
 
   .page {
-    block-size: auto;
-    min-height: fit-content;
+    /* block-size: auto; */
+    /* min-height: fit-content; */
   }
 }
 
 @media (max-width: 1024px) {
   body {
-    padding: 5rem 1rem 3rem;
+    /* padding: 5rem 1rem 3rem; */
   }
   .page {
     /* padding: 3rem 1.5rem; */
-    font-size: 1.125rem;
+    /* font-size: 1.125rem; */
   }
 }
 

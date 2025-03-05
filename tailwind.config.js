@@ -31,9 +31,8 @@ module.exports = {
         'off-white': '#F5F5F5',
       },
       fontFamily: {
-        'nunito': ['var(--font-nunito)'],
-        'noto': ['var(--font-noto-serif)'],
         'montserrat': ['var(--font-montserrat)'],
+        'garamond': ['var(--font-garamond)']
       }
     },
   },

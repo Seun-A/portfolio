@@ -1,47 +1,44 @@
 import "./layout.css"
-import { Noto_Serif, Nunito, Montserrat } from 'next/font/google'
-import { ThemeProvider } from "./theme-provider"
+import { Montserrat, EB_Garamond } from 'next/font/google'
 import Navbar from "@/components/navbar"
-import Menu from "@/components/menu"
-import lorem from "@/components/lorem"
-
-const noto_serif = Noto_Serif({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-noto-serif',
-  weight: ['400']
-})
-
-const nunito = Nunito({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-nunito',
-})
+import Hero from "@/components/hero"
+import Footer from "@/views/footer"
+import { StoreProvider } from "@/store/context";
 
 const montserrat = Montserrat({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-montserrat',
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: '--font-montserrat'
 })
 
+const garamond = EB_Garamond({
+  subsets: ["latin"],
+  display: "swap",
+  variable: '--font-garamond'
+})
 
 export const metadata = {
   title: 'Seun Ajayi',
-  description: 'Portfolio',
+  description: 'Seun Ajayi - Frontend Developer | Civil Engineering Student',
 }
 
 export default function RootLayout({ children }) {
  return (
-    <html lang="en" className={`${noto_serif.variable} ${nunito.variable}  ${montserrat.variable}`}>
+    <html
+      lang="en"
+      className={`${montserrat.variable} ${garamond.variable}`}
+    >
       <body suppressHydrationWarning={true}>
-        {/* <ThemeProvider attribute="class"> */}
+        <StoreProvider>
           <Navbar />
-          {/* <Menu /> */}
-         
-          <main>
+          <Hero />
+
+          <main className="main">
             {children}
-          </main>
-        {/* </ThemeProvider> */}
+         </main>
+         <Footer />
+        </StoreProvider>
       </body>
     </html>
   )

@@ -1,18 +1,25 @@
-import impactStyles from "./index.module.css"
-import ImpactCard from "@/components/impact-card"
+import "./index.css"
 
 export default function Impact() {
   return (
-    <div id="impact" className={`page ${impactStyles.projectsPage}`}>
-      <h1 className="title">Impact</h1>
-
-      <p className={impactStyles.paragraph}>
-        Here are a couple projects I built myself or contributed to :)
-      </p>
-
-      <div className={impactStyles.projectsGrid}>
-        hrllo
+    <section id="impact" className='section--impact'>
+      <div className="impact__header">
+        <div>
+          <h2 className='impact__heading'>
+            Impact
+          </h2>
+          <h2 className='impact__subheading'>
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum
+          </h2>
+        </div>
+        <div className="impact__nav-btns-ctn">
+          BTNS
+        </div>
       </div>
-    </div>
+
+      <div className="impact__carousel-ctn">
+        carousel slider
+      </div>
+    </section>
   )
 }

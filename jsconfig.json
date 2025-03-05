@@ -5,8 +5,7 @@
       "@/*": ["./src/*"],
       "@/components/*": ["./src/components/*"],
       "@/views/*": ["./src/views/*"],
-      "@/styles/*": ["./src/styles/*"],
-      "@/data/*": ["./src/data/*"],
+      "@/styles/*": ["./src/styles/*"]
     }
   }
 }

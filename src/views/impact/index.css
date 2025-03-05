@@ -1,0 +1,35 @@
+.impact__header { 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 300px;
+}
+
+.impact__heading {
+  color: #4B5563;
+  border-radius: 24px;
+  font-size: 48px;
+  font-weight: 600;
+  font-family: theme("fontFamily.montserrat");
+  margin-bottom: 4px;
+}
+
+.impact__subheading {
+  color: #4B5563;
+  font-size: 20px;
+}
+
+.impact__nav-btns-ctn {
+  border: 5px solid darkcyan;
+}
+
+.impact__carousel-ctn {
+  border: 1px solid firebrick;
+}
+
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+}

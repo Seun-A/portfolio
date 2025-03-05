@@ -1,5 +1,5 @@
 import './index.css'
-import HeroImg from '@/components/hero-img'
+import HeroImg from '@/components/_old/hero-img'
 import Link from "next/link"
 import { Icon } from "@iconify/react"
 

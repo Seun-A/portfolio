@@ -3,7 +3,6 @@ import Link from "next/link"
 import { Icon } from "@iconify/react"
 import Alert from "@/components/alert";
 import emailjs from 'emailjs-com';
-import formConfig from '@/data/contactFormConfig.json'
 import contactStyles from "./index.module.css"
 
 export default function Contact() {
@@ -24,10 +23,10 @@ export default function Contact() {
     if (!isBtnDisabled) {
       setShowAlert(!isShowAlert)
       emailjs.send(
-        formConfig["SERVICE_ID"],
-        formConfig["TEMPLATE_ID"],
+        process.env.SERVICE_ID,
+        process.env.TEMPLATE_ID,
         formData,
-        formConfig["USER_ID"],
+        process.env.USER_ID,
       )
       .then((res) => {
         if (res.status === 200) {

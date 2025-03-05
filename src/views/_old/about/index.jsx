@@ -1,6 +1,5 @@
 import aboutStyles from "./index.module.css"
-import lorem from "@/components/lorem"
-import Stack from "@/components/stack"
+import Stack from "@/components/_old/stack"
 
 export default function About() {
   return (
@@ -9,7 +8,7 @@ export default function About() {
       <Stack />
 
       <div className={aboutStyles.paragraphCtn}>
-        <p>{lorem}</p>
+        <p>...</p>
       </div>
     </div>
   )

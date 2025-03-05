@@ -1,59 +1,27 @@
-"use client"
 import "./index.css"
-import { Icon } from "@iconify/react"
-import Image from "next/image"
 import Link from "next/link"
-// import { ThemeSwitcher } from "@/components/theme-switcher"
 
-export function Navbar() {
-  const isBrowser = () => typeof window !== 'undefined'; 
-
-  const scrollToTop = () => {
-    if (!isBrowser()) return;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
+export default function Navbar() {
   return (
     <nav className='navbar'>
-      <div className="navbar-inner">
-        <div className="avatar-ctn">
-          <Image
-            src={"/avatar.svg"}
-            alt="avatar"
-            fill
-            priority
-          />
-        </div>
-
-        <ul className="navbar-links-ctn">
-          <li className="navbar-link">
-            <Link href=''>
-              Home
-            </Link>
-          </li>
-          <li className="navbar-link">
-            <Link href=''>
-              About
-            </Link>
-          </li>
-          <li className="navbar-link">
-            <Link href=''>
-              Projects
-            </Link>
-          </li>
-          <li className="navbar-link">
-            <Link href=''>
-              Contact
-            </Link>
-          </li>
-        </ul>
-
-        <div onClick={scrollToTop} className='navbar-to-top-btn'>
-          <Icon icon="ion:chevron-up" />
-        </div>
+      <div className="navbar__logo">
+        Seun Ajayi
       </div>
+
+      <ul className="navbar__nav-list">
+        <li>
+          <Link href='' className="navbar__nav-link">Home</Link>
+        </li>
+        <li>
+          <Link href='' className="navbar__nav-link">About</Link>
+        </li>
+        <li>
+          <Link href='' className="navbar__nav-link">Projects</Link>
+        </li>
+        <li>
+          <Link href='' className="navbar__nav-link">Contact</Link>
+        </li>
+      </ul>
     </nav>
   ) 
 }
-
-export default Navbar
