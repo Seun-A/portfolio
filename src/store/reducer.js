@@ -7,6 +7,8 @@ export const initialState = {
   skills: [],
   isFetchingProjects: false,
   projects: [],
+  isFetchingImpactCollection: false,
+  impactCollection: [],
 
 
 
@@ -48,9 +50,17 @@ export const reducer = (state, action) => {
         ...state,
         projects: action.payload
       }
+    case ACTION_TYPES.SET_FETCHING_IMPACT:
+      return {
+        ...state,
+        isFetchingImpactCollection: action.payload,
+      }
+    case ACTION_TYPES.SET_IMPACT_COLLECTION:
+      return {
+        ...state,
+        impactCollection: action.payload
+      }
 
-    
-    
     
     
     

@@ -2,6 +2,7 @@ import {
   GET_HERO_IMAGES_QUERY,
   GET_SKILLS_QUERY,
   GET_PROJECTS_COLLECTION,
+  GET_IMPACT_COLLECTION,
 
 
 
@@ -16,6 +17,8 @@ export const ACTION_TYPES = {
   SET_SKILLS_COLLECTION: "SET_SKILLS_COLLECTION",
   SET_FETCHING_PROJECTS: "SET_FETCHING_PROJECTS",
   SET_PROJECTS_COLLECTION: "SET_PROJECTS_COLLECTION",
+  SET_FETCHING_IMPACT: "SET_FETCHING_IMPACT",
+  SET_IMPACT_COLLECTION: "SET_IMPACT_COLLECTION",
 
 
 
@@ -104,7 +107,7 @@ export const fetchProjectsCollection = async (dispatch) => {
     
     dispatch({
       type: ACTION_TYPES.SET_PROJECTS_COLLECTION,
-      payload: response?.projectCollection?.items
+      payload: response?.pageSection?.projectsCollection?.items
     })
     dispatch({
       type: ACTION_TYPES.SET_FETCHING_PROJECTS,
@@ -113,6 +116,32 @@ export const fetchProjectsCollection = async (dispatch) => {
   } catch (error) {
     dispatch({
       type: ACTION_TYPES.SET_FETCHING_PROJECTS,
+      payload: false
+    })
+    console.error(error)
+  }
+}
+
+export const fetchImapactCollection = async (dispatch) => {
+  dispatch({
+    type: ACTION_TYPES.SET_FETCHING_IMPACT,
+    payload: true
+  })
+  
+  try {
+    const response = await fetchContentfulData(GET_IMPACT_COLLECTION)
+    
+    dispatch({
+      type: ACTION_TYPES.SET_IMPACT_COLLECTION,
+      payload: response?.pageSection?.projectsCollection?.items
+    })
+    dispatch({
+      type: ACTION_TYPES.SET_FETCHING_IMPACT,
+      payload: false
+    })
+  } catch (error) {
+    dispatch({
+      type: ACTION_TYPES.SET_FETCHING_IMPACT,
       payload: false
     })
     console.error(error)

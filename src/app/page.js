@@ -16,10 +16,10 @@ export default function Main() {
 
   return (
     <>
-      <Skills />
-      <Projects />
-      {/* <Impact />
-      <Experience />
+      {/* <Skills /> */}
+      {/* <Projects /> */}
+      <Impact />
+      {/* <Experience />
       <Testimonials /> */}
 
       

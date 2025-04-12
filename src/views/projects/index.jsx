@@ -1,11 +1,9 @@
 import "./index.css"
 import React from "react"
-import ProjectCard from "@/components/_old/project-card"
 import { useEffect } from "react"
 import { useStore } from "@/store/context"
 import Image from 'next/image'
 import Link from "next/link"
-import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { fetchProjectsCollection } from "@/store/actions"
 

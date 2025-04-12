@@ -31,13 +31,13 @@ export default function RootLayout({ children }) {
     >
       <body suppressHydrationWarning={true}>
         <StoreProvider>
-          <Navbar />
-          <Hero />
+          {/* <Navbar />
+          <Hero /> */}
 
           <main className="main">
             {children}
          </main>
-         <Footer />
+         {/* <Footer /> */}
         </StoreProvider>
       </body>
     </html>

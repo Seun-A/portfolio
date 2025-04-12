@@ -35,30 +35,72 @@ export const GET_SKILLS_QUERY = `
 
 export const GET_PROJECTS_COLLECTION = `
   query {
-    projectCollection {
-      total
+    pageSection(id:"5w8NwbX4gkUKpRbliZnVMz") {
+      title
+      about
+      projectsCollection {
+        total
+        items {
+          ...project
+        }
+      }
+    }
+  }
+
+  fragment project on Project {
+    name
+    description
+    url
+    isWip
+    isCollaboration
+    isLive
+    coverImage {
+      title
+      description
+      url
+    }
+    imagesCollection {
       items {
-        name
+        title
         description
         url
-        isWip
-        isCollaboration
-        isLive
-        coverImage {
-          url
-          title
-        }
-        imagesCollection {
-          items {
-            url
-            title
-          }
-        }
       }
     }
   }
 `
 
+export const GET_IMPACT_COLLECTION = `
+  query {
+    pageSection(id:"4wgqhCATxwyCQspDrjKM0r") {
+      title
+      about
+      projectsCollection {
+        total
+        items {
+          ...project
+        }
+      }
+    }
+  }
+
+  fragment project on Project {
+    name
+    description
+    url
+    coverImage {
+      title
+      description
+      url
+    }
+    imagesCollection {
+      items {
+        title
+        description
+        url
+      }
+    }
+  }
+`
 
 
 

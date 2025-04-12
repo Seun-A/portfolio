@@ -4,10 +4,10 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Icon } from "@iconify/react"
 import Image from 'next/image'
-import Alert from "@/components/alert";
-import emailjs from 'emailjs-com';
+import Alert from "@/components/alert"
+import emailjs from 'emailjs-com'
 import { useStore } from "@/store/context"
-import { fetchSocialsCollection } from "@/store/actions";
+import { fetchSocialsCollection } from "@/store/actions"
 
 
 export default function Footer() {
@@ -18,12 +18,14 @@ export default function Footer() {
     fetchSocialsCollection(dispatch)
   }, [dispatch])
 
-  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })
+  const initialFormData = { name: '', email: '', subject: '', message: '' }
+  const [formData, setFormData] = useState(initialFormData)
   const { name, email, subject, message } = formData
 
   const [isBtnDisabled, setBtnDisabled] = useState(true)
 
-  const [isShowAlert, setShowAlert] = useState(false)
+  const [isAlertVisible, setAlertVisible] = useState(false)
+  const [isAlertError, setAlertError] = useState(false)
 
   useEffect(() => {
     setBtnDisabled(!( name && email && subject && message ))
@@ -33,7 +35,7 @@ export default function Footer() {
     event.preventDefault()
 
     if (!isBtnDisabled) {
-      setShowAlert(!isShowAlert)
+      setAlertVisible(!isAlertVisible)
       emailjs.send(
         process.env.SERVICE_ID,
         process.env.TEMPLATE_ID,
@@ -42,15 +44,21 @@ export default function Footer() {
       )
       .then((res) => {
         if (res.status === 200) {
-          setShowAlert(true)
+          setAlertVisible(true)
         }
 
         setTimeout(() => {
-          setShowAlert(false)
-          setFormData({ name: '', email: '', subject: '', message: '' })
-        }, 800);
+          setAlertVisible(false)
+          setFormData(initialFormData)
+        }, 1500)
+      }).catch(error => {
+        setAlertError(true)
+        console.log(error)
+
+        setTimeout(() => {
+          setAlertVisible(false)
+        }, 1500)
       })
-      .catch(error => console.log(error))
     }
   }
 
@@ -62,7 +70,10 @@ export default function Footer() {
 
   return (
     <div id="contact" className='section--footer'>
-      <Alert isVisible={isShowAlert} />
+      <Alert
+        isVisible={isAlertVisible}
+        isError={isAlertError}
+      />
 
       <div className="footer__person-info-ctn">
         <h2 className="footer__title">Seun Ajayi</h2>
