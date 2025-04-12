@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Brooi",
+    "url": "https://www.brooi.com",
+    "imageUrl": "/projects/brooi.png",
+    "isContribution": true
+  },
+  {
+    "title": "SchoolAide",
+    "url": "https://schoolaide.co",
+    "imageUrl": "/projects/schoolaide.png",
+    "isContribution": true
+  },
+  {
+    "title": "ECX URL Shortener",
+    "url": "https://ecxurls.vercel.app/",
+    "imageUrl": "/projects/ecx-shortener.png",
+    "isContribution": true
+  },
+  {
+    "title": "ECX Website",
+    "url": "https://www.engcareerexpo.com",
+    "imageUrl": "/projects/ecx-website.png",
+    "isContribution": true
+  },
+  {
+    "title": "E-Commerce App",
+    "url": "https://github.com/Seun-A/react-ecommerce",
+    "imageUrl": "/projects/e-commerce.jpeg",
+    "isContribution": false
+  },
+  {
+    "title": "Weekly Meal Planner",
+    "url": "https://seun-a-meal-planner.netlify.app/",
+    "imageUrl": "/projects/meal-planner.png",
+    "isContribution": false
+  },
+  {
+    "title": "Quizzical",
+    "url": "https://quiz-app-seun-a.vercel.app",
+    "imageUrl": "/projects/quizzical.png",
+    "isContribution": false
+  },
+  {
+    "title": "Money Web App",
+    "url": "https://money-by-korede.netlify.app/",
+    "imageUrl": "/projects/money.png",
+    "isContribution": false
+  },
+  {
+    "title": "Custom Navigation",
+    "url": "https://seun-a.github.io/Custom-Navigation/",
+    "imageUrl": "/projects/custom-nav.jpg",
+    "isContribution": false
+  },
+  {
+    "title": "Score Board",
+    "url": "https://game-score-board-sa.vercel.app",
+    "imageUrl": "/projects/score-board.png",
+    "isContribution": false
+  },
+  {
+    "title": "Infinite Scroll",
+    "url": "https://seun-a.github.io/Infinite-Scroll/",
+    "imageUrl": "/projects/infinite-scroll.jpg",
+    "isContribution": false
+  },
+  {
+    "title": "Quote Generator",
+    "url": "https://seun-a.github.io/quote-generator/",
+    "imageUrl": "/projects/quote-gen.png",
+    "isContribution": false
+  }
+]
