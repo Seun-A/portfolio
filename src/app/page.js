@@ -16,11 +16,11 @@ export default function Main() {
 
   return (
     <>
-      {/* <Skills /> */}
-      {/* <Projects /> */}
+      <Skills />
+      <Projects />
       <Impact />
-      {/* <Experience />
-      <Testimonials /> */}
+      <Experience />
+      <Testimonials />
 
       
       {/* <div onClick={scrollToTop} href="#home" className='layout-to-top-btn'>
