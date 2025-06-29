@@ -1,45 +1,35 @@
-import "./layout.css"
-import { Montserrat, EB_Garamond } from 'next/font/google'
-import Navbar from "@/components/navbar"
-import Hero from "@/components/hero"
-import Footer from "@/views/footer"
+import { Montserrat, Poppins } from "next/font/google";
+import "./globals.css";
 import { StoreProvider } from "@/store/context";
 
 const montserrat = Montserrat({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: '--font-montserrat'
-})
-
-const garamond = EB_Garamond({
+  variable: "--font-montserrat",
   subsets: ["latin"],
-  display: "swap",
-  variable: '--font-garamond'
-})
+});
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"]
+});
 
 export const metadata = {
-  title: 'Seun Ajayi',
-  description: 'Seun Ajayi - Frontend Developer | Civil Engineering Student',
-}
+  title: "Seun Ajayi",
+  description: "Seun Ajayi - Frontend Developer | Civil Engineering Undergrad",
+};
 
-export default function RootLayout({ children }) {
- return (
-    <html
-      lang="en"
-      className={`${montserrat.variable} ${garamond.variable}`}
-    >
-      <body suppressHydrationWarning={true}>
+export default function RootLayout({
+  children,
+}) {
+  return (
+    <html lang="en">
+      <body
+        className={`${montserrat.variable} ${poppins.variable}`}
+      >
         <StoreProvider>
-          {/* <Navbar />
-          <Hero /> */}
-
-          <main className="main">
-            {children}
-         </main>
-         {/* <Footer /> */}
+          {children}
         </StoreProvider>
       </body>
     </html>
-  )
+  );
 }
