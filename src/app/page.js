@@ -1,16 +1,23 @@
-'use client'
-import Home from "../components/Home"
-import About from "../components/About"
-import Projects from "../components/Projects"
-import Impact from "../components/Impact"
-import Contact from "../components/Contact"
+import Header from "@/components/header"
+import HeroSection from "@/components/hero-section"
+import SkillsSection from "@/components/skills-section"
+import ProjectsSection from "@/components/projects-section"
+// import ImpactSection from "@/components/impact-section"
+import ExperienceSection from "@/components/experience-section"
+// import TestimonialsSection from "@/components/testimonials-section"
+import Footer from "@/components/footer"
 
-export default function Main() {
+export default function Home() {
   return (
-    <>
-      <Home />
-      <Projects />
-      <Contact />
-    </>
+    <main className="min-h-screen bg-white">
+      <Header />
+      <HeroSection />
+      <SkillsSection />
+      <ProjectsSection />
+      {/* <ImpactSection /> */}
+      <ExperienceSection />
+      {/* <TestimonialsSection /> */}
+      <Footer />
+    </main>
   )
 }

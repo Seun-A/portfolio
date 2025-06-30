@@ -1,41 +1,35 @@
-import "./layout.css"
-import { Noto_Serif, Nunito } from 'next/font/google'
-import { ThemeProvider } from "./theme-provider"
-import Navbar from "../components/Navbar"
-import Menu from "../components/Menu"
+import { Montserrat, Poppins } from "next/font/google";
+import "./globals.css";
+import { StoreProvider } from "@/store/context";
 
-const noto_serif = Noto_Serif({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-noto-serif',
-  weight: ['400']
-})
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+});
 
-const nunito = Nunito({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-nunito',
-})
-
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"]
+});
 
 export const metadata = {
-  title: 'Seun Ajayi',
-  description: 'Portfolio',
-}
+  title: "Seun Ajayi",
+  description: "Seun Ajayi - Frontend Developer | Civil Engineering Undergrad",
+};
 
-export default function RootLayout({ children }) {
- return (
-    <html lang="en" className={`${noto_serif.variable} ${nunito.variable}`}>
-      <body>
-        <ThemeProvider attribute="class">
-          <Navbar />
-          <Menu />
-         
-          <main>
-            {children}
-          </main>
-        </ThemeProvider>
+export default function RootLayout({
+  children,
+}) {
+  return (
+    <html lang="en">
+      <body
+        className={`${montserrat.variable} ${poppins.variable}`}
+      >
+        <StoreProvider>
+          {children}
+        </StoreProvider>
       </body>
     </html>
-  )
+  );
 }

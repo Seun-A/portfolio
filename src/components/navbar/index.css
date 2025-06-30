@@ -1,0 +1,45 @@
+.navbar {
+  width: 100vw;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  
+  padding: 32px 80px;
+  background: #CABA9CAA;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #4D2D18;
+  transition: all 0.2s ease;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  font-family: theme("fontFamily.garamond");
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+.navbar__nav-list {
+  display: flex;
+  gap: 60px;
+}
+
+.navbar__nav-link {
+  font-family: theme("fontFamily.montserrat");
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+.navbar__nav-link:hover {
+  filter: brightness(1.1);
+  text-decoration: underline;
+}
+
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+}
