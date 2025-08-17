@@ -1,17 +1,16 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import Image from "next/image"
 import { Icon } from "@iconify/react";
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { CardContent } from "@/components/ui/card"
 import { useStore } from "@/store/context"
 import { fetchProjectsCollection } from "@/store/actions"
+import { Carousel } from "react-responsive-carousel"
+import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 export default function ProjectsSection() {
-  const [scrollPosition, setScrollPosition] = useState(0)
-  const cardWidth = 350
-
   const { state, dispatch } = useStore()
   const { projects, isFetchingProjects } = state
 
@@ -19,79 +18,163 @@ export default function ProjectsSection() {
     fetchProjectsCollection(dispatch)
   }, [dispatch])
 
+  // Mock project images for demonstration - you can replace these with actual project images
+  const getProjectImages = (projectName) => {
+    const imageMap = {
+      'Brooi': ['/projects/brooi.png', '/projects/custom-nav.jpg', '/projects/e-commerce.jpeg'],
+      'E-commerce': ['/projects/e-commerce.jpeg', '/projects/brooi.png', '/projects/custom-nav.jpg'],
+      'Custom Navigation': ['/projects/custom-nav.jpg', '/projects/e-commerce.jpeg', '/projects/brooi.png'],
+      'default': ['/projects/placeholder.jpg', '/projects/brooi.png', '/projects/e-commerce.jpeg']
+    }
+    return imageMap[projectName] || imageMap['default']
+  }
+
   if (isFetchingProjects) {
     return (
-      <div>loading...</div>
+      <div className="py-20 bg-slate-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-cyan-400 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-cyan-400 text-lg">Loading projects...</p>
+        </div>
+      </div>
     )
   }
 
   // Use fetched projects or fallback to empty array
   const projectsToDisplay = projects || []
-  const maxScroll = Math.max(0, (projectsToDisplay.length - 1.75) * cardWidth)
 
   const scrollLeft = () => {
-    setScrollPosition(Math.max(0, scrollPosition - cardWidth))
+    const container = document.getElementById('projects-carousel')
+    if (container) {
+      const cardWidth = 384 + 24
+      const currentScroll = container.scrollLeft
+      const newScroll = currentScroll - cardWidth
+      
+      if (newScroll < 0) {
+        // Jump to end if we're at the beginning
+        container.scrollTo({ left: container.scrollWidth - cardWidth, behavior: 'smooth' })
+      } else {
+        container.scrollTo({ left: newScroll, behavior: 'smooth' })
+      }
+    }
   }
 
   const scrollRight = () => {
-    setScrollPosition(Math.min(maxScroll, scrollPosition + cardWidth))
+    const container = document.getElementById('projects-carousel')
+    if (container) {
+      const cardWidth = 384 + 24
+      const currentScroll = container.scrollLeft
+      const newScroll = currentScroll + cardWidth
+      const maxScroll = container.scrollWidth - container.clientWidth
+      
+      if (newScroll > maxScroll) {
+        // Jump to beginning if we're at the end
+        container.scrollTo({ left: 0, behavior: 'smooth' })
+      } else {
+        container.scrollTo({ left: newScroll, behavior: 'smooth' })
+      }
+    }
   }
 
   return (
-    <section id="projects" className="py-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-20 px-4 bg-slate-900 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-slate-800/50 to-slate-900"></div>
+        <div className="absolute top-20 right-20 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-custom-gradient">Featured Projects</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-5xl font-bold mb-6 text-custom-gradient">Featured Projects</h2>
+          {/* <p className="text-xl text-gray-300 max-w-3xl mx-auto bg-glass rounded-2xl p-6">
             A showcase of innovative solutions across civil engineering and software development
-          </p>
+          </p> */}
         </div>
 
         <div className="relative">
           <div className="overflow-hidden">
             <div
-              className="flex transition-transform duration-300 ease-in-out gap-6 pt-2 pb-6"
-              style={{ transform: `translateX(-${scrollPosition}px)` }}
+              id="projects-carousel"
+              className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory px-4 py-2"
+              style={{ scrollSnapType: 'x mandatory' }}
             >
               {projectsToDisplay.map((project, index) => (
-                <Card key={index} className="flex-shrink-0 w-80 hover:shadow-lg transition-shadow flex flex-col gap-0 py-0">
-                  <div className="relative h-48 overflow-hidden rounded-t-lg">
-                    <Image
-                      src={project.coverImage?.url || "/placeholder.jpg"}
-                      alt={project.name}
-                      fill
-                      className="object-cover"
-                      />
-                      {/* objectFit="cover" */}
-                  </div>
-                  <CardContent className="p-6 flex-1 grid grid-flow-col grid-rows-5 gap-1">
-                    <h3 className="text-xl font-bold mb-2 row-span-1 line-clamp-2 text-custom-gradient">{project.name}</h3>
-                    <p className="text-gray-600 mb-4 row-span-2 line-clamp-5">{project.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-4 row-span-1 items-start">
-                      {/* Technologies not available in Contentful data, so we'll skip this for now */}
+                <div key={index} className="text-card-foreground flex flex-col gap-6 rounded-xl border py-6 flex-shrink-0 w-96 bg-glass border-white/20 shadow-2xl">
+                  {/* Project Images Carousel */}
+                  <div className="relative h-64 overflow-hidden rounded-t-lg">
+                    <Carousel
+                      showArrows={true}
+                      showThumbs={false}
+                      showStatus={false}
+                      showIndicators={true}
+                      infiniteLoop={true}
+                      autoPlay={true}
+                      interval={4000}
+                      stopOnHover={true}
+                      className="h-full"
+                    >
+                      {[project.coverImage, ...project.imagesCollection.items].map((image, imgIndex) => (
+                        <div key={imgIndex} className="h-64">
+                          <Image
+                            src={image.url}
+                            alt={`${project.name} - Image ${imgIndex + 1}`}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                      ))}
+                    </Carousel>
+                    
+                    {/* Project Type Badge */}
+                    <div hidden={!project.isWip} className="absolute top-4 left-4 bg-neon-blue rounded-full px-3 py-1 text-xs font-semibold text-white">
+                      In Progress
                     </div>
-                    <div className="flex gap-2 row-span-1 items-end">
+                  </div>
+
+                  <CardContent className="p-6 flex-1">
+                    <h3 className="text-2xl font-bold mb-3 text-custom-gradient line-clamp-2">{project.name}</h3>
+                    <p className="text-gray-300 mb-6 line-clamp-4 leading-relaxed">{project.description}</p>
+                    
+                    {/* Tech Stack */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {['React', 'Next.js', 'Tailwind CSS', 'TypeScript'].map((tech, techIndex) => (
+                        <span 
+                          key={techIndex}
+                          className="px-3 py-1 bg-neon-cyan rounded-full text-xs font-medium text-white"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex gap-3">
                       {project.url && (
                         <Button
                           size="sm"
-                          variant="outline"
-                          className="bg-[#7B4331] text-white hover:text-white hover:bg-[#7B4331] hover:brightness-[1.1]"
+                          className="bg-neon-blue text-white hover:bg-blue-500/40 transition-all duration-300 flex-1"
                           onClick={() => window.open(project.url, '_blank')}
                         >
-                          <Icon icon="tabler:external-link" />
-                          View
+                          <Icon icon="tabler:external-link" className="w-4 h-4 mr-2" />
+                          View Project
                         </Button>
                       )}
 
                       {project.github && (
-                        <Button size="sm" variant="outline" className="bg-black text-white">
-                          <Icon icon="hugeicons:github" />
-                          Code
+                        <Button 
+                          size="sm" 
+                          variant="outline" 
+                          className="bg-neon-purple text-white border-purple-400/50 hover:bg-purple-500/40 transition-all duration-300 flex-1"
+                        >
+                          <Icon icon="hugeicons:github" className="w-4 h-4 mr-2" />
+                          Source Code
                         </Button>
                       )}
                     </div>
                   </CardContent>
-                </Card>
+                </div>
               ))}
             </div>
           </div>
@@ -99,21 +182,19 @@ export default function ProjectsSection() {
           {/* Navigation Buttons */}
           <Button
             variant="outline"
-            size="sm"
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white shadow-lg"
+            size="lg"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 -translate-x-6 bg-glass border-white/20 text-white hover:bg-gray-300 transition-all duration-300 w-12 h-12 rounded-full p-0"
             onClick={scrollLeft}
-            disabled={scrollPosition === 0}
           >
-            <Icon icon="lineicons:chevron-left" />
+            <Icon icon="lineicons:chevron-left" className="w-6 h-6" />
           </Button>
           <Button
             variant="outline"
-            size="sm"
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white shadow-lg"
+            size="lg"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 translate-x-6 bg-glass border-white/20 text-white hover:bg-gray-300 transition-all duration-300 w-12 h-12 rounded-full p-0"
             onClick={scrollRight}
-            disabled={scrollPosition >= maxScroll}
           >
-           <Icon icon="lineicons:chevron-right" />
+           <Icon icon="lineicons:chevron-right" className="w-6 h-6" />
           </Button>
         </div>
       </div>

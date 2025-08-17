@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Icon } from "@iconify/react"
 
 const workExperience = [
   {
@@ -146,30 +147,49 @@ export default function ExperienceSection() {
   const currentExperience = activeTab === "work" ? workExperience : leadershipExperience
 
   return (
-    <section id="experience" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-20 bg-slate-700 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-slate-600/30 to-slate-700"></div>
+        <div className="absolute top-20 right-20 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-custom-gradient mb-4">Experience</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Professional journey across engineering and technology leadership roles
-          </p>
+          <h2 className="text-5xl font-bold text-custom-gradient mb-6">Experience</h2>
+          <div className="bg-glass rounded-2xl p-6 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300">
+              Professional journey across engineering and technology leadership roles
+            </p>
+          </div>
         </div>
 
         {/* Tab Navigation */}
         <div className="flex justify-center mb-12">
-          <div className="bg-gray-100 p-1 rounded-lg">
+          <div className="bg-glass p-2 rounded-2xl border border-white/20">
             <Button
               variant={activeTab === "work" ? "default" : "ghost"}
               onClick={() => setActiveTab("work")}
-              className="px-6 py-2"
+              className={`px-8 py-3 rounded-xl transition-all duration-300 ${
+                activeTab === "work" 
+                  ? "bg-neon-blue text-white shadow-lg" 
+                  : "text-gray-300 hover:text-white hover:bg-white/10"
+              }`}
             >
+              <Icon icon="tabler:briefcase" className="w-5 h-5 mr-2" />
               Work Experience
             </Button>
             <Button
               variant={activeTab === "leadership" ? "default" : "ghost"}
               onClick={() => setActiveTab("leadership")}
-              className="px-6 py-2"
+              className={`px-8 py-3 rounded-xl transition-all duration-300 ${
+                activeTab === "leadership" 
+                  ? "bg-neon-purple text-white shadow-lg" 
+                  : "text-gray-300 hover:text-white hover:bg-white/10"
+              }`}
             >
+              <Icon icon="tabler:users" className="w-5 h-5 mr-2" />
               Leadership Experience
             </Button>
           </div>
@@ -178,7 +198,7 @@ export default function ExperienceSection() {
         {/* Horizontal Timeline */}
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute top-8 left-0 right-0 h-0.5 bg-gray-300 z-0"></div>
+          {/* <div className="absolute top-8 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 z-0 rounded-full"></div> */}
           
           {/* Scrollable Container */}
           <div className="overflow-x-auto pb-8">
@@ -186,32 +206,33 @@ export default function ExperienceSection() {
               {currentExperience.map((exp, index) => (
                 <div key={index} className="relative flex-shrink-0 w-80">
                   {/* Timeline Dot */}
-                  <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg z-10"></div>
+                  <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full border-4 border-slate-700 shadow-2xl z-10 animate-pulse"></div>
+                  <div hidden={index === currentExperience.length - 1} className="absolute top-8 left-40 translate-x-4 translate-y-px h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 z-0 rounded-full w-full"></div>
                   
                   {/* Content Card */}
                   <div className="mt-12">
-                    <Card className="hover:shadow-lg transition-shadow h-full">
+                    <Card className=" h-full bg-glass border-white/20 shadow-2xl">
                       <CardContent className="p-6">
                         <div className="flex flex-col mb-4">
                           <div className="text-center mb-3">
-                            <h3 className="text-lg font-bold text-gray-900 mb-1">{exp.title}</h3>
-                            <p className="text-blue-600 font-semibold text-sm">{exp.company}</p>
-                            <span className="text-gray-500 font-medium text-xs">{exp.period}</span>
+                            <h3 className="text-lg font-bold text-white mb-1">{exp.title}</h3>
+                            <p className="text-cyan-400 font-semibold text-sm">{exp.company}</p>
+                            <span className="text-gray-400 font-medium text-xs bg-white/5 px-3 py-1 rounded-full">{exp.period}</span>
                           </div>
                         </div>
 
                         <div className="mb-4">
-                          <p className="text-gray-600 text-sm leading-relaxed">
+                          <p className="text-gray-300 text-sm leading-relaxed">
                             {exp.description}
                           </p>
                         </div>
 
                         {exp.skills && (
                           <div className="mb-4">
-                            <h4 className="font-semibold text-gray-900 mb-2 text-sm">Skills:</h4>
-                            <div className="flex flex-wrap gap-1">
+                            <h4 className="font-semibold text-cyan-400 mb-2 text-sm">Skills:</h4>
+                            <div className="flex flex-wrap gap-2">
                               {exp.skills.map((skill, skillIndex) => (
-                                <span key={skillIndex} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
+                                <span key={skillIndex} className="px-3 py-1 bg-neon-cyan text-white text-xs rounded-full">
                                   {skill}
                                 </span>
                               ))}
@@ -220,11 +241,11 @@ export default function ExperienceSection() {
                         )}
 
                         <div>
-                          <h4 className="font-semibold text-gray-900 mb-2 text-sm">Key Achievements:</h4>
-                          <ul className={`space-y-1 overflow-hidden text-gray-600 text-sm ${activeTab === "work" ? !expandedItems[index] ? 'h-16' : '' : !expandedItems[index + workExperience.length] ? 'h-16' : ''}`}>
+                          <h4 className="font-semibold text-purple-400 mb-2 text-sm">Key Achievements:</h4>
+                          <ul className={`space-y-1 overflow-hidden text-gray-300 text-sm ${activeTab === "work" ? !expandedItems[index] ? 'h-16' : '' : !expandedItems[index + workExperience.length] ? 'h-16' : ''}`}>
                             {exp.achievements.map((achievement, achIndex) => (
                               <li key={achIndex} className="flex items-start">
-                                <span className="text-blue-600 mr-2 text-xs mt-0.5">•</span>
+                                <span className="text-cyan-400 mr-2 text-xs mt-0.5">•</span>
                                 <span className="leading-relaxed">{achievement}</span>
                               </li>
                             ))}
@@ -235,7 +256,7 @@ export default function ExperienceSection() {
                                 ? index
                                 : index + workExperience.length
                             )}
-                            className="text-blue-600 hover:text-blue-800 text-xs font-medium mt-2 cursor-pointer"
+                            className="text-cyan-400 hover:text-cyan-300 text-xs font-medium mt-2 cursor-pointer transition-colors duration-300"
                           >
                             {
                             activeTab === "work"
