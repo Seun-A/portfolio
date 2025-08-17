@@ -101,7 +101,7 @@ export default function ProjectsSection() {
               style={{ scrollSnapType: 'x mandatory' }}
             >
               {projectsToDisplay.map((project, index) => (
-                <div key={index} className="text-card-foreground flex flex-col gap-6 rounded-xl border py-6 flex-shrink-0 w-96 bg-glass border-white/20 shadow-2xl">
+                <div key={index} className="text-card-foreground flex flex-col gap-6 rounded-xl border pb-2 flex-shrink-0 w-96 bg-glass border-white/20 shadow-2xl">
                   {/* Project Images Carousel */}
                   <div className="relative h-64 overflow-hidden rounded-t-lg">
                     <Carousel
@@ -133,7 +133,7 @@ export default function ProjectsSection() {
                     </div>
                   </div>
 
-                  <CardContent className="p-6 flex-1">
+                  <CardContent className="p-6 flex-1 flex flex-col">
                     <h3 className="text-2xl font-bold mb-3 text-custom-gradient line-clamp-2">{project.name}</h3>
                     <p className="text-gray-300 mb-6 line-clamp-4 leading-relaxed">{project.description}</p>
                     
@@ -150,11 +150,11 @@ export default function ProjectsSection() {
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex gap-3">
+                    <div className="flex gap-3 mt-auto items-end">
                       {project.url && (
                         <Button
                           size="sm"
-                          className="bg-neon-blue text-white hover:bg-blue-500/40 transition-all duration-300 flex-1"
+                          className="bg-neon-blue text-white hover:bg-blue-500/40 transition-all duration-300 flex-1 py-5"
                           onClick={() => window.open(project.url, '_blank')}
                         >
                           <Icon icon="tabler:external-link" className="w-4 h-4 mr-2" />
@@ -183,7 +183,7 @@ export default function ProjectsSection() {
           <Button
             variant="outline"
             size="lg"
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 -translate-x-6 bg-glass border-white/20 text-white hover:bg-gray-300 transition-all duration-300 w-12 h-12 rounded-full p-0"
+            className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 -translate-x-6 bg-glass border-white/20 text-white hover:bg-gray-300 transition-all duration-300 w-12 h-12 rounded-full p-0"
             onClick={scrollLeft}
           >
             <Icon icon="lineicons:chevron-left" className="w-6 h-6" />
@@ -191,7 +191,7 @@ export default function ProjectsSection() {
           <Button
             variant="outline"
             size="lg"
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 translate-x-6 bg-glass border-white/20 text-white hover:bg-gray-300 transition-all duration-300 w-12 h-12 rounded-full p-0"
+            className="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 translate-x-6 bg-glass border-white/20 text-white hover:bg-gray-300 transition-all duration-300 w-12 h-12 rounded-full p-0"
             onClick={scrollRight}
           >
            <Icon icon="lineicons:chevron-right" className="w-6 h-6" />
