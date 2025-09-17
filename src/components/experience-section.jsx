@@ -1,8 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import { Icon } from "@iconify/react"
 
 const workExperience = [
@@ -23,7 +21,7 @@ const workExperience = [
     title: "Frontend Developer",
     company: "Brooi",
     period: "Aug 2024 - Apr 2025",
-
+    skills: ["VueJS", "Content Management Systems (CMS)"],
     description:
       "The development of a VueJS-based property management platform implementing solutions to meet project requirements",
     achievements: [
@@ -35,7 +33,7 @@ const workExperience = [
   {
     title: "Structural Engineering Intern",
     company: "Beads Engineering Limited",
-    period: "Sp 2024 - Oct 2024",
+    period: "Sep 2024 - Oct 2024",
     skills: ["Project Management", "Site Supervision"],
     description:
       "Supervision of infrastructure projects, ensuring compliance with building codes and safety standards.",
@@ -147,129 +145,108 @@ export default function ExperienceSection() {
   const currentExperience = activeTab === "work" ? workExperience : leadershipExperience
 
   return (
-    <section id="experience" className="py-20 bg-slate-700 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-slate-600/30 to-slate-700"></div>
-        <div className="absolute top-20 right-20 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl"></div>
-      </div>
+    <section id="experience" className="px-4 sm:px-6 lg:px-8 py-10 pb-24 md:pb-32 bg-accent/30 relative overflow-hidden">
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-custom-gradient mb-6">Experience</h2>
-          <div className="bg-glass rounded-2xl p-6 max-w-3xl mx-auto">
-            <p className="text-xl text-gray-300">
-              Professional journey across engineering and technology leadership roles
-            </p>
-          </div>
-        </div>
+        <h2 className="text-5xl md:text-6xl font-bold text-accent-dark font-sans text-center mb-16">My Experience</h2>
 
         {/* Tab Navigation */}
         <div className="flex justify-center mb-12">
-          <div className="bg-glass p-2 rounded-2xl border border-white/20">
-            <Button
+          <div className="p-2 rounded-md bg-accent-dark grid grid-cols-2 gap-4">
+            <button
               variant={activeTab === "work" ? "default" : "ghost"}
               onClick={() => setActiveTab("work")}
-              className={`px-8 py-3 rounded-xl transition-all duration-300 ${
+              className={`flex gap-1.5 items-center justify-center cursor-pointer border-0 px-2 py-3 rounded-sm transition-all duration-300 text-xs md:text-sm ${
                 activeTab === "work" 
-                  ? "bg-neon-blue text-white shadow-lg" 
-                  : "text-gray-300 hover:text-white hover:bg-white/10"
+                  ? "bg-white text-accent-dark shadow-lg" 
+                  : "text-white/50 hover:text-white hover:bg-white/10"
               }`}
             >
-              <Icon icon="tabler:briefcase" className="w-5 h-5 mr-2" />
+              <Icon icon="tabler:briefcase" className="w-4 md:w-4.5 h-4 md:h-4.5" />
               Work Experience
-            </Button>
-            <Button
+            </button>
+            <button
               variant={activeTab === "leadership" ? "default" : "ghost"}
               onClick={() => setActiveTab("leadership")}
-              className={`px-8 py-3 rounded-xl transition-all duration-300 ${
+              className={`flex gap-1.5 items-center justify-center cursor-pointer border-0 px-2 py-3 rounded-sm transition-all duration-300 text-xs md:text-sm ${
                 activeTab === "leadership" 
-                  ? "bg-neon-purple text-white shadow-lg" 
-                  : "text-gray-300 hover:text-white hover:bg-white/10"
+                  ? "bg-white text-accent-dark shadow-lg" 
+                  : "text-white/50 hover:text-white hover:bg-white/10"
               }`}
             >
-              <Icon icon="tabler:users" className="w-5 h-5 mr-2" />
+              <Icon icon="tabler:users" className="w-4 md:w-4.5 h-4 md:h-4.5" />
               Leadership Experience
-            </Button>
+            </button>
           </div>
         </div>
 
-        {/* Horizontal Timeline */}
-        <div className="relative">
-          {/* Timeline Line */}
-          {/* <div className="absolute top-8 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 z-0 rounded-full"></div> */}
-          
+        <div className="relative">          
           {/* Scrollable Container */}
           <div className="overflow-x-auto pb-8">
             <div className="flex gap-8 min-w-max px-4">
               {currentExperience.map((exp, index) => (
                 <div key={index} className="relative flex-shrink-0 w-80">
                   {/* Timeline Dot */}
-                  <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full border-4 border-slate-700 shadow-2xl z-10 animate-pulse"></div>
-                  <div hidden={index === currentExperience.length - 1} className="absolute top-8 left-40 translate-x-4 translate-y-px h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 z-0 rounded-full w-full"></div>
+                  <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-5 h-5 bg-accent-dark rounded-full"></div>
+                  <div hidden={index === currentExperience.length - 1} className="absolute top-8 left-40 translate-x-4 translate-y-px h-1 bg-accent-dark z-0 rounded-full w-full"></div>
                   
-                  {/* Content Card */}
-                  <div className="mt-12">
-                    <Card className=" h-full bg-glass border-white/20 shadow-2xl">
-                      <CardContent className="p-6">
-                        <div className="flex flex-col mb-4">
-                          <div className="text-center mb-3">
-                            <h3 className="text-lg font-bold text-white mb-1">{exp.title}</h3>
-                            <p className="text-cyan-400 font-semibold text-sm">{exp.company}</p>
-                            <span className="text-gray-400 font-medium text-xs bg-white/5 px-3 py-1 rounded-full">{exp.period}</span>
-                          </div>
-                        </div>
+                  {/* Content */}
+                  <div className="mt-14">
+                    <div className="h-full bg-white rounded-lg border border-accent-dark p-6">
+                      <div className="flex flex-col mb-4 text-center">
+                        <h3 className="text-lg font-medium mb-1 h-[2lh] line-clamp-2">{exp.title}</h3>
+                        <p className="text-accent font-medium h-[1lh] line-clamp-1">{exp.company}</p>
+                        <span className="text-foreground/50 font-semibold text-xs h-[1lh] line-clamp-1">{exp.period}</span>
+                      </div>
 
+                      <div className="mb-4">
+                        <p className="font-light text-sm h-[4lh] line-clamp-4">
+                          {exp.description}
+                        </p>
+                      </div>
+
+                      {exp.skills && (
                         <div className="mb-4">
-                          <p className="text-gray-300 text-sm leading-relaxed">
-                            {exp.description}
-                          </p>
-                        </div>
-
-                        {exp.skills && (
-                          <div className="mb-4">
-                            <h4 className="font-semibold text-cyan-400 mb-2 text-sm">Skills:</h4>
-                            <div className="flex flex-wrap gap-2">
-                              {exp.skills.map((skill, skillIndex) => (
-                                <span key={skillIndex} className="px-3 py-1 bg-neon-cyan text-white text-xs rounded-full">
-                                  {skill}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-
-                        <div>
-                          <h4 className="font-semibold text-purple-400 mb-2 text-sm">Key Achievements:</h4>
-                          <ul className={`space-y-1 overflow-hidden text-gray-300 text-sm ${activeTab === "work" ? !expandedItems[index] ? 'h-16' : '' : !expandedItems[index + workExperience.length] ? 'h-16' : ''}`}>
-                            {exp.achievements.map((achievement, achIndex) => (
-                              <li key={achIndex} className="flex items-start">
-                                <span className="text-cyan-400 mr-2 text-xs mt-0.5">•</span>
-                                <span className="leading-relaxed">{achievement}</span>
-                              </li>
+                          <h4 className="font-semibold text-accent-dark mb-2 text-sm">Skills:</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {exp.skills.map((skill, skillIndex) => (
+                              <span key={skillIndex} className="px-3 py-1 border border-accent-dark text-accent-dark text-xs rounded-full">
+                                {skill}
+                              </span>
                             ))}
-                          </ul>
-                          <button
-                            onClick={() => toggleExpanded(
-                              activeTab === "work"
-                                ? index
-                                : index + workExperience.length
-                            )}
-                            className="text-cyan-400 hover:text-cyan-300 text-xs font-medium mt-2 cursor-pointer transition-colors duration-300"
-                          >
-                            {
-                            activeTab === "work"
-                              ? expandedItems[index]
-                                ? 'See Less'
-                                : 'See More'
-                              : expandedItems[index + workExperience.length]
-                                ? 'See Less'
-                                : 'See More'}
-                          </button>
+                          </div>
                         </div>
-                      </CardContent>
-                    </Card>
+                      )}
+
+                      <div>
+                        <h4 className="font-semibold text-accent-dark mb-2 text-sm">Key Achievements:</h4>
+                        <ul className={`space-y-1 overflow-hidden text-sm ${activeTab === "work" ? !expandedItems[index] ? 'h-16' : '' : !expandedItems[index + workExperience.length] ? 'h-16' : ''}`}>
+                          {exp.achievements.map((achievement, achIndex) => (
+                            <li key={achIndex} className="flex items-start">
+                              <span className="text-accent-dark mr-2 text-xs mt-0.5">•</span>
+                              <span className="text-sm">{achievement}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <button
+                          onClick={() => toggleExpanded(
+                            activeTab === "work"
+                              ? index
+                              : index + workExperience.length
+                          )}
+                          className="text-accent hover:brightness-120 text-xs font-medium mt-2 cursor-pointer transition-all duration-300"
+                        >
+                          {
+                          activeTab === "work"
+                            ? expandedItems[index]
+                              ? 'See Less'
+                              : 'See More'
+                            : expandedItems[index + workExperience.length]
+                              ? 'See Less'
+                              : 'See More'}
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}

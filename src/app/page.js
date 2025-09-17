@@ -15,7 +15,7 @@ export default function Home() {
       <SkillsSection />
       <ProjectsSection />
       {/* <ImpactSection /> */}
-      {/* <ExperienceSection /> */}
+      <ExperienceSection />
       {/* <TestimonialsSection /> */}
       <Footer />
     </main>
