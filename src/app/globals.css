@@ -70,7 +70,7 @@
   }
 
   .bg-glass {
-    @apply bg-white/20 backdrop-blur-md;
+    @apply bg-white/50 backdrop-blur-md;
   }
 
   .bg-neon-blue {

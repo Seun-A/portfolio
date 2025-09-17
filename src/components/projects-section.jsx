@@ -79,10 +79,10 @@ export default function ProjectsSection() {
 
 
   return (
-    <section id="projects" className="px-4 sm:px-6 lg:px-8 py-10 relative overflow-hidden">
+    <section id="projects" className="px-4 sm:px-6 lg:px-8 py-10 pb-24 md:pb-32 relative overflow-hidden">
       <div className="mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-accent-dark font-sans">My Projects</h2>
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground font-sans">My Projects</h2>
         </div>
 
         <div className="overflow-hidden relative">

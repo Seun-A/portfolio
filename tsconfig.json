@@ -25,6 +25,6 @@
       "@/styles/*": ["./src/styles/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/layout.jsx", "lib/utils.js", "next.config.js", "components/ui/button.jsx", "components/ui/input.jsx", "components/ui/textarea.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/layout.jsx", "lib/utils.js", "next.config.js", "components/ui/button.jsx"],
   "exclude": ["node_modules"]
 }

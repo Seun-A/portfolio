@@ -3,13 +3,8 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Icon } from "@iconify/react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent } from "@/components/ui/card"
 import emailjs from 'emailjs-com'
 import Alert from "@/components/alert"
-import Image from "next/image"
 
 
 export default function Footer() {
@@ -72,87 +67,89 @@ export default function Footer() {
   }
 
   return (
-    <footer id="contact" className="bg-slate-900 text-white py-20 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-slate-800/50 to-slate-900"></div>
-        <div className="absolute top-20 left-20 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl"></div>
-      </div>
-
+    <footer id="contact" className="px-4 sm:px-6 lg:px-8 pt-24 md:pt-32 lg:pt-40 bg-foreground relative overflow-hidden text-white">
       <Alert
         isVisible={isAlertVisible}
         isError={isAlertError}
       />
+
+      {/* Floating header */}
+      <div className="absolute -top-3 md:-top-4.5 -left-2 md:-left-3 text-5xl md:text-6xl font-bold mb-6 whitespace-nowrap">
+        contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . 
+      </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* About Section */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center overflow-hidden">
-                <Image
-                  src="/seun-ajayi-profile.png?height=192&width=192"
-                  alt="Profile Picture"
-                  width={192}
-                  height={192}
-                  className="object-cover w-full h-full scale-150 translate-y-1"
-                  priority
-                />
-              </div>
-              <h3 className="text-3xl font-bold text-custom-gradient">Seun Ajayi</h3>
+              <h3 className="text-3xl font-bold">Seun Ajayi</h3>
             </div>
-            <p className="text-gray-300 mb-8 leading-relaxed text-lg">
+            <p className="mb-8 leading-relaxed text-xs md:text-sm text-light">
               A passionate professional bridging the worlds of civil engineering and software development. Committed to
               creating innovative solutions that make a positive impact on communities and technology.
             </p>
 
             {/* Social Links */}
             <div className="flex space-x-4">
-              <Link 
-                href="https://github.com/Seun-A" 
-                className="w-12 h-12 bg-glass border border-white/20 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 group"
+              <Link
+                className="bg-[#24292E] border border-white/50 hover:brightness-110 hover:border-white transition-all duration-100 rounded-full w-10 md:w-14 h-10 md:h-14 flex items-center justify-center"
+                href="https://github.com/Seun-A"
+                target="_blank"
+                title="GitHub"
               >
-                <Icon icon="mdi:github" width={24} className="group-hover:scale-110 transition-transform duration-300" />
+                <Icon icon="mdi:github" width={20} height={20} className="md:scale-150" />
               </Link>
-              <Link 
-                href="https://www.linkedin.com/in/seunajayi/" 
-                className="w-12 h-12 bg-glass border border-white/20 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 group"
+              <Link
+                className="bg-[#0073B1] border border-white/50 hover:brightness-110 hover:border-white transition-all duration-100 rounded-full w-10 md:w-14 h-10 md:h-14 flex items-center justify-center"
+                href="https://www.linkedin.com/in/seunajayi/"
+                target="_blank"
+                title="LinkedIn"
               >
-                <Icon icon="mdi:linkedin" width={24} className="group-hover:scale-110 transition-transform duration-300" />
+                <Icon icon="mdi:linkedin" width={20} height={20} className="md:scale-150" />
               </Link>
-              <Link 
-                href="https://calendly.com/seunaj/quick-chat-with-seun" 
-                className="w-12 h-12 bg-glass border border-white/20 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 group"
+              <Link
+                className="bg-[#006BFF] border border-white/50 hover:brightness-110 hover:border-white transition-all duration-100 rounded-full w-10 md:w-14 h-10 md:h-14 flex items-center justify-center"
+                href="https://calendly.com/seunaj/quick-chat-with-seun/"
+                target="_blank"
+                title="Book a Calendly call"
               >
-                <Icon icon="simple-icons:calendly" width={20} className="group-hover:scale-110 transition-transform duration-300" />
+                <Icon icon="simple-icons:calendly" width={20} height={20} className="md:scale-150" />
+              </Link>
+              <Link
+                className="bg-[#14171A] border border-white/50 hover:brightness-110 hover:border-white transition-all duration-100 rounded-full w-10 md:w-14 h-10 md:h-14 flex items-center justify-center"
+                href="https://x.com/shun__aj"
+                target="_blank"
+                title="X Twitter"
+              >
+                <Icon icon="prime:twitter" width={20} height={20} className="md:scale-150" />
               </Link>
             </div>
           </div>
 
           {/* Contact Information */}
           <div>
-            <h3 className="text-2xl font-bold mb-8 text-cyan-400 flex items-center gap-3">
-              <Icon icon="tabler:phone" className="w-6 h-6" />
+            <h3 className="text-3xl font-medium mb-6">
               Contact Info
             </h3>
-            <div className="space-y-6">
-              <div className="flex items-center p-4 bg-glass rounded-xl border border-white/20">
-                <div className="w-10 h-10 bg-neon-blue rounded-lg flex items-center justify-center mr-4">
-                  <Icon icon="material-symbols:mail-outline" className="h-5 w-5 text-cyan-400" />
+            <div className="space-y-6 text-sm">
+              <div className="flex items-center">
+                <div className="mr-4">
+                  <Icon icon="material-symbols:mail-outline" className="h-6 w-6 " />
                 </div>
                 <div>
-                  <p className="text-gray-400 text-sm">Email</p>
-                  <span className="text-white">seunfunmi.chisom@gmail.com</span>
+                  <p className="text-white/50 text-xs">Email</p>
+                  <span>seunfunmi.chisom@gmail.com</span>
                 </div>
               </div>
-              <div className="flex items-center p-4 bg-glass rounded-xl border border-white/20">
-                <div className="w-10 h-10 bg-neon-purple rounded-lg flex items-center justify-center mr-4">
-                  <Icon icon="lucide:map-pin" className="h-5 w-5 text-purple-400" />
+
+              <div className="flex items-center">
+                <div className="mr-4">
+                  <Icon icon="lucide:map-pin" className="h-6 w-6 " />
                 </div>
                 <div>
-                  <p className="text-gray-400 text-sm">Location</p>
-                  <span className="text-white">Lagos, NG</span>
+                  <p className="text-white/50 text-xs">Location</p>
+                  <span>Lagos, NG</span>
                 </div>
               </div>
             </div>
@@ -160,67 +157,60 @@ export default function Footer() {
 
           {/* Contact Form */}
           <div>
-            <h3 className="text-2xl font-bold mb-8 text-purple-400 flex items-center gap-3">
-              <Icon icon="tabler:message-circle" className="w-6 h-6" />
+            <h3 className="text-3xl font-medium text-white mb-6">
               Get In Touch
             </h3>
-            <Card className="bg-glass border-white/20 shadow-2xl">
-              <CardContent className="px-6">
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <Input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="bg-white/5 border-white/20 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-cyan-400/20 transition-all duration-300"
-                  />
-                  <Input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="bg-white/5 border-white/20 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-cyan-400/20 transition-all duration-300"
-                  />
-                  <Textarea
-                    name="message"
-                    placeholder="Your Message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={4}
-                    className="bg-white/5 border-white/20 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-cyan-400/20 transition-all duration-300"
-                  />
-                  <Button 
-                    disabled={isBtnDisabled} 
-                    type="submit" 
-                    className="w-full bg-neon-blue hover:bg-blue-500/40 transition-all duration-300 py-3 text-lg font-semibold"
-                  >
-                    {isBtnLoading
-                      ? <Icon icon="line-md:loading-loop" className="w-5 h-5" />
-                      : (
-                        <>
-                          <Icon icon="icon-park-outline:send" className="h-5 w-5 text-white mr-2" />
-                          <span>Send Message</span>
-                        </>
-                      )
-                    }
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+            <form onSubmit={handleSubmit} className="space-y-4 text-sm">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="bg-transparent border-b border-white/50 py-2 w-full outline-none text-white focus:outline-none"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="bg-transparent border-b border-white/50 py-2 w-full outline-none text-white focus:outline-none"
+              />
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows={4}
+                className="bg-transparent border-b border-white/50 py-2 w-full outline-none text-white focus:outline-none h-[8lh] resize-none"
+              />
+              <button 
+                disabled={isBtnDisabled} 
+                type="submit" 
+                className="w-full bg-white text-foreground flex items-center justify-center gap-2 hover:bg-accent hover:not(:disabled):brightness-150 transition-all duration-300 py-3 text-base font-medium cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white"
+              >
+                {isBtnLoading
+                  ? <Icon icon="line-md:loading-loop" className="w-5 h-5 text-foreground" />
+                  : (
+                    <>
+                      <Icon icon="icon-park-outline:send" className="h-5 w-5" />
+                      <span>Send Message</span>
+                    </>
+                  )
+                }
+              </button>
+            </form>
           </div>
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-16 pt-8 border-t border-white/20 text-center">
-          <p className="text-gray-400">
-            Built with ❤️ Seun Ajayi | 2025
-          </p>
-        </div>
+        <p className="mt-16 py-8 border-t border-white/50 text-center text-white/50 font-light">
+          Built with ❤️ by Seun Ajayi | 2025
+        </p>
       </div>
     </footer>
   )

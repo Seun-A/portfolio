@@ -61,7 +61,7 @@ export default function Header() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <button 
-              className="text-white bg-accent hover:bg-accent-dark transition-colors duration-300 px-4 py-2 rounded-sm cursor-pointer flex items-center gap-2"
+              className="text-white bg-accent border border-white/50 hover:bg-accent-dark hover:border-white transition-colors duration-300 px-4 py-2 rounded-sm cursor-pointer flex items-center gap-2"
               onClick={() => window.open('https://calendly.com/seunaj/quick-chat-with-seun', '_blank')}
             >
               <Icon icon="simple-icons:calendly" width={20} height={20} className="mr-2" />
