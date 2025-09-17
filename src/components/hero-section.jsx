@@ -48,6 +48,7 @@ export default function HeroSection() {
               className="bg-[#0073B1] text-white hover:brightness-110 transition-all duration-100 rounded-full w-10 md:w-14 h-10 md:h-14 flex items-center justify-center"
               href="https://www.linkedin.com/in/seunajayi/"
               target="_blank"
+              title="LinkedIn"
             >
               <Icon icon="mdi:linkedin" width={20} height={20} className="md:scale-150" />
             </Link>
@@ -55,6 +56,7 @@ export default function HeroSection() {
               className="bg-[#006BFF] text-white hover:brightness-110 transition-all duration-100 rounded-full w-10 md:w-14 h-10 md:h-14 flex items-center justify-center"
               href="https://calendly.com/seunaj/quick-chat-with-seun/"
               target="_blank"
+              title="Book a Calendly call"
             >
               <Icon icon="simple-icons:calendly" width={20} height={20} className="md:scale-150" />
             </Link>
