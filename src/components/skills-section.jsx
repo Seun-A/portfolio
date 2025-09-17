@@ -24,7 +24,7 @@ const notech_skills = [
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40 bg-foreground relative overflow-hidden">
+    <section id="skills" className="px-4 sm:px-6 lg:px-8 py-24 md:pt-32 lg:pt-40 bg-foreground relative overflow-hidden">
       {/* Floating header */}
       <div className="absolute -top-3 md:-top-4.5 -left-2 md:-left-3 text-5xl md:text-6xl font-bold text-white mb-6 whitespace-nowrap">
         skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . 

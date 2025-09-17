@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Icon } from "@iconify/react";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(true)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const headerRef = useRef(null)
 
   const navItems = [
