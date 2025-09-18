@@ -16,7 +16,7 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="px-4 sm:px-6 lg:px-8 py-10 md:pb-28 relative overflow-hidden">
-      <div className="flex flex-col md:flex-row gap-8 max-h-[672px]">
+      <div className="container mx-auto flex flex-col md:flex-row gap-8 max-h-[672px]">
         <div className="flex-1 space-y-5 flex flex-col justify-between order-2 md:order-1 max-md:max-w-lg md:min-w-[calc(50%-16px)] max-md:mx-auto max-md:text-center">
           {/* Name, Pronunciation, and Title */}
           <div className="space-y-4">

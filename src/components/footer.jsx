@@ -74,11 +74,13 @@ export default function Footer() {
       />
 
       {/* Floating header */}
-      <div className="absolute -top-3 md:-top-4.5 -left-2 md:-left-3 text-5xl md:text-6xl font-bold mb-6 whitespace-nowrap">
-        contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . 
+      <div className="marquee-container absolute -top-3 md:-top-4.5 -left-2 md:-left-3 text-5xl md:text-6xl font-bold mb-6 whitespace-nowrap">
+        <div className="marquee-content">
+          contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . 
+        </div>
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* About Section */}
           <div>

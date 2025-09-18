@@ -49,10 +49,10 @@ export default function Header() {
   return (
     <header ref={headerRef} className="sticky top-0 left-0 right-0 z-50">
       <div className={`relative px-4 sm:px-6 lg:px-8 bg-glass backdrop-blur-md border-b border-b-black/50 ${isMenuOpen && 'max-md:bg-white'}`}>
-        <div className="flex justify-between items-center py-4">
+        <div className="container mx-auto flex justify-between items-center py-4">
           <button 
             onClick={() => scrollToSection('home')}
-            className="font-light hover:text-accent hover:scale-105 transition-colors duration-300 px-4 py-2 cursor-pointer"
+            className="font-light hover:text-accent hover:scale-105 transition-colors duration-300 -ms-1 py-2 cursor-pointer"
           >
             <Icon icon="material-symbols:home-rounded" className="w-6 md:w-7 h-6 md:h-7" />
           </button>

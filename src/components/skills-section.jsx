@@ -26,11 +26,13 @@ export default function SkillsSection() {
   return (
     <section id="skills" className="px-4 sm:px-6 lg:px-8 py-24 md:pt-32 lg:pt-40 bg-foreground relative overflow-hidden">
       {/* Floating header */}
-      <div className="absolute -top-3 md:-top-4.5 -left-2 md:-left-3 text-5xl md:text-6xl font-bold text-white mb-6 whitespace-nowrap">
-        skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . 
+      <div className="marquee-container absolute -top-3 md:-top-4.5 -left-2 md:-left-3 text-5xl md:text-6xl font-bold text-white mb-6 whitespace-nowrap">
+        <div className="marquee-content">
+          skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . 
+        </div>
       </div>
 
-      <div className="flex max-md:flex-col gap-8 md:gap-12 relative">
+      <div className="container mx-auto flex max-md:flex-col gap-8 md:gap-12 relative">
         {/* Software Engineering */}
         <div className="flex-1 space-y-6 md:space-y-10">
           <h3 className="font-sans">

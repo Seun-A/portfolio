@@ -147,7 +147,7 @@ export default function ExperienceSection() {
   return (
     <section id="experience" className="px-4 sm:px-6 lg:px-8 py-10 pb-24 md:pb-32 bg-accent/30 relative overflow-hidden">
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto relative z-10">
         <h2 className="text-5xl md:text-6xl font-bold text-accent-dark font-sans text-center mb-16">My Experience</h2>
 
         {/* Tab Navigation */}
@@ -183,7 +183,7 @@ export default function ExperienceSection() {
         <div className="relative">          
           {/* Scrollable Container */}
           <div className="overflow-x-auto pb-8">
-            <div className="flex gap-8 min-w-max px-4">
+            <div className="flex gap-8 min-w-max">
               {currentExperience.map((exp, index) => (
                 <div key={index} className="relative flex-shrink-0 w-80">
                   {/* Timeline Dot */}
