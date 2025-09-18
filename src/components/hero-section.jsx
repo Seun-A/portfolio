@@ -8,8 +8,9 @@ export default function HeroSection() {
   const playPronunciation = () => {
     // This would typically use the Web Speech API or an audio file
     if ("speechSynthesis" in window) {
-      const utterance = new SpeechSynthesisUtterance("Shay woon Ajayi")
+      const utterance = new SpeechSynthesisUtterance("Shay woon, ajar yee")
       utterance.rate = 0.8
+      utterance.voice = speechSynthesis.getVoices()[37]
       speechSynthesis.speak(utterance)
     }
   }
