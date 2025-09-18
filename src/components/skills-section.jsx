@@ -26,7 +26,7 @@ export default function SkillsSection() {
   return (
     <section id="skills" className="px-4 sm:px-6 lg:px-8 py-24 md:pt-32 lg:pt-40 bg-foreground relative overflow-hidden">
       {/* Floating header */}
-      <div className="marquee-container absolute -top-3 md:-top-4.5 -left-2 md:-left-3 text-5xl md:text-6xl font-bold text-white mb-6 whitespace-nowrap">
+      <div className="marquee-container absolute pb-4 -top-3 md:-top-4.5 -left-2 md:-left-3 text-5xl md:text-6xl font-bold text-white mb-6 whitespace-nowrap">
         <div className="marquee-content">
           skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . skills . technologies . 
         </div>
@@ -40,7 +40,7 @@ export default function SkillsSection() {
             <span className="block text-xl md:text-2xl font-medium text-accent">Engineering</span>
           </h3>
 
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 space-x-4 space-y-4 gap-2">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4">
             {tech_skills.map((skill, index) => {
               return (
                 <div
@@ -64,15 +64,23 @@ export default function SkillsSection() {
             <span className="block text-xl md:text-2xl font-medium text-accent">Engineering</span>
           </h3>
 
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 space-x-4 space-y-4 gap-2">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 civil-skills-rtl">
+            <style jsx>{`
+              @media (min-width: 768px) {
+                .civil-skills-rtl {
+                  direction: rtl;
+                }
+              }
+            `}</style>
+
             {notech_skills.map((skill, index) => {
               return (
                 <div
                   key={index}
-                  className="text-white font-light flex flex-col items-start md:items-end gap-2"
+                  className="text-white font-light flex flex-col items-start gap-2"
                 >
                   <Icon icon={skill.icon} className="w-6 md:w-8 h-6 md:h-8 text-white" />
-                  <span className="text-xs md:text-sm overflow-hidden whitespace-nowrap text-ellipsis max-w-full md:text-right">{skill.name}</span>
+                  <span className="text-xs md:text-sm overflow-hidden whitespace-nowrap text-ellipsis max-w-full md:text-righ col-start-5">{skill.name}</span>
                 </div>
               )
             })}

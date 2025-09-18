@@ -72,7 +72,7 @@
       transform: translateX(0%);
     }
     100% {
-      transform: translateX(-100%);
+      transform: translateX(-50%);
     }
   }
 
@@ -84,6 +84,6 @@
 
   .marquee-content {
     display: inline-block;
-    animation: marquee 60s linear infinite;
+    animation: marquee 30s linear infinite;
   }
 }

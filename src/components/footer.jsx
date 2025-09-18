@@ -74,7 +74,7 @@ export default function Footer() {
       />
 
       {/* Floating header */}
-      <div className="marquee-container absolute -top-3 md:-top-4.5 -left-2 md:-left-3 text-5xl md:text-6xl font-bold mb-6 whitespace-nowrap">
+      <div className="marquee-container absolute pb-4 -top-3 md:-top-4.5 -left-2 md:-left-3 text-5xl md:text-6xl font-bold mb-6 whitespace-nowrap">
         <div className="marquee-content">
           contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . contact me . 
         </div>
