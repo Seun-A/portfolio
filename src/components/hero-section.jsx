@@ -20,9 +20,10 @@ export default function HeroSection() {
       <div className="container mx-auto flex flex-col md:flex-row gap-8 max-h-[672px]">
         <div className="flex-1 space-y-5 flex flex-col justify-between order-2 md:order-1 max-md:max-w-lg md:min-w-[calc(50%-16px)] max-md:mx-auto max-md:text-center">
           {/* Name, Pronunciation, and Title */}
-          <div className="space-y-4">
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold font-sans">
-              Seun<br className="max-md:hidden" /> Ajayi
+          <div className="space-y-3 md:space-y-4">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold font-sans md:leading-28">
+              <span className="text-accent">Seun</span> <br className="max-md:hidden" />
+              <span className="md:tracking-[1.5px]">Ajayi</span>
             </h1>
             <div className="flex items-center gap-3 max-md:justify-center">
               <span className="font-light text-lg font-mono">/ˈʃeɪwuːn əˈʤɑːjiː/</span>
