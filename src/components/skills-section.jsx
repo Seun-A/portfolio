@@ -3,13 +3,11 @@
 import { Icon } from "@iconify/react";
 
 const tech_skills = [
-  { name: "JavaScript", icon: 'logos:javascript' },
-  { name: "TypeScript", icon: 'devicon:typescript' },
-  { name: "React", icon: 'logos:react' },
   { name: "Next.js", icon: 'devicon:nextjs' },
   { name: "Vue.js", icon: 'logos:vue' },
-  { name: "Redux", icon: 'devicon:redux' },
-  { name: "Firebase", icon: 'devicon:firebase' },
+  { name: "React", icon: 'logos:react' },
+  { name: "JavaScript", icon: 'logos:javascript' },
+  { name: "TypeScript", icon: 'devicon:typescript' },
   { name: "Python", icon: 'material-icon-theme:python' }
 ]
 
@@ -17,7 +15,6 @@ const notech_skills = [
   { name: "AutoCAD", icon: 'skill-icons:autocad-light' },
   { name: "Revit", icon: 'simple-icons:autodeskrevit' },
   { name: "Civil 3D", icon: 'skill-icons:autocad-dark' },
-  { name: "Git", icon: 'devicon:git' },
   { name: "Google Suite", icon: 'logos:google-360suite' },
   { name: "Microsoft Office Suite", icon: 'mdi:microsoft-office' }
 ]
@@ -64,15 +61,7 @@ export default function SkillsSection() {
             <span className="block text-xl md:text-2xl font-medium text-accent">Engineering</span>
           </h3>
 
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 civil-skills-rtl">
-            <style jsx>{`
-              @media (min-width: 768px) {
-                .civil-skills-rtl {
-                  direction: rtl;
-                }
-              }
-            `}</style>
-
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4">
             {notech_skills.map((skill, index) => {
               return (
                 <div
