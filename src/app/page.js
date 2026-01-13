@@ -3,7 +3,7 @@ import HeroSection from "@/components/hero-section"
 import SkillsSection from "@/components/skills-section"
 import ProjectsSection from "@/components/projects-section"
 // import ImpactSection from "@/components/impact-section"
-import ExperienceSection from "@/components/experience-section"
+// import ExperienceSection from "@/components/experience-section"
 // import TestimonialsSection from "@/components/testimonials-section"
 import Footer from "@/components/footer"
 
