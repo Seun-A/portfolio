@@ -25,7 +25,7 @@ export default function HeroSection() {
               <span className="text-accent">Seun</span> <br className="max-md:hidden" />
               <span className="md:tracking-[1.5px]">Ajayi</span>
             </h1>
-            <div className="flex items-center gap-3 max-md:justify-center">
+            <div hidden className="flex items-center gap-3 max-md:justify-center">
               <span className="font-light text-lg font-mono">/ˈʃeɪwuːn əˈʤɑːjiː/</span>
               <button
                 onClick={playPronunciation}
@@ -46,6 +46,14 @@ export default function HeroSection() {
 
           <div className="flex items-center justify-center gap-2 w-full">
             <div className="flex-1 h-px bg-accent/20 me-px md:hidden" />
+            <Link
+              className="bg-[#24292E] text-white hover:brightness-110 transition-all duration-100 rounded-full w-10 md:w-14 h-10 md:h-14 flex items-center justify-center"
+              href="https://github.com/Seun-A/"
+              target="_blank"
+              title="GitHub"
+            >
+              <Icon icon="mdi:github" width={20} height={20} className="md:scale-150" />
+            </Link>
             <Link
               className="bg-[#0073B1] text-white hover:brightness-110 transition-all duration-100 rounded-full w-10 md:w-14 h-10 md:h-14 flex items-center justify-center"
               href="https://www.linkedin.com/in/seunajayi/"
