@@ -73,7 +73,7 @@ export default function HeroSection() {
             <div className="flex-1 h-px bg-accent/20 ms-px" />
           </div>
           <p className="leading-relaxed font-light text-center md:text-left max-md:text-sm max-w-lg self-start">
-            I'm a penultimate-year Civil Engineering undergraduate passionate about structural engineering design. My interests include sustainability, building information modeling, seismic design, hydraulics, and climate and business consulting.
+            I am a Frontend Web Developer with 4+ years of experience. I specialise in using JavaScript/TypeScript and its frameworks (mainly React JS and Vue JS), and I have applied these in development for the education and property management sectors. I do this while undergoing my Civil Engineering BSc. in view.
           </p>
         </div>
 
