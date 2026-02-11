@@ -50,6 +50,24 @@
     @apply bg-white/50 backdrop-blur-md;
   }
 
+  /* Project card & link icon animations */
+  @keyframes link-vertical-scroll {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  .link-icon-vertical-scroll {
+    transition: transform 150ms ease-out;
+  }
+
+  .link-button:hover .link-icon-vertical-scroll {
+    animation: link-vertical-scroll 0.6s ease-in-out infinite;
+  }
+
   @keyframes bg-pulse {
     0%, 100% { 
       background-color: #D6D6D6;

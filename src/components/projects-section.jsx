@@ -22,9 +22,22 @@ export default function ProjectsSection() {
 
 
   const ProjectCard = ({ project }) => {
+    const handleCardClick = () => {
+      if (project?.url) {
+        window.open(project.url, "_blank", "noopener,noreferrer")
+      }
+    }
+
     return (
       <div className="w-full flex justify-center">
-        <div className={`shadow-[0.95px_1.9px_6px_0.95px] shadow-accent-dark/20 rounded-xl px-2.5 py-3 w-76 md:w-80 lg:w-96 aspect-[13/14] flex flex-col justify-between gap-4 ${project?.url ? 'border border-accent' : 'animate-bg-pulse'}`}>
+        <div
+          onClick={project?.url ? handleCardClick : undefined}
+          className={`shadow-[0.95px_1.9px_6px_0.95px] shadow-accent-dark/20 rounded-xl px-2.5 py-3 w-76 md:w-80 lg:w-96 aspect-[13/14] flex flex-col justify-between gap-4 transition-transform transition-shadow duration-300 ${
+            project?.url
+              ? 'border border-accent cursor-pointer hover:shadow-xl hover:shadow-accent-dark/30 hover:scale-[1.02]'
+              : 'animate-bg-pulse'
+          }`}
+        >
           <div className="flex justify-between items-start gap-16">
             <div className="space-y-1 flex-1">
               <div className="text-lg font-medium line-clamp-1">{project?.name ?? "Loading..."}</div>
@@ -35,13 +48,19 @@ export default function ProjectsSection() {
             <div className="flex items-center justify-center">
               {project?.url && (
                 <Link
+                  onClick={(e) => e.stopPropagation()}
                   href={project?.url}
                   target="_blank"
                   title="View Project"
                   disabled
-                  className="w-8 h-8 bg-white border border-accent hover:bg-accent hover:text-white transition-all duration-300 text-accent rounded-full flex items-center justify-center"
+                  className="link-button w-8 h-8 bg-white border border-accent hover:bg-accent hover:text-white transition-all duration-300 text-accent rounded-full flex items-center justify-center"
                 >
-                  <Icon icon="flowbite:link-outline" width="24" height="24" />
+                  <Icon
+                    icon="flowbite:link-outline"
+                    width="24"
+                    height="24"
+                    className="link-icon-vertical-scroll"
+                  />
                 </Link>
               )}
             </div>
@@ -86,7 +105,7 @@ export default function ProjectsSection() {
         </div>
 
         <div className="overflow-hidden relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-2 pb-4">
             {isFetchingProjects ? [...Array(5)].map((_, index) => (
                 <ProjectCard key={index} />
               )) :
