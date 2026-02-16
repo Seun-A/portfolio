@@ -38,9 +38,7 @@ export default function HeroSection() {
             <div className="text-accent md:text-lg lg:text-xl mt-4 md:mt-8 animate-fade-in">
               <span className="whitespace-nowrap">Frontend Developer</span>
               <span> | </span>
-              <span className="whitespace-nowrap">Civil Engineer</span>
-              <span> | </span>
-              <span className="whitespace-nowrap">Student Leader</span>
+              <span className="whitespace-nowrap">Civil Engineering Student</span>
             </div>
           </div>
 
