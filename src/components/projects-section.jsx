@@ -49,7 +49,7 @@ const SoftwareProjectCard = ({ project }) => {
     <div className="aspect-4/5 w-full justify-center rounded-xl animate-bg-pulse" />
   ) : (
     <div
-      className="relative aspect-4/5 w-full cursor-pointer justify-center overflow-hidden rounded-xl border text-indigo transition-all duration-300 [background-size:100%_200%] bg-[linear-gradient(180deg,#EBF5FF_50%,#262941_50%)] hover:[background-position:0_100%] hover:text-white"
+      className="relative aspect-4/5 w-full cursor-pointer justify-center overflow-hidden rounded-xl border text-indigo transition-all duration-300 bg-size-[100%_200%] bg-[linear-gradient(180deg,#EBF5FF_50%,#262941_50%)] hover:bg-position-[0_100%] hover:text-white"
     >
       <Link
         href={project?.url ?? "#"}
@@ -82,10 +82,10 @@ const SoftwareProjectCard = ({ project }) => {
         <div className="row-span-3 grid grid-rows-12 px-3">
           <div className="row-span-3 text-2xl font-semibold">{project?.name ?? "Loading..."}</div>
           <div className="row-span-5 text-sm font-light py-2">
-            <span className="line-clamp-4">{project?.description}</span>
+            <span className="line-clamp-3 lg:line-clamp-4">{project?.description}</span>
           </div>
           <div className="row-span-4 flex items-center justify-between border-t">
-            <div className="flex items-center gap-2 text-[10px] [&>*]:rounded-md [&>*]:border [&>*]:px-1 [&>*]:py-px [&>*]:cursor-text">
+            <div className="flex items-center gap-2 text-[10px] *:rounded-md *:border *:px-1 *:py-px *:cursor-text">
               {stackTags.map((tag, i) => (
                 <span key={`${tag}-${i}`}>{tag}</span>
               ))}
@@ -105,7 +105,7 @@ function ArticleCard({ article }) {
   const { name, description, url, tagLine, coverImage } = article
 
   return (
-    <article className="cursor-pointer relative flex aspect-square w-full flex-col overflow-hidden rounded-xl text-indigo">
+    <article className="cursor-pointer relative flex aspect-square w-full flex-col overflow-hidden rounded-lg md:rounded-xl text-indigo">
       <Link
         href={url}
         target="_blank"
@@ -129,7 +129,7 @@ function ArticleCard({ article }) {
           )}
         </div>
 
-        <div className="absolute top-0 left-0 h-[200%] w-full text-transparent transition-all duration-300 [background-size:100%_200%] bg-[linear-gradient(180deg,#EBF5FF00_50%,#262941_50%)] dark:bg-[linear-gradient(180deg,#EBF5FF00_50%,#FFFFFF_50%)] hover:[background-position:0_100%] hover:text-white dark:hover:text-indigo">
+        <div className="absolute top-0 left-0 h-[200%] w-full text-transparent transition-all duration-300 bg-size-[100%_200%] bg-[linear-gradient(180deg,#EBF5FF00_50%,#262941_50%)] dark:bg-[linear-gradient(180deg,#EBF5FF00_50%,#FFFFFF_50%)] hover:bg-position-[0_100%] hover:text-white dark:hover:text-indigo">
           <div className="grid grid-rows-10 gap-2 px-4 pb-4 pt-3 h-1/2">
             <div className="row-span-1 flex items-center">
               <span className="border text-[10px] font-medium uppercase tracking-wider px-1.5 rounded-md w-fit">{tagLine ?? "Article"}</span>
@@ -174,11 +174,11 @@ export default function ProjectsSection() {
     >
       <div className="relative z-10 mx-auto max-md:max-w-7xl">
         <header className="mb-10 md:mb-12">
-          <div className="mb-8 text-center md:mb-12">
-            <h2 className="font-sans text-5xl font-semibold md:text-4xl">
+          <div className="mb-6 text-center md:mb-12">
+            <h2 className="font-sans text-3xl lg:text-5xl font-semibold md:text-4xl">
               I <span className="text-powder">work</span>.
             </h2>
-            <h3 className="mt-1 font-sans text-5xl font-bold md:text-6xl">
+            <h3 className="mt-1 font-sans text-3xl lg:text-5xl font-bold md:text-6xl">
               I work a <span className="text-powder">lot</span>.
             </h3>
           </div>

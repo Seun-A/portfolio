@@ -112,12 +112,12 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="relative min-h-[720px] overflow-hidden bg-radial from-powder-800 to-powder-900 text-white"
+      className="relative lg:min-h-[720px] overflow-hidden bg-radial from-powder-800 to-powder-900 text-white"
     >
       <Alert isVisible={isAlertVisible} isError={isAlertError} />
 
       <div className="absolute inset-x-0 h-full max-h-full bottom-0 left-0 z-0 flex items-center justify-center overflow-auto">
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 -left-[20%] z-[15] flex items-end justify-center h-[120%]">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 left-[20%] opacity-30 lg:opacity-80 lg:left-[-20%] z-15 flex items-end justify-center h-[120%]">
           <Image
             src="/Seun-Ajayi-Footer.png"
             alt=""
@@ -127,7 +127,7 @@ export default function Footer() {
           />
         </div>
         <div
-          className="absolute inset-x-0 left-1/2 top-1/2 -translate-x-1/2 -translate-y-[80%] z-10 text-center w-fit"
+          className="absolute hidden lg:block inset-x-0 left-1/2 top-1/2 -translate-x-1/2 translate-y-[-80%] z-10 text-center w-fit"
           aria-hidden
         >
           <p className="font-sans text-[clamp(2.25rem,11vw,10rem)] font-bold leading-none text-white md:text-[clamp(3rem,18vw,20rem)]">
@@ -135,7 +135,7 @@ export default function Footer() {
           </p>
         </div>
         <div
-          className="absolute inset-x-0 left-1/2 top-1/2 -translate-x-1/2 -translate-y-[80%] z-30 text-center w-fit"
+          className="absolute hidden lg:block inset-x-0 left-1/2 top-1/2 -translate-x-1/2 translate-y-[-80%] z-30 text-center w-fit"
           aria-hidden
         >
           <p className="font-sans text-[clamp(2.25rem,11vw,10rem)] font-bold leading-none text-transparent [-webkit-text-stroke:2px_white] [text-stroke:2px_white] md:text-[clamp(3rem,18vw,20rem)]">
@@ -146,10 +146,10 @@ export default function Footer() {
 
       <div className="relative z-40 flex flex-col justify-between h-full py-16 px-8">
         <p className="max-w-xl text-4xl font-sans font-semibold leading-12 tracking-tight text-white md:text-5xl lg:text-[3.25rem]">
-          Let&apos;s <br />make <br /> <span className="text-powder">magic</span>
+          Let&apos;s <br className="hidden lg:block" />make <br className="hidden lg:block" /> <span className="lg:text-powder">magic</span> <span className="text-powder lg:hidden">together</span>.
         </p>
 
-        <div className="min-h-[200px] shrink-0 lg:min-h-[300px]" aria-hidden />
+        <div className="min-h-[50px] shrink-0 lg:min-h-[300px]" aria-hidden />
 
         <div className="mt-auto flex flex-col-reverse gap-12 pb-4 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
           <div className="flex flex-col gap-3">
@@ -172,7 +172,7 @@ export default function Footer() {
               {socialLinks.map(({ href, title, icon, className }) => (
                 <Link
                   key={href}
-                  className={`flex size-11 items-center justify-center rounded-full transition-all duration-200 hover:border-white hover:brightness-110 md:size-14 [background-size:100%_200%] hover:[background-position:0_100%] ${className}`}
+                  className={`flex size-11 items-center justify-center rounded-full transition-all duration-200 hover:border-white hover:brightness-110 md:size-14 bg-size-[100%_200%] hover:bg-position-[0_100%] ${className}`}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"

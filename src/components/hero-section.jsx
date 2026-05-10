@@ -74,7 +74,7 @@ export default function HeroSection() {
               {socialLinks.map(({ href, title, icon, className }) => (
                 <Link
                   key={href}
-                  className={`flex size-10 items-center justify-center rounded-full transition-all duration-200 hover:border-white hover:brightness-110 [background-size:100%_200%] hover:[background-position:0_100%] ${className}`}
+                  className={`flex size-10 items-center justify-center rounded-full transition-all duration-200 hover:border-white hover:brightness-110 bg-size-[100%_200%] hover:bg-position-[0_100%] ${className}`}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -88,7 +88,7 @@ export default function HeroSection() {
               <button
                 type="button"
                 onClick={scrollToProjects}
-                className="cursor-pointer inline-flex items-center gap-3 rounded-full p-1 pe-4 text-xs font-medium transition-all duration-200 hover:brightness-110 text-indigo hover:text-white [background-size:100%_200%] hover:[background-position:0_100%] bg-[linear-gradient(180deg,#83C5FF_50%,#262941_50%)]"
+                className="cursor-pointer inline-flex items-center gap-3 rounded-full p-1 pe-4 text-xs font-medium transition-all duration-200 hover:brightness-110 text-indigo hover:text-white bg-size-[100%_200%] hover:bg-position-[0_100%] bg-[linear-gradient(180deg,#83C5FF_50%,#262941_50%)]"
               >
                 <span className="flex size-7 items-center justify-center rounded-full bg-white text-indigo">
                   <Icon icon="tabler:arrow-right" className="size-4" aria-hidden />
@@ -100,7 +100,7 @@ export default function HeroSection() {
         </div>
 
         <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 -right-[100%] lg:top-[28%] lg:right-0 opacity-30 lg:opacity-100 lg:z-[15] flex items-end justify-center"
+          className="pointer-events-none absolute inset-x-0 bottom-0 -right-full lg:top-[28%] lg:right-0 opacity-30 lg:opacity-100 lg:z-15 flex items-end justify-center"
           aria-hidden
         >
           <Image

@@ -6,7 +6,7 @@ function SkillsCategoryGrid({ title, skills }) {
   return (
     <div className="flex flex-col gap-2">
       <h4 className="font-sans text-lg font-semibold md:text-2xl">{title}</h4>
-      <div className="flex  gap-14">
+      <div className="flex flex-wrap w-full max-w-full gap-x-8 lg:gap-x-14 gap-y-6 lg:gap-y-8">
         {skills.map((skill, index) => (
           <div key={`${skill.name}-${index}`} className="flex flex-col items-center gap-2 font-light ">
             <Icon
@@ -56,14 +56,14 @@ const writing_skills = [
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="relative overflow-hidden bg-white px-4 py-18 dark:bg-indigo sm:px-6 lg:px-32">
+    <section id="skills" className="relative overflow-hidden bg-white px-4 py-8 lg:py-18 dark:bg-indigo sm:px-6 lg:px-32">
       <div className="relative z-10 mx-auto max-md:max-w-7xl">
         <header className="mb-10 md:mb-12">
-          <div className="mb-8 text-center md:mb-12">
-            <h2 className="font-sans text-5xl font-semibold md:text-4xl">
+          <div className="mb-6 text-center md:mb-12">
+            <h2 className="font-sans text-3xl lg:text-5xl font-semibold md:text-4xl">
               I use a lot of
             </h2>
-            <h3 className="mt-1 font-sans text-5xl font-bold md:text-6xl">
+            <h3 className="mt-1 font-sans text-3xl lg:text-5xl font-bold md:text-6xl">
               <span className="text-powder">Tools</span>.
             </h3>
           </div>
