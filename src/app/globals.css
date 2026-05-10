@@ -1,4 +1,10 @@
 @import "tailwindcss";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+/* Use toggleable `.dark` on `<html>` — not `prefers-color-scheme` — so app theme wins over OS */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @import "tw-animate-css";
 
 @theme inline {
@@ -6,39 +12,34 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-montserrat);
   --font-mono: var(--font-poppins);
-  --color-accent: var(--accent);
-  --color-accent-dark: var(--accent-dark);
-  
-  /* Pending */
-  --color-accent-foreground: var(--accent-foreground);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --color-destructive: var(--destructive);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
+
+  /* NEW */
+  --color-carbon: var(--carbon);
+  --color-shadow: var(--shadow);
+  --color-indigo: var(--indigo);
+  --color-powder: var(--powder);
+  --color-powder-50: var(--powder-50);
+  --color-powder-800: var(--powder-800);
+  --color-powder-900: var(--powder-900);
 }
 
 :root {
   --background: #FFFFFF;
   --foreground: #262626;
-  --accent: #968478;
-  --accent-dark: #736359;
 
-  /* Pending */
-  --accent-foreground: #353535;
-  --card-foreground: #262626;
-  --card: #FFFFFF;
-  --destructive: #E4572E;
-  --muted-foreground: #8E8E8E;
-  --muted: #F7F7F7;
-  --primary-foreground: #FCFCFC;
-  --primary: #353535;
-  --secondary-foreground: #353535;
-  --secondary: #F7F7F7;
+  /* NEW */
+  --carbon: #1E1E1C;
+  --shadow: #22242F;
+  --indigo: #262941;
+  --powder: #83C5FF;
+  --powder-50: #EBF5FF;
+  --powder-800: #003049;
+  --powder-900: #000407;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #f5f5f5;
 }
 
 @layer base {
@@ -46,28 +47,7 @@
     @apply bg-background text-foreground font-mono;
   }
 
-  .bg-glass {
-    @apply bg-white/50 backdrop-blur-md;
-  }
-
-  /* Project card & link icon animations */
-  @keyframes link-vertical-scroll {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-4px);
-    }
-  }
-
-  .link-icon-vertical-scroll {
-    transition: transform 150ms ease-out;
-  }
-
-  .link-button:hover .link-icon-vertical-scroll {
-    animation: link-vertical-scroll 0.6s ease-in-out infinite;
-  }
-
+  /* Project card animations */
   @keyframes bg-pulse {
     0%, 100% { 
       background-color: #D6D6D6;
@@ -103,5 +83,16 @@
   .marquee-content {
     display: inline-block;
     animation: marquee 30s linear infinite;
+  }
+
+  /* react-slick: gutter between project cards */
+  .projects-slider .slick-list {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+
+  .projects-slider .slick-slide > div {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
