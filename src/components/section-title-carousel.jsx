@@ -19,7 +19,7 @@ const defaultSliderSettings = {
 // never checks the initial match state, so on a fresh mobile load it stays on
 // the default slidesToShow. We compute the responsive value ourselves.
 function getResponsiveSlides(width) {
-  if (width <= 640) return 1
+  if (width <= 640) return 2
   if (width <= 1024) return 2
   return 3
 }
@@ -38,7 +38,7 @@ function useResponsiveSlides() {
 }
 
 const navButtonClass =
-  "group flex size-8 lg:size-10 cursor-pointer items-center justify-center rounded-full bg-indigo text-white transition-all duration-200 hover:bg-powder hover:text-white dark:bg-white/10 dark:text-white dark:hover:bg-powder dark:hover:text-indigo"
+  "flex size-10 cursor-pointer items-center justify-center rounded-full bg-white text-deep-blue transition-colors duration-200 hover:bg-[#F03A47] hover:text-white"
 
 
 function SectionTitleCarousel({
@@ -75,7 +75,7 @@ function SectionTitleCarousel({
   return (
     <div className={cn("space-y-4", className)}>
       <div className={headerRowClass}>
-        <div className="font-sans text-lg lg:text-4xl font-medium">{sectionTitle}</div>
+        <div className="font-sans text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl">{sectionTitle}</div>
         <div className="flex shrink-0 items-center gap-3">
           <button
             type="button"
@@ -116,19 +116,5 @@ export function LeftTitleCarousel(props) {
 
 export function RightTitleCarousel(props) {
   return <SectionTitleCarousel {...props} titlePosition="right" />
-}
-
-export function EmptyTitleCarousel({ className }) {
-  return (
-    <div
-      className={cn("grid grid-cols-1 gap-4 sm:grid-cols-3", className)}
-      aria-busy="true"
-      aria-label="Loading projects"
-    >
-      {[0, 1, 2].map((i) => (
-        <div key={i} className="aspect-4/5 w-full rounded-xl animate-bg-pulse" />
-      ))}
-    </div>
-  )
 }
 
