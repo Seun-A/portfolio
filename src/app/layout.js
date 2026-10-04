@@ -20,8 +20,8 @@ const corinthia = Corinthia({
 });
 
 export const metadata = {
-  title: "Seun Ajayi",
-  description: "Seun Ajayi - Frontend Developer | Civil Engineering Undergrad",
+  title: "Seun Ajayi | Video Editor/Web Developer",
+  description: "Seun Ajayi - Video Editor | Digital Creator | Frontend Web Developer",
 };
 
 export default function RootLayout({
