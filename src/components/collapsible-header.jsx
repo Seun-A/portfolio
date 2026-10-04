@@ -1,49 +1,44 @@
 "use client"
 
+import Logo from "@/components/logo"
 import { Icon } from "@iconify/react"
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useId, useRef, useState } from "react"
 
 const navItems = [
-  { name: "Skills", href: "skills" },
-  { name: "Projects", href: "projects" },
-  { name: "Contact", href: "contact" },
+  { name: "Portfolio", href: "projects" },
+  { name: "Contact Me", href: "contact" },
 ]
 
-/** Close the nav after the page scrolls this many px from where it was when the menu opened */
-const SCROLL_CLOSE_DELTA_PX = 56
+const leftItems = navItems.slice(0, 1)
+const rightItems = navItems.slice(1)
+
+/** Close the mobile menu after the page moves this far from where it was when the menu opened. */
+const SCROLL_CLOSE_DELTA_PX = 24
+
+const linkClassName =
+  "cursor-pointer text-[11px] font-medium uppercase tracking-[0.2em] text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 sm:text-xs"
 
 export default function CollapsibleHeader() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [themeDark, setThemeDark] = useState(true)
-  const [mounted, setMounted] = useState(false)
   const headerRef = useRef(null)
-
-  useEffect(() => {
-    setMounted(true)
-    const stored = localStorage.getItem("theme")
-    const prefersDark =
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    const nextDark = stored === "dark" || (!stored && prefersDark)
-    document.documentElement.classList.toggle("dark", nextDark)
-    setThemeDark(nextDark)
-  }, [])
-
-  const toggleTheme = useCallback((e) => {
-    e.stopPropagation()
-    const next = !document.documentElement.classList.contains("dark")
-    document.documentElement.classList.toggle("dark", next)
-    localStorage.setItem("theme", next ? "dark" : "light")
-    setThemeDark(next)
-  }, [])
+  const pendingSection = useRef(null)
+  const menuId = useId()
 
   const scrollToSection = useCallback((sectionId) => {
-    const el = document.getElementById(sectionId)
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" })
+    if (menuOpen) {
+      pendingSection.current = sectionId
+      setMenuOpen(false)
+      return
     }
-    setMenuOpen(false)
-  }, [])
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" })
+  }, [menuOpen])
+
+  useEffect(() => {
+    if (menuOpen || !pendingSection.current) return
+    const sectionId = pendingSection.current
+    pendingSection.current = null
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" })
+  }, [menuOpen])
 
   useEffect(() => {
     if (!menuOpen) return
@@ -54,102 +49,109 @@ export default function CollapsibleHeader() {
       }
     }
 
-    document.addEventListener("mousedown", onPointerDown)
-    document.addEventListener("touchstart", onPointerDown)
-
-    return () => {
-      document.removeEventListener("mousedown", onPointerDown)
-      document.removeEventListener("touchstart", onPointerDown)
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setMenuOpen(false)
     }
-  }, [menuOpen])
-
-  /* Collapse when focus leaves the header (e.g. Tab out), without relying on pointer events */
-  useEffect(() => {
-    if (!menuOpen) return
-    const root = headerRef.current
-    if (!root) return
-
-    const onFocusOut = (event) => {
-      const next = event.relatedTarget
-      if (next instanceof Node && root.contains(next)) return
-      setMenuOpen(false)
-    }
-
-    root.addEventListener("focusout", onFocusOut)
-    return () => root.removeEventListener("focusout", onFocusOut)
-  }, [menuOpen])
-
-  /* Collapse after scrolling away from the position where the menu was opened */
-  useEffect(() => {
-    if (!menuOpen) return
 
     const baselineY = window.scrollY
-
     const onScroll = () => {
       if (Math.abs(window.scrollY - baselineY) >= SCROLL_CLOSE_DELTA_PX) {
         setMenuOpen(false)
       }
     }
 
+    document.addEventListener("mousedown", onPointerDown)
+    document.addEventListener("touchstart", onPointerDown)
+    document.addEventListener("keydown", onKeyDown)
     window.addEventListener("scroll", onScroll, { passive: true })
-    return () => window.removeEventListener("scroll", onScroll)
+
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown)
+      document.removeEventListener("touchstart", onPointerDown)
+      document.removeEventListener("keydown", onKeyDown)
+      window.removeEventListener("scroll", onScroll)
+    }
   }, [menuOpen])
 
   return (
-    <div
+    <header
       ref={headerRef}
-      className="fixed right-4 top-4 lg:left-8 z-50 w-fit"
+      className="sticky top-0 z-50 w-full border-b border-b-white bg-deep-blue text-white"
     >
-      <div className="flex items-center gap-0 rounded-full border border-white/10 bg-black/45 shadow-lg backdrop-blur-md max-w-fit pe-0.5">
+      <div className="relative flex h-16 items-center justify-between px-5 md:h-20 md:px-8 lg:h-22 lg:px-12">
         <button
           type="button"
-          onClick={toggleTheme}
-          className="cursor-pointer flex size-11 shrink-0 items-center justify-center rounded-full text-white transition-colors hover:bg-white/10"
-          aria-label={themeDark ? "Switch to light mode" : "Switch to dark mode"}
+          onClick={() => scrollToSection("home")}
+          className="cursor-pointer rounded-sm focus-visible:outline focus-visible:outline-offset-4 lg:absolute lg:left-1/2 lg:-translate-x-1/2"
+          aria-label="Seun Ajayi, back to top"
         >
-          <Icon icon="gg:dark-mode" className="size-5 dark:text-powder" />
+          <Logo className="text-[1.75rem] leading-none md:text-4xl lg:text-[2.75rem]" />
         </button>
+
+        <nav aria-label="Page sections" className="hidden md:contents">
+          <div className="hidden items-center gap-10 lg:flex">
+            {leftItems.map((item) => (
+              <button
+                key={item.href}
+                type="button"
+                className={linkClassName}
+                onClick={() => scrollToSection(item.href)}
+              >
+                {item.name}
+              </button>
+            ))}
+          </div>
+
+          <div className="hidden items-center gap-10 lg:flex">
+            {rightItems.map((item) => (
+              <button
+                key={item.href}
+                type="button"
+                className={linkClassName}
+                onClick={() => scrollToSection(item.href)}
+              >
+                {item.name}
+              </button>
+            ))}
+          </div>
+
+          <div className="hidden items-center gap-6 md:flex lg:hidden">
+            {navItems.map((item) => (
+              <button
+                key={item.href}
+                type="button"
+                className={linkClassName}
+                onClick={() => scrollToSection(item.href)}
+              >
+                {item.name}
+              </button>
+            ))}
+          </div>
+        </nav>
+
         <button
           type="button"
-          onClick={() => setMenuOpen((o) => !o)}
-          className="cursor-pointer flex items-center gap-3 rounded-full py-2.5 pe-3 ps-4 text-sm font-medium tracking-tight text-white transition-colors hover:bg-white/10 sm:ps-5"
+          className="flex size-10 cursor-pointer items-center justify-center rounded-sm focus-visible:outline focus-visible:outline-offset-4 md:hidden"
           aria-expanded={menuOpen}
-          aria-controls="collapsible-nav-menu"
+          aria-controls={menuId}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          onClick={() => setMenuOpen((open) => !open)}
         >
-          <span className="font-sans">Seun Ajayi</span>
-          <Icon
-            icon={menuOpen ? "tabler:x" : "tabler:menu-2"}
-            className="size-5 shrink-0 opacity-90"
-            aria-hidden
-          />
+          <Icon icon={menuOpen ? "tabler:x" : "tabler:menu-2"} className="size-6" aria-hidden />
         </button>
       </div>
 
       <nav
-        id="collapsible-nav-menu"
-        hidden={!menuOpen}
-        aria-hidden={!menuOpen}
-        className={`mt-2 overflow-hidden rounded-2xl border border-white/10 bg-black/55 shadow-xl backdrop-blur-md transition-[opacity,transform] duration-200 lg:max-w-fit ${
-          menuOpen
-            ? "pointer-events-auto translate-y-0 opacity-100"
-            : "pointer-events-none invisible -translate-y-1 opacity-0"
-        }`}
+        id={menuId}
+        aria-label="Page sections"
+        className={`bg-deep-blue md:hidden absolute top-full w-full border-t border-t-white ${menuOpen ? "block" : "hidden"}`}
       >
         <ul className="flex flex-col py-2">
-          <li>
-            <button
-              type="button"
-              className="cursor-pointer w-full text-white px-5 py-3 text-left text-sm font-light transition-colors hover:bg-white/10 hover:text-powder"
-              onClick={() => scrollToSection("home")}
-            >
-              Home
-            </button>
-          </li>
           {navItems.map((item) => (
             <li key={item.href}>
               <button
                 type="button"
-                className="cursor-pointer w-full text-white px-5 py-3 text-left text-sm font-light transition-colors hover:bg-white/10 hover:text-powder"
+                className="w-full cursor-pointer px-5 py-3.5 text-left text-xs font-medium uppercase tracking-[0.2em] text-white transition-colors hover:bg-white/5"
                 onClick={() => scrollToSection(item.href)}
               >
                 {item.name}
@@ -158,6 +160,6 @@ export default function CollapsibleHeader() {
           ))}
         </ul>
       </nav>
-    </div>
+    </header>
   )
 }

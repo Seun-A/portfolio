@@ -1,4 +1,4 @@
-import { Montserrat, Poppins } from "next/font/google";
+import { Montserrat, Poppins, Corinthia } from "next/font/google";
 import "./globals.css";
 import { StoreProvider } from "@/store/context";
 
@@ -11,6 +11,12 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"]
+});
+
+const corinthia = Corinthia({
+  variable: "--font-corinthia",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata = {
@@ -27,7 +33,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body
-        className={`${montserrat.variable} ${poppins.variable}`}
+        className={`${montserrat.variable} ${poppins.variable} ${corinthia.variable}`}
       >
         <StoreProvider>
           {children}
