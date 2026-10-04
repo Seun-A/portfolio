@@ -184,7 +184,7 @@ export default function Footer() {
   }
 
   return (
-    <footer id="contact" className="scroll-mt-20 bg-deep-blue text-white lg:scroll-mt-28">
+    <footer id="contact" className="scroll-mt-20 bg-midnight text-white lg:scroll-mt-28">
       <Alert isVisible={isAlertVisible} isError={isAlertError} />
 
       <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 md:gap-10 md:px-8 md:py-16 lg:grid-cols-2 lg:gap-14 lg:px-12 lg:py-20">

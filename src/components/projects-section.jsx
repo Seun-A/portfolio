@@ -178,7 +178,7 @@ export default function ProjectsSection() {
     <section
       id="projects"
       ref={containerRef}
-      className="relative scroll-mt-20 overflow-hidden bg-powder-50 px-4 py-10 text-deep-blue md:px-8 md:py-16 lg:scroll-mt-28 lg:px-12 lg:py-20"
+      className="relative scroll-mt-20 overflow-hidden bg-powder px-4 py-10 text-deep-blue md:px-8 md:py-16 lg:scroll-mt-28 lg:px-12 lg:py-20"
     >
       <DotField containerRef={containerRef} />
       <div className="relative z-10 mx-auto max-w-7xl">
