@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { supabase } from "@/lib/supabase"
 import HighlightedWord from "@/components/hero/highlighted-word"
+import Reveal from "@/components/reveal"
 
 const PHOTO_FRAME =
   "group relative h-full min-h-0 overflow-hidden rounded-xl md:rounded-2xl lg:rounded-3xl"
@@ -79,9 +80,11 @@ export default function ContentSection() {
   return (
     <section className="bg-deep-blue text-white">
       <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-10 md:gap-8 md:px-8 md:py-16 lg:grid lg:grid-cols-2 lg:items-center lg:gap-x-16 lg:gap-y-4 lg:px-12 lg:py-20">
-        <PhotoPair photos={slots.slice(0, 2)} columns="grid-cols-[2fr_3fr]" />
+        <Reveal variant="wipe">
+          <PhotoPair photos={slots.slice(0, 2)} columns="grid-cols-[2fr_3fr]" />
+        </Reveal>
 
-        <div className="flex flex-col items-start lg:col-start-2 lg:row-span-2 lg:row-start-1">
+        <Reveal variant="up" delay={160} className="flex flex-col items-start lg:col-start-2 lg:row-span-2 lg:row-start-1">
           <h2 className="max-w-md font-sans text-4xl leading-[1.05] font-bold tracking-tight md:text-5xl lg:text-6xl">
             Work you can{" "}
             <HighlightedWord word="count" bg="bg-[#F03A47]" text="text-white" caret="bg-white" step={1} /> on
@@ -94,15 +97,15 @@ export default function ContentSection() {
           <button
             type="button"
             onClick={scrollToProjects}
-            className="mt-8 inline-flex cursor-pointer items-center bg-white px-8 py-4 text-sm font-semibold tracking-[0.14em] text-black uppercase"
+            className="motion-btn mt-8 inline-flex cursor-pointer items-center bg-white px-8 py-4 text-sm font-semibold tracking-[0.14em] text-black uppercase"
           >
             See projects
           </button>
-        </div>
+        </Reveal>
 
-        <div className="lg:col-start-1 lg:row-start-2">
+        <Reveal variant="wipe" delay={120} className="lg:col-start-1 lg:row-start-2">
           <PhotoPair photos={slots.slice(2, 4)} columns="grid-cols-[3fr_2fr]" />
-        </div>
+        </Reveal>
       </div>
     </section>
   )

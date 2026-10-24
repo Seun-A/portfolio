@@ -11,6 +11,7 @@ import HighlightedWord from "@/components/hero/highlighted-word"
 import { LeftTitleCarousel, RightTitleCarousel } from "@/components/section-title-carousel"
 import DotField from "@/components/hero/dot-field"
 import QuickLinks from "@/components/quick-links"
+import Reveal from "@/components/reveal"
 
 const imageZoomClass =
   "object-cover transition-[scale] duration-[1100ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
@@ -182,11 +183,11 @@ export default function ProjectsSection() {
     >
       <DotField containerRef={containerRef} />
       <div className="relative z-10 mx-auto max-w-7xl">
-        <header className="mb-10 md:mb-14">
+        <Reveal as="header" variant="up" className="mb-10 md:mb-14">
           <h3 className="mt-1 font-sans text-4xl leading-[1.05] font-bold tracking-tight md:text-5xl lg:text-6xl">
             I work quite a <HighlightedWord word="lot" bg="bg-[#6CCFF6]" text="text-white" caret="bg-white" step={2} />.
           </h3>
-        </header>
+        </Reveal>
 
         <QuickLinks />
 

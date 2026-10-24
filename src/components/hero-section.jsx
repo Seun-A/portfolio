@@ -31,8 +31,8 @@ const COLUMNS = [
 function HeroCopy({ title, body, className }) {
   return (
     <div className={`@container flex w-full flex-col items-center justify-center p-4 text-center md:text-left lg:h-full ${className}`}>
-      <p className="font-sans text-3xl font-medium text-deep-blue">{title}</p>
-      <p className="mt-4">{body}</p>
+      <p className="font-sans text-3xl font-medium text-deep-blue md:self-start">{title}</p>
+      <p className="mt-4 md:self-start">{body}</p>
     </div>
   )
 }

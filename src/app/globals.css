@@ -153,3 +153,92 @@
     height: 100%;
   }
 }
+
+/* Scroll and load reveals. Hidden only after JS marks the document, so a failed script still shows the page. */
+.js .reveal {
+  opacity: 0;
+}
+
+.js .reveal.is-in {
+  animation-duration: 900ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-delay: var(--reveal-delay, 0ms);
+  animation-fill-mode: both;
+}
+
+.js .reveal-up.is-in { animation-name: reveal-up; }
+.js .reveal-left.is-in { animation-name: reveal-left; }
+.js .reveal-right.is-in { animation-name: reveal-right; }
+.js .reveal-fade.is-in { animation-name: reveal-fade; }
+.js .reveal-scale.is-in { animation-name: reveal-scale; }
+.js .reveal-wipe.is-in { animation-name: reveal-wipe; animation-duration: 1100ms; }
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(2rem); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes reveal-left {
+  from { opacity: 0; transform: translateX(-1.75rem); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes reveal-right {
+  from { opacity: 0; transform: translateX(1.75rem); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes reveal-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes reveal-scale {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes reveal-wipe {
+  from { opacity: 0; clip-path: inset(100% 0 0 0); }
+  to { opacity: 1; clip-path: inset(0 0 0 0); }
+}
+
+.nav-link {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0 1px;
+  transition: background-size 420ms cubic-bezier(0.22, 1, 0.36, 1), color 200ms ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  background-size: 100% 1px;
+}
+
+.motion-btn {
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1), background-color 200ms ease, color 200ms ease;
+}
+
+.motion-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal,
+  .js .reveal.is-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  .nav-link,
+  .motion-btn {
+    transition: none;
+  }
+
+  .motion-btn:hover:not(:disabled) {
+    transform: none;
+  }
+}

@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react"
 import Image from "next/image"
 import { supabase } from "@/lib/supabase"
+import Reveal from "@/components/reveal"
 
 const PLACEHOLDERS = [
   { id: "a", width: 16, height: 10 },
@@ -17,7 +18,7 @@ function isVideoFile(url) {
   return /\.(mp4|webm|mov)(\?|$)/i.test(url || "")
 }
 
-function QuickLinkTile({ item }) {
+function QuickLinkTile({ item, delay = 0 }) {
   const [ready, setReady] = useState(false)
   const markReady = useCallback((media) => {
     if (!media) return
@@ -34,7 +35,7 @@ function QuickLinkTile({ item }) {
   const video = isVideoFile(preview)
 
   return (
-    <li className="mb-2 break-inside-avoid md:mb-3">
+    <Reveal as="li" variant="up" delay={delay} className="mb-2 break-inside-avoid md:mb-3">
       {preview ? (
         <a
           href={item.href}
@@ -75,7 +76,7 @@ function QuickLinkTile({ item }) {
       ) : (
         <span className="block animate-bg-pulse" style={{ aspectRatio: `${width} / ${height}` }} aria-hidden />
       )}
-    </li>
+    </Reveal>
   )
 }
 
@@ -103,12 +104,12 @@ export default function QuickLinks() {
 
   return (
     <div className="mb-16">
-      <h3 className="mb-6 text-center font-sans text-sm font-medium tracking-[0.28em] uppercase md:mb-8 md:text-base">
+      <Reveal as="h3" variant="fade" className="mb-6 text-center font-sans text-sm font-medium tracking-[0.28em] uppercase md:mb-8 md:text-base">
         Quick links
-      </h3>
+      </Reveal>
       <ul className="columns-2 gap-2 md:columns-3 md:gap-3">
-        {items.map((item) => (
-          <QuickLinkTile key={item.id} item={item} />
+        {items.map((item, index) => (
+          <QuickLinkTile key={item.id} item={item} delay={index * 70} />
         ))}
       </ul>
     </div>

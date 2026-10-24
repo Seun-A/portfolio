@@ -7,6 +7,7 @@ import emailjs from "emailjs-com"
 import Alert from "@/components/alert"
 import { supabase } from "@/lib/supabase"
 import HighlightedWord from "@/components/hero/highlighted-word"
+import Reveal from "@/components/reveal"
 
 
 const HERO_ASSET_ID = "footer-video"
@@ -188,9 +189,11 @@ export default function Footer() {
       <Alert isVisible={isAlertVisible} isError={isAlertError} />
 
       <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 md:gap-10 md:px-8 md:py-16 lg:grid-cols-2 lg:gap-14 lg:px-12 lg:py-20">
-        <FooterMedia />
+        <Reveal variant="left">
+          <FooterMedia />
+        </Reveal>
 
-        <div className="flex flex-col gap-8">
+        <Reveal variant="right" delay={140} className="flex flex-col gap-8">
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
           <h2 className="font-sans text-4xl leading-tight font-bold tracking-tight md:text-5xl">
             Let's work <HighlightedWord word="together" bg="bg-[#F03A47]" text="text-white" caret="bg-white" step={1} />!
@@ -243,7 +246,7 @@ export default function Footer() {
           <button
             disabled={isBtnDisabled || isBtnLoading}
             type="submit"
-            className="inline-flex w-fit cursor-pointer items-center gap-2 bg-white px-5 py-3 text-sm font-semibold tracking-[0.14em] text-black uppercase disabled:cursor-not-allowed disabled:opacity-50"
+            className="motion-btn inline-flex w-fit cursor-pointer items-center gap-2 bg-white px-5 py-3 text-sm font-semibold tracking-[0.14em] text-black uppercase disabled:cursor-not-allowed disabled:opacity-50"
           >
             {isBtnLoading && <Icon icon="line-md:loading-loop" className="size-4" />}
             Send me
@@ -264,7 +267,7 @@ export default function Footer() {
             </Link>
           ))}
         </nav>
-        </div>
+        </Reveal>
       </div>
     </footer>
   )

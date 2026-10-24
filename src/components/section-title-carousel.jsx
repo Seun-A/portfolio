@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react"
 import { Icon } from "@iconify/react"
 import Slider from "react-slick"
 import { cn } from "@/lib/utils"
+import Reveal from "@/components/reveal"
 
 const defaultSliderSettings = {
   dots: false,
@@ -38,7 +39,7 @@ function useResponsiveSlides() {
 }
 
 const navButtonClass =
-  "flex size-10 cursor-pointer items-center justify-center rounded-full bg-white text-deep-blue transition-colors duration-200 hover:bg-[#F03A47] hover:text-white"
+  "flex size-10 cursor-pointer items-center justify-center rounded-full bg-white text-deep-blue transition-[transform,background-color,color] duration-200 hover:scale-105 hover:bg-[#F03A47] hover:text-white motion-reduce:transition-none motion-reduce:hover:scale-100"
 
 
 function SectionTitleCarousel({
@@ -73,7 +74,7 @@ function SectionTitleCarousel({
       : "gap-3 px-2 flex md:flex-row-reverse items-center justify-between"
 
   return (
-    <div className={cn("space-y-4", className)}>
+    <Reveal variant="fade" className={cn("space-y-4", className)}>
       <div className={headerRowClass}>
         <div className="font-sans text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl">{sectionTitle}</div>
         <div className="flex shrink-0 items-center gap-3">
@@ -106,7 +107,7 @@ function SectionTitleCarousel({
           {children}
         </Slider>
       </div>
-    </div>
+    </Reveal>
   )
 }
 

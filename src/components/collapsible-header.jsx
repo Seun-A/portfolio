@@ -1,6 +1,7 @@
 "use client"
 
 import Logo from "@/components/logo"
+import Reveal from "@/components/reveal"
 import { Icon } from "@iconify/react"
 import { useCallback, useEffect, useId, useRef, useState } from "react"
 
@@ -16,7 +17,7 @@ const rightItems = navItems.slice(1)
 const SCROLL_CLOSE_DELTA_PX = 24
 
 const linkClassName =
-  "cursor-pointer text-[11px] font-medium uppercase tracking-[0.2em] text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 sm:text-xs"
+  "nav-link cursor-pointer text-[11px] font-medium uppercase tracking-[0.2em] text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 sm:text-xs"
 
 export default function CollapsibleHeader() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -78,7 +79,7 @@ export default function CollapsibleHeader() {
       ref={headerRef}
       className="sticky top-0 z-50 w-full border-b border-b-white bg-deep-blue text-white"
     >
-      <div className="relative flex h-16 items-center justify-between px-5 md:h-20 md:px-8 lg:h-22 lg:px-12">
+      <Reveal immediate variant="fade" className="relative flex h-16 items-center justify-between px-5 md:h-20 md:px-8 lg:h-22 lg:px-12">
         <button
           type="button"
           onClick={() => scrollToSection("home")}
@@ -139,14 +140,15 @@ export default function CollapsibleHeader() {
         >
           <Icon icon={menuOpen ? "tabler:x" : "tabler:menu-2"} className="size-6" aria-hidden />
         </button>
-      </div>
+      </Reveal>
 
       <nav
         id={menuId}
         aria-label="Page sections"
-        className={`bg-deep-blue md:hidden absolute top-full w-full border-t border-t-white ${menuOpen ? "block" : "hidden"}`}
+        inert={menuOpen ? undefined : true}
+        className={`absolute top-full grid w-full overflow-hidden bg-deep-blue transition-[grid-template-rows,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none md:hidden ${menuOpen ? "grid-rows-[1fr] border-t border-white" : "grid-rows-[0fr] border-t border-transparent"}`}
       >
-        <ul className="flex flex-col py-2">
+        <ul className="flex min-h-0 flex-col overflow-hidden py-2">
           {navItems.map((item) => (
             <li key={item.href}>
               <button

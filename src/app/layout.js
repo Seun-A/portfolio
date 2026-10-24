@@ -28,13 +28,16 @@ export default function RootLayout({
   children,
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="js">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body
         className={`${montserrat.variable} ${poppins.variable} ${corinthia.variable}`}
       >
+        <noscript>
+          <style>{`.reveal{opacity:1!important;transform:none!important;clip-path:none!important}`}</style>
+        </noscript>
         <StoreProvider>
           {children}
         </StoreProvider>
